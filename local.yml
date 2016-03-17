@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  become: no
+  roles:
+    - brew
+    - brew-cask
+  vars:
+    brew_repos:
+    brew_packs:
+    brew_cask_repos:
+    brew_cask_packs:
+

@@ -1,2 +1,10 @@
 # ansible-mac-setup
-an ansible role that installs mac dev tools
+
+## usage
+
+```bash
+$ git clone git@github.com:ohr486/ansible-mac-setup.git
+$ cd ansible-mac-setup
+$ ./setup.sh
+```
+
