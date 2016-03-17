@@ -1,0 +1,21 @@
+---
+
+# TODO: versionを変数化する
+
+- name: check ruby installed or not
+  shell: "[ -e ~/.rbenv/versions/2.3.0 ] && echo 'Installed' || echo ''"
+  register: ruby_installed
+
+- name: install ruby with rbenv
+  shell: rbenv install 2.3.0
+  when: (not ruby_installed.stdout)
+
+- lineinfile: dest=~/.bash_profile line='# for rbenv by ansible-mac-setup'
+- lineinfile: dest=~/.bash_profile line='export PATH="$HOME/.rbenv/bin:$PATH"'
+- lineinfile: dest=~/.bash_profile line='eval "$(rbenv init -)"'
+
+- name: set ruby version
+  shell: |
+    exenv global 2.3.0
+    exenv rehash
+

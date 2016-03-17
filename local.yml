@@ -6,9 +6,16 @@
   roles:
     - brew
     - brew-cask
+    - ruby
+    - elixir
   vars:
     brew_repos:
     brew_packs:
+      # language
+      - { name: rbenv }
+      - { name: ruby-build }
+      - { name: exenv }
+      - { name: elixir-build }
     brew_cask_repos:
     brew_cask_packs:
 
