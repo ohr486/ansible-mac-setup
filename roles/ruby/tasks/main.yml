@@ -12,5 +12,5 @@
     rbenv rehash
 
 - name: installs latest bundler
-  gem: name=bundler state=latest
+  gem: name=bundler user_install=False state=latest
 
