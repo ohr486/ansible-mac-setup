@@ -8,3 +8,9 @@ $ cd ansible-mac-setup
 $ ./setup.sh
 ```
 
+## spec
+
+```bash
+$ bundle exec rake
+```
+
