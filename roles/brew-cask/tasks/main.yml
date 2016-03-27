@@ -1,4 +1,7 @@
 ---
+- lineinfile: dest=~/.bash_profile line='# for brew-cask by ansible-mac-setup'
+- lineinfile: dest=~/.bash_profile line='export HOMEBREW_CASK_OPTS="--appdir=/Applications"'
+
 - name: tap brew cask
   homebrew_tap: tap=caskroom/cask state=present
 
