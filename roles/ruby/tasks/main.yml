@@ -1,21 +1,16 @@
 ---
-
-# TODO: versionを変数化する
-
-- name: check ruby installed or not
-  shell: "[ -e ~/.rbenv/versions/2.3.0 ] && echo 'Installed' || echo ''"
-  register: ruby_installed
-
-- name: install ruby with rbenv
-  shell: rbenv install 2.3.0
-  when: (not ruby_installed.stdout)
-
 - lineinfile: dest=~/.bash_profile line='# for rbenv by ansible-mac-setup'
 - lineinfile: dest=~/.bash_profile line='export PATH="$HOME/.rbenv/bin:$PATH"'
 - lineinfile: dest=~/.bash_profile line='eval "$(rbenv init -)"'
 
-- name: set ruby version
+- name: install latest ruby
+  shell: rbenv install -s $(rbenv install -l | grep -v - | tail -1)
+
+- name: set latest ruby version
   shell: |
-    exenv global 2.3.0
-    exenv rehash
+    rbenv global $(rbenv install -l | grep -v - | tail -1)
+    rbenv rehash
+
+- name: installs latest bundler
+  gem: name=bundler state=latest
 

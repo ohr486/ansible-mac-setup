@@ -1,21 +1,13 @@
 ---
-
-# TODO: versionを変数化する
-
-- name: check elixir installed or not
-  shell: "[ -e ~/.exenv/versions/1.2.3 ] && echo 'Installed' || echo ''"
-  register: elixir_installed
-
-- name: install elixir with exenv
-  shell: exenv install 1.2.3
-  when: (not elixir_installed.stdout)
-
 - lineinfile: dest=~/.bash_profile line='# for exenv by ansible-mac-setup'
 - lineinfile: dest=~/.bash_profile line='export PATH="$HOME/.exenv/bin:$PATH"'
 - lineinfile: dest=~/.bash_profile line='eval "$(exenv init -)"'
 
-- name: set elixir version
+- name: install latest elixir
+  shell: exenv install $(exenv install -l | grep -v - | grep -v Docs | grep -v master | grep -v dev | grep -v versions | sort | tail -1)
+
+- name: set latest elixir version
   shell: |
-    exenv global 1.2.3
+    exenv global $(exenv install -l | grep -v - | grep -v Docs | grep -v master | grep -v dev | grep -v versions | sort | tail -1)
     exenv rehash
 
