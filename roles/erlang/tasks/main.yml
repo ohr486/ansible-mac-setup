@@ -1,7 +1,6 @@
 ---
 - lineinfile: dest=~/.bash_profile line='# for kerl by ansible-mac-setup'
 - lineinfile: dest=~/.bash_profile line='KERL_CONFIGURE_OPTIONS="--enable-kernel-poll --enable-threads --enable-dynamic-ssl-lib --enable-smp-support --enable-darwin-64bit --disable-hipe --disable-native-libs --disable-sctp --without-javac --without-odbc --without-wx --with-ssl=/usr/local/opt/openssl"'
-- lineinfile: dest=~/.bash_profile line='source ~/.kerl/erlang/$(kerl list releases | head -1 | awk "{print \$NF}")/activate'
 
 - name: source ~/.bash_profile
   shell: source ~/.bash_profile
@@ -20,3 +19,7 @@
 - name: install latest erlang
   shell: kerl install $(kerl list releases | head -1 | awk '{print $NF}') ~/.kerl/erlang/$(kerl list releases | head -1 | awk '{print $NF}')
 
+- lineinfile: dest=~/.bash_profile line='source ~/.kerl/erlang/$(kerl list releases | head -1 | awk "{print \$NF}")/activate'
+
+- name: source ~/.bash_profile
+  shell: source ~/.bash_profile
