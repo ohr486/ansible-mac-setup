@@ -6,6 +6,7 @@
   roles:
     - brew
     - brew-cask
+    - java
     - ruby
     - erlang
     - elixir
@@ -19,6 +20,7 @@
       - { name: rbenv }
       - { name: ruby-build }
       - { name: kerl }
+      - { name: rebar }
       - { name: exenv }
       - { name: elixir-build }
       # for font
@@ -28,8 +30,16 @@
       - { name: openssl }
     brew_cask_repos:
     brew_cask_packs:
+      # for language
+      - { name: java }
       # for font
       - { name: xquartz }
+      # for life
+      - { name: iterm2 }
+      - { name: evernote }
+      - { name: dash }
+      - { name: firefox }
+      - { name: google-chrome }
 
 # for font
   handlers:
