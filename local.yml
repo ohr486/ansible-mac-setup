@@ -8,14 +8,27 @@
     - brew-cask
     - ruby
     - elixir
+    - font
   vars:
     brew_repos:
+      # for font
+      - sanemat/font
     brew_packs:
-      # language
+      # for language
       - { name: rbenv }
       - { name: ruby-build }
       - { name: exenv }
       - { name: elixir-build }
+      # for font
+      - { name: fontforge }
+      - { name: ricty }
     brew_cask_repos:
     brew_cask_packs:
+      # for font
+      - { name: xquartz }
+
+# for font
+  handlers:
+    - name: run fc-cache
+      shell: fc-cache -vf
 

@@ -1,0 +1,7 @@
+---
+- name: Install Ricty Font
+  shell: cp -f $(brew --cellar ricty)/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
+  args:
+    creates: ~/Library/Fonts/Ricty-bold.ttf
+  notify: run fc-cache
+
