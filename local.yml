@@ -28,6 +28,9 @@
       - { name: ricty }
       # for libs
       - { name: openssl }
+      - { name: libffi }
+      # for life
+      - { name: git }
     brew_cask_repos:
     brew_cask_packs:
       # for language
