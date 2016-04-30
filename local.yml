@@ -10,6 +10,7 @@
     - ruby
     - erlang
     - elixir
+    - node
     - font
   vars:
     brew_repos:
@@ -23,6 +24,7 @@
       - { name: rebar }
       - { name: exenv }
       - { name: elixir-build }
+      - { name: nodebrew }
       # for font
       - { name: fontforge }
       - { name: ricty }
@@ -31,6 +33,7 @@
       - { name: libffi }
       # for life
       - { name: git }
+      - { name: wget }
     brew_cask_repos:
     brew_cask_packs:
       # for language

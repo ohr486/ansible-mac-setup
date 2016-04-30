@@ -1,0 +1,16 @@
+---
+- lineinfile: dest=~/.bash_profile line='# for nodebrew by ansible-mac-setup'
+- lineinfile: dest=~/.bash_profile line='export PATH=$HOME/.nodebrew/current/bin:$PATH'
+
+- name: source ~/.bash_profile
+  shell: source ~/.bash_profile
+
+- name: create installation dir
+  file: path=~/.nodebrew/src state=directory mode=0755
+
+# TODO: run once
+- name: install latest nodejs
+  shell: nodebrew install-binary $(nodebrew ls-remote | grep -e '^v[0-9]' | sort | tail -1 | awk '{print $NF}')
+
+- name: set stable
+  shell: nodebrew use stable
