@@ -1,0 +1,17 @@
+---
+- lineinfile: dest=~/.zshrc line='# for zsh by ansible-mac-setup'
+- lineinfile: dest=~/.zshrc line='source ~/.bash_profile'
+- lineinfile: dest=~/.zshrc line='if [[ -s ~/.zprezto/init.zsh ]]; then source ~/.zprezto/init.zsh ; fi'
+
+- name: checkout prezto
+  git: repo=git@github.com:sorin-ionescu/prezto.git dest=~/.zprezto
+
+- name: zsh - link in prezto files
+  file: state=link src=~/.zprezto/runcoms/{{ item }} path=~/.{{ item }}
+  with_items:
+    - zlogin
+    - zlogout
+    - zpreztorc
+    - zprofile
+    - zshenv
+

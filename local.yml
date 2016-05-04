@@ -12,6 +12,7 @@
     - elixir
     - node
     - font
+    - zsh
   vars:
     brew_repos:
       # for font
@@ -32,20 +33,28 @@
       - { name: openssl }
       - { name: libffi }
       # for life
+      - { name: coreutils }
+      - { name: zsh }
       - { name: git }
       - { name: wget }
+      - { name: sqlite }
     brew_cask_repos:
     brew_cask_packs:
       # for language
       - { name: java }
       # for font
       - { name: xquartz }
+      # for VM
+      - { name: virtualbox }
+      - { name: vagrant }
       # for life
       - { name: iterm2 }
       - { name: evernote }
       - { name: dash }
       - { name: firefox }
       - { name: google-chrome }
+      - { name: slack }
+      - { name: kindle }
 
 # for font
   handlers:
