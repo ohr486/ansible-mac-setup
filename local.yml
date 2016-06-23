@@ -32,6 +32,8 @@
       # for libs
       - { name: openssl }
       - { name: libffi }
+      # for books
+      - { name: ghostscript }
       # for life
       - { name: coreutils }
       - { name: zsh }
@@ -47,6 +49,8 @@
       # for VM
       - { name: virtualbox }
       - { name: vagrant }
+      # for book
+      - { name: mactex }
       # for life
       - { name: iterm2 }
       - { name: evernote }
