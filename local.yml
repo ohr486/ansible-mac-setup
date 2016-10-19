@@ -26,6 +26,11 @@
       - { name: exenv }
       - { name: elixir-build }
       - { name: nodebrew }
+      # for database
+      - { name: redis }
+      - { name: mysql }
+      # for bigdata
+      - { name: apache-spark }
       # for font
       - { name: fontforge }
       - { name: ricty }

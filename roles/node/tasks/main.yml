@@ -8,9 +8,20 @@
 - name: create installation dir
   file: path=~/.nodebrew/src state=directory mode=0755
 
+- name: regist newest node version
+  shell: nodebrew ls-remote | grep -e '^v[0-9]' | sort | tail -1 | awk '{print $NF}'
+  register: newest_node_version
+- debug: var=newest_node_version
+
+- name: check newest node installed
+  shell: nodebrew ls | grep {{ newest_node_version.stdout }} | echo
+  register: newest_node_installed
+- debug: var=newest_node_installed
+
 # TODO: run once
 - name: install latest nodejs
-  shell: nodebrew install-binary $(nodebrew ls-remote | grep -e '^v[0-9]' | sort | tail -1 | awk '{print $NF}')
+  shell: nodebrew install-binary {{ newest_node_version.stdout }}
+  when: newest_node_installed.stdout ==  ""
 
 - name: set stable
   shell: nodebrew use stable

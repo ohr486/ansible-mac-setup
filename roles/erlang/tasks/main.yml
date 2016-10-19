@@ -1,6 +1,6 @@
 ---
 - lineinfile: dest=~/.bash_profile line='# for kerl by ansible-mac-setup'
-- lineinfile: dest=~/.bash_profile line='KERL_CONFIGURE_OPTIONS="--enable-kernel-poll --enable-threads --enable-dynamic-ssl-lib --enable-smp-support --enable-darwin-64bit --disable-hipe --disable-native-libs --disable-sctp --without-javac --without-odbc --without-wx --with-ssl=/usr/local/opt/openssl"'
+- lineinfile: dest=~/.bash_profile line='export KERL_CONFIGURE_OPTIONS="--enable-kernel-poll --enable-threads --enable-dynamic-ssl-lib --enable-smp-support --enable-darwin-64bit --with-ssl=/usr/local/opt/openssl"'
 
 - name: source ~/.bash_profile
   shell: source ~/.bash_profile
@@ -11,15 +11,25 @@
 - name: update releases
   shell: kerl update releases
 
-# TODO: run once
+- name: regist newest erlang version
+  shell: kerl list releases | head -1 | awk '{print $NF}'
+  register: newest_erlang_version
+
+- name: check local erlang builds
+  stat: path='~/.kerl/builds/{{ newest_erlang_version.stdout }}'
+  register: check_erlang_build
+
+- name: check local erlang installs
+  stat: path='~/.kerl/erlang/{{ newest_erlang_version.stdout }}'
+  register: check_erlang_install
+
 - name: build latest erlang
-  shell: kerl build $(kerl list releases | head -1 | awk '{print $NF}') $(kerl list releases | head -1 | awk '{print $NF}')
+  shell: kerl build {{ newest_erlang_version.stdout }} {{ newest_erlang_version.stdout }}
+  when: not check_erlang_build.stat.exists
 
-# TODO: run once
 - name: install latest erlang
-  shell: kerl install $(kerl list releases | head -1 | awk '{print $NF}') ~/.kerl/erlang/$(kerl list releases | head -1 | awk '{print $NF}')
-
-- lineinfile: dest=~/.bash_profile line='source ~/.kerl/erlang/$(kerl list releases | head -1 | awk "{print \$NF}")/activate'
+  shell: kerl install {{ newest_erlang_version.stdout }} ~/.kerl/erlang/{{ newest_erlang_version.stdout }}
+  when: not check_erlang_install.stat.exists
 
 - name: source ~/.bash_profile
   shell: source ~/.bash_profile
