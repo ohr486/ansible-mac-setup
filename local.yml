@@ -51,15 +51,11 @@
       - { name: java }
       # for font
       - { name: xquartz }
-      # for VM
-      - { name: virtualbox }
-      - { name: vagrant }
       # for book
       - { name: mactex }
       # for life
       - { name: iterm2 }
       - { name: evernote }
-      - { name: dash }
       - { name: firefox }
       - { name: google-chrome }
       - { name: slack }
