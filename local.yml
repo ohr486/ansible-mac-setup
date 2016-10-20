@@ -49,6 +49,8 @@
     brew_cask_packs:
       # for language
       - { name: java }
+      # for docker
+      - { name: docker }
       # for font
       - { name: xquartz }
       # for book
