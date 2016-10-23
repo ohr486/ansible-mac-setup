@@ -57,6 +57,7 @@
       # for book
       - { name: mactex }
       # for life
+      - { name: appcleaner }
       - { name: iterm2 }
       - { name: evernote }
       - { name: firefox }
