@@ -31,5 +31,8 @@
   shell: kerl install {{ newest_erlang_version.stdout }} ~/.kerl/erlang/{{ newest_erlang_version.stdout }}
   when: not check_erlang_install.stat.exists
 
+# setup直後は無効
+- lineinfile: dest=~/.bash_profile line="source ~/.kerl/erlang/$(kerl list releases | head -1 | awk '{print $NF}')/activate"
+
 - name: source ~/.bash_profile
   shell: source ~/.bash_profile
