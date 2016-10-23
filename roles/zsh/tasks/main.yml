@@ -1,4 +1,5 @@
 ---
+- shell: touch ~/.zshrc
 - lineinfile: dest=~/.zshrc line='# for zsh by ansible-mac-setup'
 - lineinfile: dest=~/.zshrc line='source ~/.bash_profile'
 - lineinfile: dest=~/.zshrc line='if [[ -s ~/.zprezto/init.zsh ]]; then source ~/.zprezto/init.zsh ; fi'
