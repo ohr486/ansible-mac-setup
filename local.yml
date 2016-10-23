@@ -58,6 +58,7 @@
       - { name: mactex }
       # for life
       - { name: appcleaner }
+      - { name: daisydisk }
       - { name: iterm2 }
       - { name: evernote }
       - { name: firefox }
