@@ -1,0 +1,7 @@
+---
+- lineinfile: dest=~/.bash_profile line='# for android by ansible-mac-setup'
+- lineinfile: dest=~/.bash_profile line='export STUDIO_JDK=${JAVA_HOME%/*/*}'
+
+- name: source ~/.bash_profile
+  shell: source ~/.bash_profile
+

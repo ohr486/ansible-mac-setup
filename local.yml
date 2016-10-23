@@ -4,13 +4,14 @@
   gather_facts: no
   become: no
   roles:
+    - java    # add java env
+    - android # add android-studio env
     - brew
     - brew-cask
-    - java
     - ruby
-    - erlang
-    - elixir
-    - node
+    - erlang # FIXME: env disabled at first time
+    - elixir # FIXME: env disabled at first time
+    - node   # FIXME: run once
     - font
     - zsh
   vars:
@@ -62,6 +63,7 @@
       - { name: google-chrome }
       - { name: slack }
       - { name: kindle }
+      - { name: android-file-transfer }
 
 # for font
   handlers:
