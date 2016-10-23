@@ -5,7 +5,7 @@
 - lineinfile: dest=~/.zshrc line='if [[ -s ~/.zprezto/init.zsh ]]; then source ~/.zprezto/init.zsh ; fi'
 
 - name: checkout prezto
-  git: repo=git@github.com:sorin-ionescu/prezto.git dest=~/.zprezto
+  git: repo=git@github.com:sorin-ionescu/prezto.git dest=~/.zprezto force=yes
 
 - name: zsh - link in prezto files
   file: state=link src=~/.zprezto/runcoms/{{ item }} path=~/.{{ item }}
