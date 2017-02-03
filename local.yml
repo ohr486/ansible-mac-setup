@@ -30,6 +30,9 @@
       # for database
       - { name: redis }
       - { name: mysql }
+      # for docker
+      - { name: unison }
+      - { name: fswatch }
       # for bigdata
       - { name: apache-spark }
       # for font
