@@ -27,6 +27,7 @@
       - { name: exenv }
       - { name: elixir-build }
       - { name: nodebrew }
+      - { name: golang }
       # for database
       - { name: redis }
       - { name: mysql }
