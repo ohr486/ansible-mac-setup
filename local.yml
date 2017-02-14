@@ -27,13 +27,17 @@
       - { name: exenv }
       - { name: elixir-build }
       - { name: nodebrew }
+      - { name: v8 }
       - { name: golang }
+      - { name: gauche }
       # for database
       - { name: redis }
       - { name: mysql }
       # for docker
       - { name: unison }
       - { name: fswatch }
+      # for terraform
+      - { name: terraform }
       # for bigdata
       - { name: apache-spark }
       # for font
