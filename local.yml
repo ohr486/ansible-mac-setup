@@ -49,6 +49,7 @@
       # for books
       - { name: ghostscript }
       # for life
+      - { name: htop }
       - { name: coreutils }
       - { name: zsh }
       - { name: git }
