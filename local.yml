@@ -18,6 +18,10 @@
     brew_repos:
       # for font
       - sanemat/font
+      # for rsync
+      - homebrew/dupes
+      # for avr
+      - osx-cross/homebrew-avr
     brew_packs:
       # for language
       - { name: rbenv }
@@ -36,6 +40,9 @@
       # for docker
       - { name: unison }
       - { name: fswatch }
+      - { name: rsync }
+      - { name: fsevent_watch }
+      - { name: fsevents-tools }
       # for terraform
       - { name: terraform }
       # for bigdata
@@ -49,12 +56,20 @@
       # for books
       - { name: ghostscript }
       # for life
+      - { name: jq }
       - { name: htop }
       - { name: coreutils }
       - { name: zsh }
       - { name: git }
       - { name: wget }
       - { name: sqlite }
+      # for ergodox
+      - { name: avr-binutils }
+      - { name: avr-gcc }
+      - { name: avr-gcc49 }
+      - { name: avr-libc }
+      - { name: avr-libc49 }
+      - { name: dfu-programmer }
     brew_cask_repos:
     brew_cask_packs:
       # for language
@@ -75,6 +90,10 @@
       - { name: slack }
       - { name: kindle }
       - { name: android-file-transfer }
+      # for writing
+      - { name: mactex }
+      #- { name: atom }
+      - { name: karabiner-elements }
 
 # for font
   handlers:
