@@ -37,6 +37,8 @@
       # for database
       - { name: redis }
       - { name: mysql }
+      # for aws
+      - { name: awscli }
       # for docker
       - { name: unison }
       - { name: fswatch }
@@ -85,6 +87,7 @@
       - { name: daisydisk }
       - { name: iterm2 }
       - { name: evernote }
+      - { name: dropbox }
       - { name: firefox }
       - { name: google-chrome }
       - { name: slack }
@@ -92,7 +95,7 @@
       - { name: android-file-transfer }
       # for writing
       - { name: mactex }
-      #- { name: atom }
+      - { name: atom }
       - { name: karabiner-elements }
 
 # for font
