@@ -22,6 +22,8 @@
       - homebrew/dupes
       # for avr
       - osx-cross/homebrew-avr
+      # for homebrew-services
+      - homebrew/services
     brew_packs:
       # for language
       - { name: rbenv }
@@ -59,12 +61,16 @@
       - { name: ghostscript }
       # for life
       - { name: jq }
+      - { name: graphviz }
       - { name: htop }
       - { name: coreutils }
       - { name: zsh }
       - { name: git }
+      - { name: ghq }
       - { name: wget }
       - { name: sqlite }
+      - { name: peco }
+      - { name: tree }
       # for ergodox
       - { name: avr-binutils }
       - { name: avr-gcc }
