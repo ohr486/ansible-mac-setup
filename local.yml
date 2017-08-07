@@ -51,6 +51,7 @@
       - { name: terraform }
       # for bigdata
       - { name: apache-spark }
+      - { name: kafka }
       # for font
       - { name: fontforge }
       - { name: ricty }
@@ -71,6 +72,7 @@
       - { name: sqlite }
       - { name: peco }
       - { name: tree }
+      - { name: tsung }
       # for ergodox
       - { name: avr-binutils }
       - { name: avr-gcc }
