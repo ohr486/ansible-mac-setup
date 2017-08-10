@@ -22,3 +22,6 @@ echo '=============== run ansible-playbook ================='
 
 ansible-playbook local.yml -i hosts
 
+echo '=============== cleanup libs ========================='
+brew cleanup
+brew cask cleanup
