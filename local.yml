@@ -52,6 +52,8 @@
       # for bigdata
       - { name: apache-spark }
       - { name: kafka }
+      # for server manage
+      - { name: consul }
       # for font
       - { name: fontforge }
       - { name: ricty }
