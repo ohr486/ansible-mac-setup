@@ -7,10 +7,10 @@
   shell: source ~/.bash_profile
 
 - name: install latest elixir
-  shell: exenv install $(exenv install -l | grep -v - | grep -v Docs | grep -v master | grep -v dev | grep -v versions | sort | tail -1)
+  shell: exenv install $(elixir-build --definitions | grep -v zip | grep -v dev | grep -v master | sort | tail -1)
 
 - name: set latest elixir version
   shell: |
-    exenv global $(exenv install -l | grep -v - | grep -v Docs | grep -v master | grep -v dev | grep -v versions | sort | tail -1)
+    exenv global $(elixir-build --definitions | grep -v zip | grep -v dev | grep -v master | sort | tail -1)
     exenv rehash
 
