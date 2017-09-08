@@ -1,5 +1,7 @@
 ---
 - lineinfile: dest=~/.bash_profile line='# for pyenv by ansible-mac-setup'
+- lineinfile: dest=~/.bash_profile line='export PYENV_ROOT="$HOME/.pyenv"'
+- lineinfile: dest=~/.bash_profile line='export PATH="$PYENV_ROOT/bin:$PATH"'
 - lineinfile: dest=~/.bash_profile line='eval "$(pyenv init -)"'
 
 - name: source ~/.bash_profile
