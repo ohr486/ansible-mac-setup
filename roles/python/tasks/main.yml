@@ -1,0 +1,12 @@
+---
+- lineinfile: dest=~/.bash_profile line='# for pyenv by ansible-mac-setup'
+- lineinfile: dest=~/.bash_profile line='eval "$(pyenv init -)"'
+
+- name: source ~/.bash_profile
+  shell: source ~/.bash_profile
+
+- name: install latest python
+  shell: pyenv install $(pyenv install -l | grep -v - | tail -1)
+
+- name: set latest python
+  shell: pyenv global $(pyenv install -l | grep -v - | tail -1)

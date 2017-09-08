@@ -12,6 +12,7 @@
     - erlang # FIXME: env disabled at first time
     - elixir # FIXME: env disabled at first time
     - node   # FIXME: run once
+    - python
     - font
     - zsh
   vars:
@@ -28,6 +29,7 @@
       # for language
       - { name: rbenv }
       - { name: ruby-build }
+      - { name: pyenv }
       - { name: kerl }
       - { name: rebar }
       - { name: exenv }
@@ -88,6 +90,9 @@
       - { name: java }
       # for docker
       - { name: docker }
+      # for vagrant
+      - { name: vagrant }
+      - { name: virtualbox }
       # for font
       - { name: xquartz }
       # for book
