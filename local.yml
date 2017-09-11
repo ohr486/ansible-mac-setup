@@ -30,6 +30,8 @@
       - { name: rbenv }
       - { name: ruby-build }
       - { name: pyenv }
+      - { name: pyenv-virtualenv }
+      - { name: pyenv-virtualenvwrapper }
       - { name: kerl }
       - { name: rebar }
       - { name: exenv }
@@ -88,6 +90,8 @@
     brew_cask_packs:
       # for language
       - { name: java }
+      # for android
+      - { name: android-studio }
       # for docker
       - { name: docker }
       # for vagrant
