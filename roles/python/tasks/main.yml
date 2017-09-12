@@ -14,9 +14,6 @@
 - name: set latest python
   shell: pyenv global $(pyenv install -l | grep -v - | tail -1)
 
-- name: create virtualenvs dir
-  file: path=~/.virtualenvs state=directory
-
 - name: install pip mods for virtualenv
   pip:
     name:
