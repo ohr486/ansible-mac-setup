@@ -45,6 +45,8 @@
       - { name: mysql }
       # for aws
       - { name: awscli }
+      # for heroku
+      - { name: heroku }
       # for docker
       - { name: unison }
       - { name: fswatch }
