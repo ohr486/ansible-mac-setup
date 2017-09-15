@@ -69,6 +69,7 @@
       # for books
       - { name: ghostscript }
       # for life
+      - { name: neovim }
       - { name: jq }
       - { name: graphviz }
       - { name: htop }
