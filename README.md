@@ -11,6 +11,6 @@ $ ./setup.sh
 ## spec
 
 ```bash
-$ bundle exec rake
+$ bundle exec rake spec
 ```
 
