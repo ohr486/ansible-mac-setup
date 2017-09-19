@@ -13,4 +13,3 @@ $ ./setup.sh
 ```bash
 $ bundle exec rake spec
 ```
-
