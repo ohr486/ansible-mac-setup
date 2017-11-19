@@ -11,5 +11,7 @@ $ ./setup.sh
 ## spec
 
 ```bash
+$ gem install bundler
+$ bundle install
 $ bundle exec rake spec
 ```
