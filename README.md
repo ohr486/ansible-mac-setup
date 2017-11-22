@@ -1,5 +1,7 @@
 # ansible-mac-setup
 
+1click setup script for MacOS
+
 ## usage
 
 ```bash
