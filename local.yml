@@ -25,6 +25,8 @@
       - osx-cross/homebrew-avr
       # for homebrew-services
       - homebrew/services
+      # for php
+      - homebrew/php
     brew_packs:
       # for language
       - { name: rbenv }
@@ -40,6 +42,7 @@
       - { name: v8 }
       - { name: golang }
       - { name: gauche }
+      - { name: composer }
       # for database
       - { name: redis }
       - { name: mysql }
