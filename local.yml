@@ -118,6 +118,8 @@
       - { name: slack }
       - { name: kindle }
       - { name: android-file-transfer }
+      # for IDE
+      - { name: intellij-idea }
       # for writing
       - { name: mactex }
       - { name: atom }
