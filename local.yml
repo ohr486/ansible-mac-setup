@@ -86,12 +86,12 @@
       - { name: tree }
       - { name: tsung }
       # for ergodox
-      - { name: avr-binutils }
-      - { name: avr-gcc }
-      - { name: avr-gcc49 }
-      - { name: avr-libc }
-      - { name: avr-libc49 }
-      - { name: dfu-programmer }
+      #- { name: avr-binutils }
+      #- { name: avr-gcc }
+      #- { name: avr-gcc49 }
+      #- { name: avr-libc }
+      #- { name: avr-libc49 }
+      #- { name: dfu-programmer }
     brew_cask_repos:
     brew_cask_packs:
       # for language
