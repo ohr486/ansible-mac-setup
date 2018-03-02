@@ -119,7 +119,7 @@
       - { name: kindle }
       - { name: android-file-transfer }
       # for IDE
-      - { name: intellij-idea }
+      - { name: jetbrains-toolbox }
       # for writing
       - { name: mactex }
       - { name: atom }
