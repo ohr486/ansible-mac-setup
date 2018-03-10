@@ -84,7 +84,9 @@
       - { name: sqlite }
       - { name: peco }
       - { name: tree }
+      # for testing
       - { name: tsung }
+      - { name: selenium-server-standalone }
       # for ergodox
       #- { name: avr-binutils }
       #- { name: avr-gcc }
