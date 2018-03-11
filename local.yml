@@ -94,6 +94,7 @@
       - { name: avr-libc }
       - { name: avr-libc49 }
       - { name: dfu-programmer }
+      - { name: teensy_loader_cli }
     brew_cask_repos:
     brew_cask_packs:
       # for language
