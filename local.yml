@@ -57,7 +57,6 @@
       - { name: fsevent_watch }
       - { name: fsevents-tools }
       # for terraform
-      - { name: terraform }
       - { name: tfenv }
       # for bigdata
       - { name: apache-spark }
