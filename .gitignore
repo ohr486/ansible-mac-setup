@@ -1,6 +1,8 @@
 
 /*.retry
 
+vendor/*
+
 *.swp
 *~
 *.DS_Store
