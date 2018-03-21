@@ -4,17 +4,17 @@
   gather_facts: no
   become: no
   roles:
-    #- java    # add java env
-    #- android # add android-studio env
+    - java    # add java env
+    - android # add android-studio env
     - brew
-    #- brew-cask
-    #- ruby
-    #- erlang # FIXME: env disabled at first time
-    #- elixir # FIXME: env disabled at first time
-    #- node   # FIXME: run once
-    #- python
-    #- font
-    #- zsh
+    - brew-cask
+    - ruby
+    - erlang # FIXME: env disabled at first time
+    - elixir # FIXME: env disabled at first time
+    - node   # FIXME: run once
+    - python
+    - font
+    - zsh
   vars:
     brew_repos:
       # for font
