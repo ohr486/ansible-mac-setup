@@ -8,6 +8,7 @@
     - android # add android-studio env
     - brew
     - brew-cask
+    - terraform
     - ruby
     - erlang # FIXME: env disabled at first time
     - elixir # FIXME: env disabled at first time
