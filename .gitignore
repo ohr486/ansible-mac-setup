@@ -3,6 +3,10 @@
 
 vendor/*
 
+# for ide
+.idel
+
+
 *.swp
 *~
 *.DS_Store
