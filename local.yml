@@ -85,6 +85,8 @@
       - { name: sqlite }
       - { name: peco }
       - { name: tree }
+      # for hashicorp
+      - { name: packer }
       # for testing
       - { name: tsung }
       - { name: selenium-server-standalone }
