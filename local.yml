@@ -62,6 +62,7 @@
       # for bigdata
       - { name: apache-spark }
       - { name: kafka }
+      - { name: embulk }
       # for server manage
       - { name: consul }
       # for font
