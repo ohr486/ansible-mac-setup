@@ -5,14 +5,14 @@ echo '=============== start mac setup script ==============='
 echo '======================================================'
 
 echo '=============== install xcodebuild ==================='
-sudo xcodebuild -license
+#sudo xcodebuild -license
 
 echo '=============== install commandline tools ============'
-xcode-select --install
+#xcode-select --install
 
 echo '=============== install homebrew ====================='
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew update
+#ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+#brew update
 
 echo '=============== install ansible ======================'
 brew install ansible
