@@ -1,0 +1,6 @@
+---
+- lineinfile: dest=~/.bash_profile line='# for golang by ansible-mac-setup'
+- lineinfile: dest=~/.bash_profile line='export GOPATH="$HOME/.golang"'
+
+- name: create gopath dir
+  file: path=~/.golang state=directory mode=0755
