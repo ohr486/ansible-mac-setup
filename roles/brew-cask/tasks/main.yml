@@ -5,9 +5,6 @@
 #- name: source ~/.bash_profile
 #  shell: source ~/.bash_profile
 
-- name: tap brew cask
-  homebrew_tap: tap=caskroom/cask state=present
-
 #- name: install/upgrade brew cask
 #  homebrew: name=brew-cask state=latest
 
