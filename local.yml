@@ -87,7 +87,6 @@
       - { name: sqlite }
       - { name: peco }
       - { name: tree }
-      - { name: bitbar }
       # for hashicorp
       - { name: packer }
       # for testing
