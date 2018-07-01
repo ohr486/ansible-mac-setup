@@ -5,7 +5,7 @@ vendor/*
 
 # for ide
 .idel
-
+.vscode
 
 *.swp
 *~
