@@ -13,7 +13,7 @@
     - erlang # FIXME: env disabled at first time
     - elixir # FIXME: env disabled at first time
     - node   # FIXME: run once
-    - python
+    - python # FIXME: run once
     - golang
     - font
     - zsh
