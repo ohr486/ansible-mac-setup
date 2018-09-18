@@ -12,7 +12,7 @@
   shell: kerl update releases
 
 - name: regist newest erlang version
-  shell: kerl list releases | head -1 | awk '{print $NF}'
+  shell: kerl list releases | grep -v 'R' | sort -r | head -1 | awk '{print $NF}'
   register: newest_erlang_version
 
 - name: check local erlang builds
@@ -32,7 +32,7 @@
   when: not check_erlang_install.stat.exists
 
 # setup直後は無効
-- lineinfile: dest=~/.bash_profile line="source ~/.kerl/erlang/$(kerl list releases | head -1 | awk '{print $NF}')/activate"
+- lineinfile: dest=~/.bash_profile line="source ~/.kerl/erlang/$(kerl list releases | grep -v 'R' | sort -r | head -1 | awk '{print $NF}')/activate"
 
 - name: source ~/.bash_profile
   shell: source ~/.bash_profile
