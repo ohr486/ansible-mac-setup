@@ -102,9 +102,11 @@
       - { name: dfu-programmer }
       - { name: teensy_loader_cli }
     brew_cask_repos:
+      # for java
+      - homebrew/cask-versions
     brew_cask_packs:
       # for language
-      - { name: java }
+      - { name: java8 }
       # for android
       - { name: android-studio }
       # for docker
