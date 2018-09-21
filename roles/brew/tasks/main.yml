@@ -1,5 +1,6 @@
 ---
-#- lineinfile: dest=~/.bash_profile line='# for brew by ansible-mac-setup'
+- lineinfile: dest=~/.bash_profile line='# for brew by ansible-mac-setup'
+- lineinfile: dest=~/.bash_profile line='alias brew="PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew"'
 #- lineinfile: dest=~/.bash_profile line='export HOMEBREW_GITHUB_API_TOKEN="{YOUR_API_TOKEN}"'
 
 - name: tap brew repositories
