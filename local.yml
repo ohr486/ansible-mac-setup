@@ -15,6 +15,7 @@
     - node   # FIXME: run once
     - python # FIXME: run once
     - golang
+    - rust
     - font
     - zsh
   vars:
@@ -44,6 +45,7 @@
       - { name: v8 }
       - { name: golang }
       - { name: gauche }
+      - { name: rustup-init }
       - { name: composer }
       # for database
       - { name: redis }

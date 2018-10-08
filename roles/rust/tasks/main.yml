@@ -1,0 +1,6 @@
+---
+- lineinfile: dest=~/.bash_profile line='# for rust by ansible-mac-setup'
+- lineinfile: dest=~/.bash_profile line='export PATH="$HOME/.cargo/bin:$PATH"'
+
+- name: create rust dir
+  file: path=~/.cargo state=directory mode=0755
