@@ -1,4 +1,4 @@
----
+
 - hosts: localhost
   connection: local
   gather_facts: no
@@ -43,7 +43,7 @@
       - { name: elixir-build }
       - { name: nodebrew }
       - { name: v8 }
-      - { name: golang }
+      - { name: goenv }
       - { name: gauche }
       - { name: rustup-init }
       - { name: composer }
