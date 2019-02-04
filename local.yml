@@ -60,6 +60,8 @@
       - { name: rsync }
       - { name: fsevent_watch }
       - { name: fsevents-tools }
+      # for k8s
+      - { name: kubernetes-cli }
       # for terraform
       - { name: tfenv }
       # for bigdata
