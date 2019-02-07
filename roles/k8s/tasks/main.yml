@@ -1,0 +1,6 @@
+---
+- lineinfile: dest=~/.bash_profile line='# for k8s by ansible-mac-setup'
+- lineinfile: dest=~/.bash_profile line='alias k="kubectl"'
+
+- lineinfile: dest=~/.zshrc line='# for k8s by ansible-mac-setup'
+- lineinfile: dest=~/.zshrc line='if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi'

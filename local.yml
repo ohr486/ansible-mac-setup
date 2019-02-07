@@ -16,6 +16,7 @@
     - python # FIXME: run once
     - golang
     - rust
+    - k8s
     - font
     - zsh
   vars:
