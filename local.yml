@@ -62,6 +62,7 @@
       - { name: fsevents-tools }
       # for k8s
       - { name: kubernetes-cli }
+      - { name: kubernetes-helm }
       # for terraform
       - { name: tfenv }
       # for bigdata
