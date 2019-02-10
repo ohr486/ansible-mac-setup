@@ -115,6 +115,8 @@
       - { name: java8 }
       # for android
       - { name: android-studio }
+      # for dotnet
+      - { name: dotnet }
       # for docker
       - { name: docker }
       # for vagrant
