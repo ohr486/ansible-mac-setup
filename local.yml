@@ -17,6 +17,7 @@
     - golang
     - rust
     - k8s
+    - dotnet
     - font
     - zsh
   vars:
