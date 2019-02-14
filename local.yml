@@ -94,6 +94,7 @@
       - { name: sqlite }
       - { name: peco }
       - { name: tree }
+      - { name: s3cmd }
       # for hashicorp
       - { name: packer }
       # for testing
