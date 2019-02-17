@@ -54,6 +54,7 @@
       - { name: mysql }
       # for aws
       - { name: awscli }
+      - { name: s3cmd }
       # for heroku
       - { name: heroku }
       # for docker
@@ -94,7 +95,6 @@
       - { name: sqlite }
       - { name: peco }
       - { name: tree }
-      - { name: s3cmd }
       # for hashicorp
       - { name: packer }
       # for testing
