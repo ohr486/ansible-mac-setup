@@ -5,7 +5,6 @@
   become: no
   roles:
     - java    # add java env
-    - android # add android-studio env
     - brew
     - brew-cask
     - terraform
@@ -115,8 +114,6 @@
     brew_cask_packs:
       # for language
       - { name: java8 }
-      # for android
-      - { name: android-studio }
       # for dotnet
       - { name: dotnet }
       # for docker
