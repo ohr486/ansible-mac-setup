@@ -24,13 +24,13 @@
       # for font
       - sanemat/font
       # for rsync
-      - homebrew/dupes
+      #- homebrew/dupes
       # for avr
       - osx-cross/homebrew-avr
       # for homebrew-services
       - homebrew/services
       # for php
-      - homebrew/php
+      #- homebrew/php
     brew_packs:
       # for language
       - { name: rbenv }
