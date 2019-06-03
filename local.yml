@@ -32,7 +32,8 @@
       # for php
       #- homebrew/php
     brew_packs:
-      # for language
+      # for languages
+      - { name: asdf }
       - { name: rbenv }
       - { name: ruby-build }
       - { name: pyenv }
