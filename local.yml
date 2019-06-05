@@ -112,6 +112,8 @@
     brew_cask_repos:
       # for java
       - homebrew/cask-versions
+      # for health
+      - homebrew/cask-drivers
     brew_cask_packs:
       # for language
       - { name: java8 }
@@ -144,6 +146,8 @@
       - { name: mactex }
       - { name: atom }
       - { name: karabiner-elements }
+      # for health
+      - { name: fitbit-connect }
 
 # for font
   handlers:
