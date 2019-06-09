@@ -145,6 +145,7 @@
       # for writing
       - { name: mactex }
       - { name: atom }
+      - { name: visual-studio-code }
       - { name: karabiner-elements }
       # for health
       - { name: fitbit-connect }
