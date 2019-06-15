@@ -140,6 +140,7 @@
       - { name: kindle }
       - { name: android-file-transfer }
       - { name: elmedia-player }
+      - { name: steam }
       # for IDE
       - { name: jetbrains-toolbox }
       # for writing
