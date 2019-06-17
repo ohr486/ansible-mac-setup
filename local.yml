@@ -109,6 +109,10 @@
       - { name: avr-libc49 }
       - { name: dfu-programmer }
       - { name: teensy_loader_cli }
+      # for IoT
+      - { name: fwup }
+      - { name: squashfs }
+      - { name:: coreutils }
     brew_cask_repos:
       # for java
       - homebrew/cask-versions
