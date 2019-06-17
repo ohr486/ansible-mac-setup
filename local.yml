@@ -112,7 +112,7 @@
       # for IoT
       - { name: fwup }
       - { name: squashfs }
-      - { name:: coreutils }
+      - { name: coreutils }
     brew_cask_repos:
       # for java
       - homebrew/cask-versions
