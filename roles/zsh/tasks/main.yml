@@ -1,4 +1,9 @@
 ---
+- shell: touch ~/.zshenv
+- lineinfile: dest=~/.zshenv line='# for zsh by ansible-mac-setup'
+- lineinfile: dest=~/.zshenv line='autoload -Uz compinit'
+- lineinfile: dest=~/.zshenv line='compinit'
+
 - shell: touch ~/.zshrc
 - lineinfile: dest=~/.zshrc line='# for zsh by ansible-mac-setup'
 - lineinfile: dest=~/.zshrc line='source ~/.bash_profile'
@@ -14,5 +19,3 @@
     - zlogout
     - zpreztorc
     - zprofile
-    - zshenv
-

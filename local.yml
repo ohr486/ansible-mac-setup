@@ -7,14 +7,17 @@
     - java    # add java env
     - brew
     - brew-cask
+    - asdf
+    # --- lang ---
     - terraform
     - ruby
-    - erlang # FIXME: env disabled at first time
-    - elixir # FIXME: env disabled at first time
+    #- erlang # FIXME: env disabled at first time
+    #- elixir # FIXME: env disabled at first time
     - node   # FIXME: run once
     - python # FIXME: run once
     - golang
     - rust
+    # ------------
     - k8s
     - dotnet
     - font

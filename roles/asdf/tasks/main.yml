@@ -1,0 +1,23 @@
+---
+- lineinfile: dest=~/.bash_profile line='# for asdf by ansible-mac-setup'
+- lineinfile: dest=~/.bash_profile line='source $(brew --prefix asdf)/asdf.sh'
+- lineinfile: dest=~/.bash_profile line='source $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash'
+
+- name: create asdf dir
+  file: path=~/.asdf state=directory mode=0755
+
+- name: check erlang
+  stat: path=~/.asdf/plugins/erlang
+  register: erlangresult
+
+- name: install erlang
+  shell: asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
+  when: not erlangresult.stat.exists
+
+- name: check elixir
+  stat: path=~/.asdf/plugins/elixir
+  register: elixirresult
+
+- name: install elixir
+  shell: asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+  when: not elixirresult.stat.exists
