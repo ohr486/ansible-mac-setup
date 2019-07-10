@@ -11,8 +11,6 @@
     # --- lang ---
     - terraform
     - ruby
-    #- erlang # FIXME: env disabled at first time
-    #- elixir # FIXME: env disabled at first time
     - node   # FIXME: run once
     - python # FIXME: run once
     - golang
@@ -42,10 +40,7 @@
       - { name: pyenv }
       - { name: pyenv-virtualenv }
       - { name: pyenv-virtualenvwrapper }
-      - { name: kerl }
       - { name: rebar }
-      - { name: exenv }
-      - { name: elixir-build }
       - { name: nodebrew }
       - { name: v8 }
       - { name: goenv }
