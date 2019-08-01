@@ -6,6 +6,7 @@
 - name: create asdf dir
   file: path=~/.asdf state=directory mode=0755
 
+# ---------- erlang ----------
 - name: check erlang
   stat: path=~/.asdf/plugins/erlang
   register: erlangresult
@@ -14,6 +15,7 @@
   shell: asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
   when: not erlangresult.stat.exists
 
+# ---------- elixir ----------
 - name: check elixir
   stat: path=~/.asdf/plugins/elixir
   register: elixirresult
@@ -21,3 +23,12 @@
 - name: install elixir
   shell: asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
   when: not elixirresult.stat.exists
+
+# ---------- ruby ----------
+- name: check ruby
+  stat: path=~/.asdf/plugins/ruby
+  register: rubyresult
+
+- name: install ruby
+  shell: asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
+  when: not rubyresult.stat.exists
