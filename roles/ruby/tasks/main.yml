@@ -1,21 +1,9 @@
 ---
-- lineinfile: dest=~/.bash_profile line='# for rbenv by ansible-mac-setup'
-- lineinfile: dest=~/.bash_profile line='export PATH="$HOME/.rbenv/bin:$PATH"'
-- lineinfile: dest=~/.bash_profile line='export RUBY_CONFIGURE_OPTS=--with-readline-dir=`brew --prefix readline`'
-- lineinfile: dest=~/.bash_profile line='eval "$(rbenv init -)"'
-
-- name: source ~/.bash_profile
-  shell: source ~/.bash_profile
+- lineinfile: dest=~/.bash_profile line='# for asdf ruby by ansible-mac-setup'
+- lineinfile: dest=~/.bash_profile line='export NEWEST_RUBY_VER=$(asdf list-all ruby | grep "^\d.*" | grep -v dev | grep -v preview | grep -v rc | sort -r | head -n 1)
 
 - name: install latest ruby
-  shell: rbenv install -s $(rbenv install -l | grep -v - | tail -1)
+  shell: asdf install ruby $(asdf list-all ruby | grep "^\d.*" | grep -v dev | grep -v preview | grep -v rc | sort -r | head -n 1)
 
 - name: set latest ruby version
-  shell: |
-    rbenv global $(rbenv install -l | grep -v - | tail -1)
-    rbenv rehash
-
-# TODO: bundle install fail
-#- name: installs latest bundler
-#  gem: name=bundler user_install=False state=latest
-
+  shell: asdf global ruby $(asdf list-all ruby | grep "^\d.*" | grep -v dev | grep -v preview | grep -v rc | sort -r | head -n 1)

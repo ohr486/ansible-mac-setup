@@ -1,7 +1,9 @@
 ---
 - lineinfile: dest=~/.bash_profile line='# for asdf by ansible-mac-setup'
-- lineinfile: dest=~/.bash_profile line='source $(brew --prefix asdf)/asdf.sh'
-- lineinfile: dest=~/.bash_profile line='source $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash'
+- lineinfile: dest=~/.bash_profile line='#export ASDF_PREFIX="$(brew --prefix asdf)"'
+- lineinfile: dest=~/.bash_profile line='export ASDF_PREFIX="/usr/local/opt/asdf" # for init speed up'
+- lineinfile: dest=~/.bash_profile line='source $ASDF_PREFIX/asdf.sh'
+- lineinfile: dest=~/.bash_profile line='source $ASDF_PREFIX/etc/bash_completion.d/asdf.bash'
 
 - name: create asdf dir
   file: path=~/.asdf state=directory mode=0755

@@ -32,8 +32,6 @@
     brew_packs:
       # for languages
       - { name: asdf }
-      - { name: rbenv }
-      - { name: ruby-build }
       - { name: pyenv }
       - { name: pyenv-virtualenv }
       - { name: pyenv-virtualenvwrapper }
