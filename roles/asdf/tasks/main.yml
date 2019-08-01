@@ -44,3 +44,11 @@
   shell: asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
   when: not nodejsresult.stat.exists
 
+# ---------- python ----------
+- name: check python
+  stat: path=~/.asdf/plugins/python
+  register: pythonresult
+
+- name: install python
+  shell: asdf plugin-add python https://github.com/danhper/asdf-python.git
+  when: not pythonresult.stat.exists

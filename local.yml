@@ -4,14 +4,14 @@
   gather_facts: no
   become: no
   roles:
-    - java    # add java env
+    - java
     - brew
     - brew-cask
     - asdf
     - terraform
     - ruby
     - nodejs
-    - python # FIXME: run once
+    - python
     - golang
     - rust
     - dotnet
@@ -32,9 +32,6 @@
     brew_packs:
       # for languages
       - { name: asdf }
-      - { name: pyenv }
-      - { name: pyenv-virtualenv }
-      - { name: pyenv-virtualenvwrapper }
       - { name: rebar }
       - { name: v8 }
       - { name: goenv }
