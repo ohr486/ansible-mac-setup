@@ -1,0 +1,10 @@
+---
+
+- name: import PGP
+  shell: bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+
+- name: install latest nodejs
+  shell: asdf install nodejs $(asdf list-all nodejs | sort -r | head -n 1)
+
+- name: set latest nodejs version
+  shell: asdf global nodejs $(asdf list-all nodejs | sort -r | head -n 1)

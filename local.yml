@@ -10,7 +10,7 @@
     - asdf
     - terraform
     - ruby
-    - node   # FIXME: run once
+    - nodejs
     - python # FIXME: run once
     - golang
     - rust
@@ -36,7 +36,6 @@
       - { name: pyenv-virtualenv }
       - { name: pyenv-virtualenvwrapper }
       - { name: rebar }
-      - { name: nodebrew }
       - { name: v8 }
       - { name: goenv }
       - { name: gauche }
@@ -78,6 +77,7 @@
       - { name: graphviz }
       - { name: htop }
       - { name: coreutils }
+      - { name: gpg }
       - { name: zsh }
       - { name: git }
       - { name: ghq }
@@ -102,7 +102,6 @@
       # for IoT
       - { name: fwup }
       - { name: squashfs }
-      - { name: coreutils }
     brew_cask_repos:
       # for java
       - homebrew/cask-versions

@@ -1,7 +1,7 @@
 ---
 - lineinfile: dest=~/.bash_profile line='# for asdf by ansible-mac-setup'
-- lineinfile: dest=~/.bash_profile line='#export ASDF_PREFIX="$(brew --prefix asdf)"'
-- lineinfile: dest=~/.bash_profile line='export ASDF_PREFIX="/usr/local/opt/asdf" # for init speed up'
+- lineinfile: dest=~/.bash_profile line='# export ASDF_PREFIX="$(brew --prefix asdf)"'
+- lineinfile: dest=~/.bash_profile line='export ASDF_PREFIX="/usr/local/opt/asdf"'
 - lineinfile: dest=~/.bash_profile line='source $ASDF_PREFIX/asdf.sh'
 - lineinfile: dest=~/.bash_profile line='source $ASDF_PREFIX/etc/bash_completion.d/asdf.bash'
 
@@ -34,3 +34,13 @@
 - name: install ruby
   shell: asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
   when: not rubyresult.stat.exists
+
+# ---------- nodejs ----------
+- name: check nodejs
+  stat: path=~/.asdf/plugins/nodejs
+  register: nodejsresult
+
+- name: install nodejs
+  shell: asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+  when: not nodejsresult.stat.exists
+

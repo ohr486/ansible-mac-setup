@@ -1,6 +1,4 @@
 ---
-- lineinfile: dest=~/.bash_profile line='# for asdf ruby by ansible-mac-setup'
-- lineinfile: dest=~/.bash_profile line='export NEWEST_RUBY_VER=$(asdf list-all ruby | grep "^\d.*" | grep -v dev | grep -v preview | grep -v rc | sort -r | head -n 1)
 
 - name: install latest ruby
   shell: asdf install ruby $(asdf list-all ruby | grep "^\d.*" | grep -v dev | grep -v preview | grep -v rc | sort -r | head -n 1)
