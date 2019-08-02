@@ -34,7 +34,6 @@
       - { name: asdf }
       - { name: rebar }
       - { name: v8 }
-      - { name: goenv }
       - { name: gauche }
       - { name: rustup-init }
       - { name: composer }
