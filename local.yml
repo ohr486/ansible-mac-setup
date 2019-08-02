@@ -14,7 +14,6 @@
     - python
     - golang
     - rust
-    - dotnet
     - font
     - zsh
   vars:
@@ -136,8 +135,6 @@
       - { name: atom }
       - { name: visual-studio-code }
       - { name: karabiner-elements }
-      # for health
-      - { name: fitbit-connect }
 
 # for font
   handlers:
