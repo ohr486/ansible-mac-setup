@@ -32,8 +32,11 @@
   shell: asdf plugin-add packer https://github.com/Banno/asdf-hashicorp.git
   when: not pkresult.stat.exists
 
+- name: install latest packer
+  shell: asdf install packer $(asdf list-all packer | tail -n 1)
 
-
+- name: set latest packer version
+  shell: asdf global packer $(asdf list-all packer | tail -n 1)
 
 # ---------- erlang ----------
 - name: check erlang
@@ -44,6 +47,24 @@
   shell: asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
   when: not erlangresult.stat.exists
 
+# TODO: add install cmds
+
+- name: check rebar
+  stat: path=~/.asdf/plugins/rebar
+  register: rebarresult
+
+- name: install rebar
+  shell: asdf plugin-add rebar https://github.com/Stratus3D/asdf-rebar.git
+  when: not rebarresult.stat.exists
+
+- name: install latest rebar
+  shell: asdf install rebar $(asdf list-all rebar | grep -v rc | tail -n 1)
+
+- name: set latest rebar version
+  shell: asdf global rebar $(asdf list-all rebar | grep -v rc | tail -n 1)
+
+# TODO: set rebar bin path
+
 # ---------- elixir ----------
 - name: check elixir
   stat: path=~/.asdf/plugins/elixir
@@ -52,6 +73,8 @@
 - name: install elixir
   shell: asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
   when: not elixirresult.stat.exists
+
+# TODO: add install cmds
 
 # ---------- ruby ----------
 - name: check ruby
