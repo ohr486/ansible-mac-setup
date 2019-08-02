@@ -8,12 +8,6 @@
     - brew
     - brew-cask
     - asdf
-    - terraform
-    - ruby
-    - nodejs
-    - python
-    - golang
-    - rust
     - font
     - zsh
   vars:
@@ -31,7 +25,6 @@
     brew_packs:
       # for languages
       - { name: asdf }
-      - { name: rebar }
       - { name: v8 }
       - { name: gauche }
       - { name: composer }
@@ -49,14 +42,10 @@
       - { name: rsync }
       - { name: fsevent_watch }
       - { name: fsevents-tools }
-      # for terraform
-      - { name: tfenv }
       # for bigdata
       - { name: apache-spark }
       - { name: kafka }
       - { name: embulk }
-      # for server manage
-      - { name: consul }
       # for font
       - { name: fontforge }
       - { name: ricty }
@@ -79,10 +68,7 @@
       - { name: sqlite }
       - { name: peco }
       - { name: tree }
-      # for hashicorp
-      - { name: packer }
       # for testing
-      - { name: tsung }
       - { name: selenium-server-standalone }
       - { name: geckodriver }
       # for ergodox

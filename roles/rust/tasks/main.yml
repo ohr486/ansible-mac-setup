@@ -1,7 +1,0 @@
----
-
-- name: install latest rust
-  shell: asdf install rust $(asdf list-all rust | grep -v beta | grep -v stable | grep -v nightly | sort -r | head -n 1)
-
-- name: set latest rust version
-  shell: asdf global rust $(asdf list-all rust | grep -v beta | grep -v stable | grep -v nightly | sort -r | head -n 1)

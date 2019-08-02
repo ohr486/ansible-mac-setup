@@ -8,6 +8,33 @@
 - name: create asdf dir
   file: path=~/.asdf state=directory mode=0755
 
+# ---------- terraform ----------
+- name: check terraform
+  stat: path=~/.asdf/plugins/terraform
+  register: tfresult
+
+- name: install terrafrom
+  shell: asdf plugin-add terraform https://github.com/Banno/asdf-hashicorp.git
+  when: not tfresult.stat.exists
+
+- name: install latest terraform
+  shell: asdf install terraform $(asdf list-all terraform | grep -v beta | grep -v rc | grep -v alpha | tail -n 1)
+
+- name: set latest terraform version
+  shell: asdf global terraform $(asdf list-all terraform | grep -v beta | grep -v rc | grep -v alpha | tail -n 1)
+
+# ---------- packer ----------
+- name: check packer
+  stat: path=~/.asdf/plugins/packer
+  register: pkresult
+
+- name: install packer
+  shell: asdf plugin-add packer https://github.com/Banno/asdf-hashicorp.git
+  when: not pkresult.stat.exists
+
+
+
+
 # ---------- erlang ----------
 - name: check erlang
   stat: path=~/.asdf/plugins/erlang
@@ -35,6 +62,12 @@
   shell: asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
   when: not rubyresult.stat.exists
 
+- name: install latest ruby
+  shell: asdf install ruby $(asdf list-all ruby | grep "^\d.*" | grep -v dev | grep -v preview | grep -v rc | sort -r | head -n 1)
+
+- name: set latest ruby version
+  shell: asdf global ruby $(asdf list-all ruby | grep "^\d.*" | grep -v dev | grep -v preview | grep -v rc | sort -r | head -n 1)
+
 # ---------- nodejs ----------
 - name: check nodejs
   stat: path=~/.asdf/plugins/nodejs
@@ -43,6 +76,15 @@
 - name: install nodejs
   shell: asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
   when: not nodejsresult.stat.exists
+
+- name: import PGP
+  shell: bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+
+- name: install latest nodejs
+  shell: asdf install nodejs $(asdf list-all nodejs | sort -r | head -n 1)
+
+- name: set latest nodejs version
+  shell: asdf global nodejs $(asdf list-all nodejs | sort -r | head -n 1)
 
 # ---------- python ----------
 - name: check python
@@ -53,6 +95,15 @@
   shell: asdf plugin-add python https://github.com/danhper/asdf-python.git
   when: not pythonresult.stat.exists
 
+- name: install latest python2
+  shell: asdf install python $(asdf list-all python | grep "^2.*" | grep -v dev | sort -r | head -n 1)
+
+- name: install latest python3
+  shell: asdf install python $(asdf list-all python | grep "^3.*" | grep -v dev | sort -r | head -n 1)
+
+- name: set latest python
+  shell: asdf global python $(asdf list-all python | grep "^3.*" | grep -v dev | sort -r | head -n 1)
+
 # ---------- golang ----------
 - name: check golang
   stat: path=~/.asdf/plugins/golang
@@ -62,6 +113,12 @@
   shell: asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
   when: not golangresult.stat.exists
 
+- name: install latest golang
+  shell: asdf install golang $(asdf list-all golang | grep -v beta | grep -v rc | tail -n 1)
+
+- name: set latest golang version
+  shell: asdf global golang $(asdf list-all golang | grep -v beta | grep -v rc | tail -n 1)
+
 # ---------- rust ----------
 - name: check rust
   stat: path=~/.asdf/plugins/rust
@@ -70,3 +127,9 @@
 - name: install rust
   shell: asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
   when: not rustresult.stat.exists
+
+- name: install latest rust
+  shell: asdf install rust $(asdf list-all rust | grep -v beta | grep -v stable | grep -v nightly | sort -r | head -n 1)
+
+- name: set latest rust version
+  shell: asdf global rust $(asdf list-all rust | grep -v beta | grep -v stable | grep -v nightly | sort -r | head -n 1)

@@ -1,7 +1,0 @@
----
-
-- name: install latest ruby
-  shell: asdf install ruby $(asdf list-all ruby | grep "^\d.*" | grep -v dev | grep -v preview | grep -v rc | sort -r | head -n 1)
-
-- name: set latest ruby version
-  shell: asdf global ruby $(asdf list-all ruby | grep "^\d.*" | grep -v dev | grep -v preview | grep -v rc | sort -r | head -n 1)
