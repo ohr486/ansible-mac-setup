@@ -125,7 +125,7 @@
   shell: asdf install python $(asdf list-all python | grep "^3.*" | grep -v dev | sort -r | head -n 1)
 
 - name: set latest python
-  shell: asdf global python $(asdf list-all python | grep "^3.*" | grep -v dev | sort -r | head -n 1)
+  shell: asdf global python $(asdf list-all python | grep "^3.*" | grep -v dev | sort -r | head -n 1) $(asdf list-all python | grep "^2.*" | grep -v dev | sort -r | head -n 1)
 
 # ---------- golang ----------
 - name: check golang
