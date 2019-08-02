@@ -35,7 +35,6 @@
       - { name: rebar }
       - { name: v8 }
       - { name: gauche }
-      - { name: rustup-init }
       - { name: composer }
       # for database
       - { name: redis }
