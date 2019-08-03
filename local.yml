@@ -4,6 +4,7 @@
   gather_facts: no
   become: no
   roles:
+    - alias
     - dotenv
     - java
     - brew
@@ -29,6 +30,9 @@
       - { name: v8 }
       - { name: gauche }
       - { name: composer }
+      # for compute
+      - { name: kubernetes-cli }
+      - { name: aws-iam-authenticator }
       # for database
       - { name: redis }
       - { name: mysql@5.6 }
