@@ -1,0 +1,110 @@
+---
+
+- name: create Dropbox dir
+  file: path=~/Dropbox state=directory mode=0755
+
+- name: create common-conf dir
+  file: path=~/Dropbox/common-conf state=directory mode=0755
+
+# --- bash ---
+- name: symbolic link for .bash_profile
+  file:
+    src: ~/Dropbox/common-conf/bash_profile
+    dest: ~/.bash_profile
+    state: link
+
+# --- zsh ---
+- name: symbolic link for .zshrc
+  file:
+    src: ~/Dropbox/common-conf/zshrc
+    dest: ~/.zshrc
+    state: link
+
+- name: symbolic link for .zshenv
+  file:
+    src: ~/Dropbox/common-conf/zshenv
+    dest: ~/.zshenv
+    state: link
+
+# --- profile ---
+- name: symbolic link for .profile
+  file:
+    src: ~/Dropbox/common-conf/profile
+    dest: ~/.profile
+    state: link
+
+# --- config ---
+- name: create config dir
+  file: path=~/Dropbox/common-conf/config state=directory mode=0755
+
+- name: symbolic link for .config
+  file:
+    src: ~/Dropbox/common-conf/config
+    dest: ~/.config
+    state: link
+
+# --- vim ---
+- name: create vim dir
+  file: path=~/Dropbox/common-conf/vim state=directory mode=0755
+
+- name: symbolic link for .vim
+  file:
+    src: ~/Dropbox/common-conf/vim
+    dest: ~/.vim
+    state: link
+
+- name: symbolic link for .vimrc
+  file:
+    src: ~/Dropbox/common-conf/vimrc
+    dest: ~/.vimrc
+    state: link
+
+# --- asdf ---
+- name: symbolic link for .tool-versions
+  file:
+    src: ~/Dropbox/common-conf/tool-versions
+    dest: ~/.tool-versions
+    state: link
+
+# --- kube ---
+- name: symbolic link for .kube
+  file:
+    src: ~/Dropbox/common-conf/kube
+    dest: ~/.kube
+    state: link
+
+# --- nerves ---
+- name: symbolic link for .nerves-hub
+  file:
+    src: ~/Dropbox/common-conf/nerves-hub
+    dest: ~/.nerves-hub
+    state: link
+
+# --- netrc ---
+- name: symbolic link for .netrc
+  file:
+    src: ~/Dropbox/common-conf/netrc
+    dest: ~/.netrc
+    state: link
+
+# --- for IDE ---
+- name: symbolic link for .idea
+  file:
+    src: ~/Dropbox/common-conf/idea
+    dest: ~/.idea
+    state: link
+
+# --- for DigitalOcean ---
+- name: symbolic link for .tugboat
+  file:
+    src: ~/Dropbox/common-conf/tugboat
+    dest: ~/.tugboat
+    state: link
+
+# --- gnupg ---
+- name: symbolic link for .gnupg
+  file:
+    src: ~/Dropbox/common-conf/gnupg
+    dest: ~/.gnupg
+    state: link
+

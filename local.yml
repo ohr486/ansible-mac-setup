@@ -4,6 +4,7 @@
   gather_facts: no
   become: no
   roles:
+    - dotenv
     - java
     - brew
     - brew-cask
@@ -31,6 +32,7 @@
       # for database
       - { name: redis }
       - { name: mysql@5.6 }
+      - { name: sqlite }
       # for aws
       - { name: awscli }
       - { name: s3cmd }
@@ -60,12 +62,11 @@
       - { name: graphviz }
       - { name: htop }
       - { name: coreutils }
-      - { name: gpg }
+      - { name: gnupg }
       - { name: zsh }
       - { name: git }
       - { name: ghq }
       - { name: wget }
-      - { name: sqlite }
       - { name: peco }
       - { name: tree }
       # for testing
@@ -90,8 +91,6 @@
     brew_cask_packs:
       # for language
       - { name: java8 }
-      # for dotnet
-      - { name: dotnet }
       # for docker
       - { name: docker }
       # for vagrant
