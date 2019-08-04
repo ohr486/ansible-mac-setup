@@ -16,4 +16,7 @@ alias k='kubectl'
 alias kg='kubectl get'
 alias kd='kubectl describe'
 alias kc='kubectl config'
+alias ke='kubectl exec'
+alias kl='kubectl logs'
+alias kpf='kubectl port-forward'
 source <(kubectl completion zsh)
