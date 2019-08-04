@@ -10,6 +10,7 @@
     - brew
     - brew-cask
     - asdf
+    - k8s
     - font
     - zsh
   vars:
