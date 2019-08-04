@@ -20,3 +20,5 @@ alias ke='kubectl exec'
 alias kl='kubectl logs'
 alias kpf='kubectl port-forward'
 source <(kubectl completion zsh)
+source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+PS1='$(kube_ps1)'$PS1

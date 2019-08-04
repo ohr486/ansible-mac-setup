@@ -33,6 +33,7 @@
       # for compute
       - { name: kubernetes-cli }
       - { name: aws-iam-authenticator }
+      - { name: kube-ps1 }
       - { name: stern }
       # for database
       - { name: redis }
