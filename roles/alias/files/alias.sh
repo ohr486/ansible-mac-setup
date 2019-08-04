@@ -15,4 +15,5 @@ alias be='bundle exec'
 alias k='kubectl'
 alias kg='kubectl get'
 alias kd='kubectl describe'
+alias kc='kubectl config'
 source <(kubectl completion zsh)
