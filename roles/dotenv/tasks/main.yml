@@ -13,6 +13,12 @@
     dest: ~/.bash_profile
     state: link
 
+- name: symbolic link for .bashrc
+  file:
+    src: ~/Dropbox/common-conf/bashrc
+    dest: ~/.bashrc
+    state: link
+
 # --- zsh ---
 - name: symbolic link for .zshrc
   file:

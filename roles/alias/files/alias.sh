@@ -14,9 +14,14 @@ alias be='bundle exec'
 # for k8s
 alias k='kubectl'
 alias kg='kubectl get'
+alias kgp='kubectl get pods'
 alias kd='kubectl describe'
 alias kc='kubectl config'
 alias ke='kubectl exec'
-alias kl='kubectl logs'
+alias klog='kubectl logs'
 alias kpf='kubectl port-forward'
 source <(kubectl completion zsh)
+
+# for kubectx
+alias kns='kubens'
+alias kctx='kubectx'
