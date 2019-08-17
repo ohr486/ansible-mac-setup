@@ -33,7 +33,6 @@
       - { name: composer }
       # for compute
       - { name: kubernetes-cli }
-      - { name: aws-iam-authenticator }
       - { name: kube-ps1 }
       - { name: kubectx }
       - { name: stern }
@@ -44,6 +43,7 @@
       # for aws
       - { name: awscli }
       - { name: s3cmd }
+      - { name: aws-iam-authenticator }
       # for heroku
       - { name: heroku }
       # for docker
