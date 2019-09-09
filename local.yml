@@ -62,6 +62,7 @@
       # for libs
       - { name: openssl }
       - { name: libffi }
+      - { name: wxmac }
       # for books
       - { name: ghostscript }
       # for life
