@@ -156,3 +156,18 @@
 
 - name: set latest rust version
   shell: asdf global rust $(asdf list-all rust | grep -v beta | grep -v stable | grep -v nightly | sort -r | head -n 1)
+
+# ---------- elm ----------
+- name: check elm
+  stat: path=~/.asdf/plugins/elm
+  register: elmresult
+
+- name: install elm
+  shell: asdf plugin-add elm https://github.com/asdf-community/asdf-elm.git
+  when: not elmresult.stat.exists
+
+- name: install latest elm
+  shell: asdf install elm $(asdf list-all elm | grep -v alpha | sort -r | head -n 1)
+
+- name: set latest elm version
+  shell: asdf global elm $(asdf list-all elm | grep -v alpha | sort -r | head -n 1)
