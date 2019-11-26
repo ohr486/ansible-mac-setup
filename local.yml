@@ -79,7 +79,7 @@
       - { name: peco }
       - { name: tree }
       - { name: fzf }
-      - { name: lopenldap }
+      - { name: openldap }
       # for testing
       - { name: selenium-server-standalone }
       - { name: geckodriver }
