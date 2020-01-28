@@ -131,6 +131,8 @@
       - { name: atom }
       - { name: visual-studio-code }
       - { name: karabiner-elements }
+      # for Gaming
+      - { name: unity-hub }
 
 # for font
   handlers:
