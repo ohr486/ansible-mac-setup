@@ -1,4 +1,7 @@
 ---
+- name: touch bash profile
+  command: touch ~/.bash_profile
+
 - lineinfile: dest=~/.bash_profile line='# for java by ansible-mac-setup'
 - lineinfile: dest=~/.bash_profile line='export JAVA_HOME="$(/usr/libexec/java_home)"'
 
