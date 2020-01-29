@@ -7,8 +7,8 @@
     - alias
     - dotenv
     - java
-    - brew
     - brew-cask
+    - brew
     - asdf
     - k8s
     - font
@@ -101,7 +101,7 @@
       - homebrew/cask-drivers
     brew_cask_packs:
       # for language
-      - { name: java8 }
+      - { name: java11 }
       # for docker
       - { name: docker }
       # for vagrant
