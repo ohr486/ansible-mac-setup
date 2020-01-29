@@ -1,7 +1,4 @@
 ---
-- name: touch .bash_profile
-  command: touch ~/.bash_profile
-
 - lineinfile: dest=~/.bash_profile line='# for loading alias by ansible-mac-setup'
 - lineinfile: dest=~/.bash_profile line='source ~/Dropbox/common-conf/alias.sh'
 
