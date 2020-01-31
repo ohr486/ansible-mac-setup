@@ -4,11 +4,11 @@
   gather_facts: no
   become: no
   roles:
+    - brew-cask
+    - brew
     - alias
     - dotenv
     - java
-    - brew-cask
-    - brew
     - asdf
     - k8s
     - font
