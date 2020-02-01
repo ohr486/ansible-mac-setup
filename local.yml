@@ -133,6 +133,7 @@
       - { name: karabiner-elements }
       # for Gaming
       - { name: unity-hub }
+      - { name: parsec }
 
 # for font
   handlers:
