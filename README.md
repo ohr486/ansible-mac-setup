@@ -4,6 +4,16 @@
 
 ## usage
 
+install homebrew
+
+```bash
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+$ brew install git
+$ brew install ansible
+```
+
+run setup script
+
 ```bash
 $ git clone git@github.com:ohr486/ansible-mac-setup.git
 $ cd ansible-mac-setup
