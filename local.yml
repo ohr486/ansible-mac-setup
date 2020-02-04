@@ -134,6 +134,7 @@
       # for Gaming
       - { name: unity-hub }
       - { name: parsec }
+      - { name: zerotier-one }
 
 # for font
   handlers:
