@@ -24,6 +24,8 @@
       - homebrew/services
       # for php
       #- homebrew/php
+      # for heroku
+      - heroku/brew
     brew_packs:
       # for languages
       - { name: asdf }
