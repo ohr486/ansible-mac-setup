@@ -54,9 +54,9 @@
       - { name: fsevent_watch }
       - { name: fsevents-tools }
       # for bigdata
-      - { name: apache-spark }
-      - { name: kafka }
-      - { name: embulk }
+      #- { name: apache-spark }
+      #- { name: kafka }
+      #- { name: embulk }
       # for font
       - { name: fontforge }
       - { name: ricty }
