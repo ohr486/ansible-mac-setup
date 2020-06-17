@@ -87,9 +87,9 @@
       # for ergodox
       - { name: avr-binutils }
       - { name: avr-gcc }
-      - { name: avr-gcc49 }
-      - { name: avr-libc }
-      - { name: avr-libc49 }
+      #- { name: avr-gcc49 }
+      #- { name: avr-libc }
+      #- { name: avr-libc49 }
       - { name: dfu-programmer }
       - { name: teensy_loader_cli }
       # for IoT
