@@ -52,10 +52,12 @@
   when: not erlangresult.stat.exists
 
 - name: install latest erlang
-  shell: asdf install erlang $(asdf list-all erlang | grep -v rc | tail -n 1)
+  #shell: asdf install erlang $(asdf list-all erlang | grep -v rc | tail -n 1)
+  shell: asdf install erlang 22.3.4.1 # 安定版を利用
 
 - name: set latest erlang version
-  shell: asdf global erlang $(asdf list-all erlang | grep -v rc | tail -n 1)
+  #shell: asdf global erlang $(asdf list-all erlang | grep -v rc | tail -n 1)
+  shell: asdf global erlang 22.3.4.1 # 安定版を利用
 
 - name: check rebar
   stat: path=~/.asdf/plugins/rebar
