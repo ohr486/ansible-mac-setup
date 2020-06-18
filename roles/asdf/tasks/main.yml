@@ -8,6 +8,10 @@
 - name: create asdf dir
   file: path=~/.asdf state=directory mode=0755
 
+# ---------- update list ----------
+- name: update plugin-list
+  shell: asdf plugin update --all
+
 # ---------- terraform ----------
 - name: check terraform
   stat: path=~/.asdf/plugins/terraform
