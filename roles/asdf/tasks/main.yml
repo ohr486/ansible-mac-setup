@@ -47,7 +47,11 @@
   shell: asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
   when: not erlangresult.stat.exists
 
-# TODO: add install cmds
+- name: install latest erlang
+  shell: asdf install erlang $(asdf list-all erlang | grep -v rc | tail -n 1)
+
+- name: set latest erlang version
+  shell: asdf global erlang $(asdf list-all erlang | grep -v rc | tail -n 1)
 
 - name: check rebar
   stat: path=~/.asdf/plugins/rebar
