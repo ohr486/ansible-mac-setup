@@ -136,6 +136,8 @@
       - { name: unity-hub }
       - { name: parsec }
       - { name: zerotier-one }
+      # for meeting
+      - { name: zoomus }
 
 # for font
   handlers:
