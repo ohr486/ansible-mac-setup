@@ -32,6 +32,8 @@
       - { name: v8 }
       - { name: gauche }
       - { name: composer }
+      # for erlang compile
+      - { name: fop }
       # for compute
       - { name: kubernetes-cli }
       - { name: kube-ps1 }
