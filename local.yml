@@ -34,6 +34,8 @@
       - { name: composer }
       # for erlang compile
       - { name: fop }
+      # for java compile
+      - { name: ant }
       # for compute
       - { name: kubernetes-cli }
       - { name: kube-ps1 }
