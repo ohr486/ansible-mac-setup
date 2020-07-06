@@ -106,7 +106,7 @@
       - homebrew/cask-drivers
     brew_cask_packs:
       # for language
-      - { name: java11 }
+      - { name: java }
       - { name: javacc }
       # for docker
       - { name: docker }
