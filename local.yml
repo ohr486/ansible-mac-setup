@@ -143,6 +143,7 @@
       - { name: zerotier-one }
       # for meeting
       - { name: zoomus }
+      - { name: blue-jeans }
 
 # for font
   handlers:
