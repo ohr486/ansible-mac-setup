@@ -1,6 +1,6 @@
 # ansible-mac-setup
 
-1click setup script for MacOS
+one click setup script for MacOS
 
 ## usage
 
