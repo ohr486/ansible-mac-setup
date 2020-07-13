@@ -73,8 +73,6 @@
 - name: set latest rebar version
   shell: asdf global rebar $(asdf list-all rebar | grep -v rc | tail -n 1)
 
-# TODO: set rebar bin path
-
 # ---------- elixir ----------
 - name: check elixir
   stat: path=~/.asdf/plugins/elixir
