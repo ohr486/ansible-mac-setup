@@ -70,7 +70,6 @@
       - { name: wxmac }
       # for books
       - { name: ghostscript }
-      - { name: gitbook }
       # for life
       - { name: neovim }
       - { name: jq }
@@ -119,6 +118,7 @@
       - { name: xquartz }
       # for book
       - { name: mactex }
+      - { name: gitbook }
       # for life
       - { name: appcleaner }
       - { name: daisydisk }
