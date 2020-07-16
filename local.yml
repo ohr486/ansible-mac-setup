@@ -118,7 +118,6 @@
       - { name: xquartz }
       # for book
       - { name: mactex }
-      - { name: gitbook }
       # for life
       - { name: appcleaner }
       - { name: daisydisk }
