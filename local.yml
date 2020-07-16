@@ -70,6 +70,7 @@
       - { name: wxmac }
       # for books
       - { name: ghostscript }
+      - { name: gitbook }
       # for life
       - { name: neovim }
       - { name: jq }
