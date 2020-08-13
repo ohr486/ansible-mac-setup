@@ -114,3 +114,9 @@
     dest: ~/.gnupg
     state: link
 
+# --- gnupg ---
+- name: symbolic link for .aws
+  file:
+    src: ~/Dropbox/common-conf/dot-aws
+    dest: ~/.aws
+    state: link
