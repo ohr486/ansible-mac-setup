@@ -108,7 +108,7 @@
     brew_cask_packs:
       # for language
       - { name: java }
-      - { name: javacc }
+      #- { name: javacc }
       # for docker
       - { name: docker }
       # for vagrant
