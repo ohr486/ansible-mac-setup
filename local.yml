@@ -59,7 +59,7 @@
       # for bigdata
       #- { name: apache-spark }
       - { name: kafka }
-      #- { name: embulk }
+      - { name: embulk }
       # for font
       - { name: fontforge }
       - { name: ricty }
