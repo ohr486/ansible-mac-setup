@@ -15,8 +15,8 @@ echo '=============== install homebrew ====================='
 #brew update
 
 echo '=============== install ansible ======================'
-#brew install ansible
-#brew upgrade ansible
+brew install ansible
+brew upgrade ansible
 
 echo '=============== run ansible-playbook ================='
 
