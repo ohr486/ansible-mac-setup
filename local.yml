@@ -58,7 +58,7 @@
       - { name: fsevents-tools }
       # for bigdata
       #- { name: apache-spark }
-      - { name: kafka }
+      #- { name: kafka }
       #- { name: embulk }
       # for font
       - { name: fontforge }
