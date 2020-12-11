@@ -30,7 +30,7 @@
       # for languages
       - { name: asdf }
       - { name: v8 }
-      - { name: gauche }
+      #- { name: gauche }
       - { name: composer }
       # for erlang compile
       - { name: fop }
