@@ -42,7 +42,7 @@
       - { name: kubectx }
       - { name: stern }
       # for database
-      - { name: redis }
+      #- { name: redis }
       #- { name: mysql@5.6 }
       # for aws
       - { name: awscli }
