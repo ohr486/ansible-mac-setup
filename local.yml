@@ -86,7 +86,7 @@
       - { name: openldap }
       - { name: pwgen }
       # for testing
-      - { name: selenium-server-standalone }
+      #- { name: selenium-server-standalone }
       - { name: geckodriver }
       # for ergodox
       - { name: avr-binutils }
