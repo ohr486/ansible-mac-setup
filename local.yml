@@ -29,13 +29,13 @@
     brew_packs:
       # for languages
       - { name: asdf }
-      - { name: v8 }
+      #- { name: v8 }
       #- { name: gauche }
-      - { name: composer }
+      #- { name: composer }
       # for erlang compile
-      - { name: fop }
+      #- { name: fop }
       # for java compile
-      - { name: ant }
+      #- { name: ant }
       # for compute
       - { name: kubernetes-cli }
       - { name: kube-ps1 }
@@ -64,41 +64,41 @@
       - { name: fontforge }
       - { name: ricty }
       # for libs
-      - { name: openssl }
-      - { name: libffi }
-      - { name: wxmac }
+      #- { name: openssl }
+      #- { name: libffi }
+      #- { name: wxmac }
       # for books
-      - { name: ghostscript }
+      #- { name: ghostscript }
       # for life
       - { name: neovim }
       - { name: jq }
-      - { name: graphviz }
+      #- { name: graphviz }
       - { name: htop }
-      - { name: coreutils }
-      - { name: gnupg }
+      #- { name: coreutils }
+      #- { name: gnupg }
       - { name: zsh }
       - { name: git }
       - { name: ghq }
       - { name: wget }
       - { name: peco }
       - { name: tree }
-      - { name: fzf }
-      - { name: openldap }
-      - { name: pwgen }
+      #- { name: fzf }
+      #- { name: openldap }
+      #- { name: pwgen }
       # for testing
       #- { name: selenium-server-standalone }
-      - { name: geckodriver }
+      #- { name: geckodriver }
       # for ergodox
-      - { name: avr-binutils }
-      - { name: avr-gcc }
+      #- { name: avr-binutils }
+      #- { name: avr-gcc }
       #- { name: avr-gcc49 }
       #- { name: avr-libc }
       #- { name: avr-libc49 }
-      - { name: dfu-programmer }
-      - { name: teensy_loader_cli }
+      #- { name: dfu-programmer }
+      #- { name: teensy_loader_cli }
       # for IoT
-      - { name: fwup }
-      - { name: squashfs }
+      #- { name: fwup }
+      #- { name: squashfs }
     brew_cask_repos:
       # for java
       - homebrew/cask-versions
@@ -106,17 +106,17 @@
       - homebrew/cask-drivers
     brew_cask_packs:
       # for language
-      - { name: java }
+      #- { name: java }
       #- { name: javacc }
       # for docker
       - { name: docker }
       # for vagrant
       - { name: vagrant }
-      - { name: virtualbox }
+      #- { name: virtualbox }
       # for font
-      - { name: xquartz }
+      #- { name: xquartz }
       # for book
-      - { name: mactex }
+      #- { name: mactex }
       # for life
       - { name: appcleaner }
       - { name: daisydisk }
@@ -124,26 +124,26 @@
       - { name: evernote }
       - { name: dropbox }
       - { name: firefox }
-      - { name: google-chrome }
+      #- { name: google-chrome }
       - { name: slack }
       - { name: kindle }
-      - { name: android-file-transfer }
-      - { name: elmedia-player }
+      #- { name: android-file-transfer }
+      #- { name: elmedia-player }
       #- { name: steam }
       # for IDE
       - { name: jetbrains-toolbox }
       # for writing
-      - { name: mactex }
+      #- { name: mactex }
       #- { name: atom }
-      - { name: visual-studio-code }
+      #- { name: visual-studio-code }
       - { name: karabiner-elements }
       # for Gaming
-      - { name: unity-hub }
-      - { name: parsec }
-      - { name: zerotier-one }
+      #- { name: unity-hub }
+      #- { name: parsec }
+      #- { name: zerotier-one }
       # for meeting
-      - { name: zoomus }
-      - { name: blue-jeans }
+      - { name: zoom }
+      #- { name: blue-jeans }
       - { name: discord }
 
 # for font
