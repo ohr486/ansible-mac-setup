@@ -9,8 +9,8 @@
   file: path=~/.asdf state=directory mode=0755
 
 # ---------- update list ----------
-- name: update plugin-list
-  shell: asdf plugin update --all
+#- name: update plugin-list
+#  shell: asdf plugin update --all # TODO: pluginが1つも無いとerror
 
 # ---------- terraform ----------
 - name: check terraform
@@ -28,65 +28,65 @@
   shell: asdf global terraform $(asdf list-all terraform | grep -v beta | grep -v rc | grep -v alpha | tail -n 1)
 
 # ---------- packer ----------
-- name: check packer
-  stat: path=~/.asdf/plugins/packer
-  register: pkresult
+#- name: check packer
+#  stat: path=~/.asdf/plugins/packer
+#  register: pkresult
 
-- name: install packer
-  shell: asdf plugin-add packer https://github.com/Banno/asdf-hashicorp.git
-  when: not pkresult.stat.exists
+#- name: install packer
+#  shell: asdf plugin-add packer https://github.com/Banno/asdf-hashicorp.git
+#  when: not pkresult.stat.exists
 
-- name: install latest packer
-  shell: asdf install packer $(asdf list-all packer | tail -n 1)
+#- name: install latest packer
+#  shell: asdf install packer $(asdf list-all packer | tail -n 1)
 
-- name: set latest packer version
-  shell: asdf global packer $(asdf list-all packer | tail -n 1)
+#- name: set latest packer version
+#  shell: asdf global packer $(asdf list-all packer | tail -n 1)
 
 # ---------- erlang ----------
-- name: check erlang
-  stat: path=~/.asdf/plugins/erlang
-  register: erlangresult
+#- name: check erlang
+#  stat: path=~/.asdf/plugins/erlang
+#  register: erlangresult
 
-- name: install erlang
-  shell: asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
-  when: not erlangresult.stat.exists
+#- name: install erlang
+#  shell: asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
+#  when: not erlangresult.stat.exists
 
-- name: install latest erlang
-  #shell: asdf install erlang $(asdf list-all erlang | grep -v rc | tail -n 1)
-  shell: asdf install erlang 22.3.4.1 # 安定版を利用
+#- name: install latest erlang
+#  #shell: asdf install erlang $(asdf list-all erlang | grep -v rc | tail -n 1)
+#  shell: asdf install erlang 22.3.4.1 # 安定版を利用
 
-- name: set latest erlang version
-  #shell: asdf global erlang $(asdf list-all erlang | grep -v rc | tail -n 1)
-  shell: asdf global erlang 22.3.4.1 # 安定版を利用
+#- name: set latest erlang version
+#  #shell: asdf global erlang $(asdf list-all erlang | grep -v rc | tail -n 1)
+#  shell: asdf global erlang 22.3.4.1 # 安定版を利用
 
-- name: check rebar
-  stat: path=~/.asdf/plugins/rebar
-  register: rebarresult
+#- name: check rebar
+#  stat: path=~/.asdf/plugins/rebar
+#  register: rebarresult
 
-- name: install rebar
-  shell: asdf plugin-add rebar https://github.com/Stratus3D/asdf-rebar.git
-  when: not rebarresult.stat.exists
+#- name: install rebar
+#  shell: asdf plugin-add rebar https://github.com/Stratus3D/asdf-rebar.git
+#  when: not rebarresult.stat.exists
 
-- name: install latest rebar
-  shell: asdf install rebar $(asdf list-all rebar | grep -v rc | tail -n 1)
+#- name: install latest rebar
+#  shell: asdf install rebar $(asdf list-all rebar | grep -v rc | tail -n 1)
 
-- name: set latest rebar version
-  shell: asdf global rebar $(asdf list-all rebar | grep -v rc | tail -n 1)
+#- name: set latest rebar version
+#  shell: asdf global rebar $(asdf list-all rebar | grep -v rc | tail -n 1)
 
 # ---------- elixir ----------
-- name: check elixir
-  stat: path=~/.asdf/plugins/elixir
-  register: elixirresult
+#- name: check elixir
+#  stat: path=~/.asdf/plugins/elixir
+#  register: elixirresult
 
-- name: install elixir
-  shell: asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
-  when: not elixirresult.stat.exists
+#- name: install elixir
+#  shell: asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+#  when: not elixirresult.stat.exists
 
-- name: install latest elixir
-  shell: asdf install elixir $(asdf list-all elixir | grep -v master | grep -v rc | grep -v otp | tail -n 1)
+#- name: install latest elixir
+#  shell: asdf install elixir $(asdf list-all elixir | grep -v master | grep -v rc | grep -v otp | tail -n 1)
 
-- name: set laster elixir version
-  shell: asdf global elixir $(asdf list-all elixir | grep -v master | grep -v rc | grep -v otp | tail -n 1)
+#- name: set laster elixir version
+#  shell: asdf global elixir $(asdf list-all elixir | grep -v master | grep -v rc | grep -v otp | tail -n 1)
 
 # ---------- ruby ----------
 - name: check ruby
@@ -122,22 +122,22 @@
   shell: asdf global nodejs $(asdf list-all nodejs | sort -r | head -n 1)
 
 # ---------- python ----------
-- name: check python
-  stat: path=~/.asdf/plugins/python
-  register: pythonresult
+#- name: check python
+#  stat: path=~/.asdf/plugins/python
+#  register: pythonresult
 
-- name: install python
-  shell: asdf plugin-add python https://github.com/danhper/asdf-python.git
-  when: not pythonresult.stat.exists
+#- name: install python
+#  shell: asdf plugin-add python https://github.com/danhper/asdf-python.git
+#  when: not pythonresult.stat.exists
 
-- name: install latest python2
-  shell: asdf install python $(asdf list-all python | grep "^2.*" | grep -v dev | sort -r | head -n 1)
+#- name: install latest python2
+#  shell: asdf install python $(asdf list-all python | grep "^2.*" | grep -v dev | sort -r | head -n 1)
 
-- name: install latest python3
-  shell: asdf install python $(asdf list-all python | grep "^3.*" | grep -v dev | sort -r | head -n 1)
+#- name: install latest python3
+#  shell: asdf install python $(asdf list-all python | grep "^3.*" | grep -v dev | sort -r | head -n 1)
 
-- name: set latest python
-  shell: asdf global python $(asdf list-all python | grep "^3.*" | grep -v dev | sort -r | head -n 1) $(asdf list-all python | grep "^2.*" | grep -v dev | sort -r | head -n 1)
+#- name: set latest python
+#  shell: asdf global python $(asdf list-all python | grep "^3.*" | grep -v dev | sort -r | head -n 1) $(asdf list-all python | grep "^2.*" | grep -v dev | sort -r | head -n 1)
 
 # ---------- golang ----------
 - name: check golang
@@ -155,31 +155,31 @@
   shell: asdf global golang $(asdf list-all golang | grep -v beta | grep -v rc | tail -n 1)
 
 # ---------- rust ----------
-- name: check rust
-  stat: path=~/.asdf/plugins/rust
-  register: rustresult
+#- name: check rust
+#  stat: path=~/.asdf/plugins/rust
+#  register: rustresult
 
-- name: install rust
-  shell: asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
-  when: not rustresult.stat.exists
+#- name: install rust
+#  shell: asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
+#  when: not rustresult.stat.exists
 
-- name: install latest rust
-  shell: asdf install rust $(asdf list-all rust | grep -v beta | grep -v stable | grep -v nightly | sort -r | head -n 1)
+#- name: install latest rust
+#  shell: asdf install rust $(asdf list-all rust | grep -v beta | grep -v stable | grep -v nightly | sort -r | head -n 1)
 
-- name: set latest rust version
-  shell: asdf global rust $(asdf list-all rust | grep -v beta | grep -v stable | grep -v nightly | sort -r | head -n 1)
+#- name: set latest rust version
+#  shell: asdf global rust $(asdf list-all rust | grep -v beta | grep -v stable | grep -v nightly | sort -r | head -n 1)
 
 # ---------- elm ----------
-- name: check elm
-  stat: path=~/.asdf/plugins/elm
-  register: elmresult
+#- name: check elm
+#  stat: path=~/.asdf/plugins/elm
+#  register: elmresult
 
-- name: install elm
-  shell: asdf plugin-add elm https://github.com/asdf-community/asdf-elm.git
-  when: not elmresult.stat.exists
+#- name: install elm
+#  shell: asdf plugin-add elm https://github.com/asdf-community/asdf-elm.git
+#  when: not elmresult.stat.exists
 
-- name: install latest elm
-  shell: asdf install elm $(asdf list-all elm | grep -v alpha | sort -r | head -n 1)
+#- name: install latest elm
+#  shell: asdf install elm $(asdf list-all elm | grep -v alpha | sort -r | head -n 1)
 
-- name: set latest elm version
-  shell: asdf global elm $(asdf list-all elm | grep -v alpha | sort -r | head -n 1)
+#- name: set latest elm version
+#  shell: asdf global elm $(asdf list-all elm | grep -v alpha | sort -r | head -n 1)
