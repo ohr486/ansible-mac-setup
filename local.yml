@@ -110,6 +110,7 @@
       #- { name: javacc }
       # for docker
       - { name: docker }
+      - { name: docker-compose }
       # for vagrant
       - { name: vagrant }
       - { name: virtualbox }
