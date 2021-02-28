@@ -51,6 +51,8 @@
       # for heroku
       #- { name: heroku }
       # for docker
+      - { name: docker }
+      - { name: docker-compose }
       - { name: unison }
       - { name: fswatch }
       - { name: rsync }
@@ -109,8 +111,7 @@
       #- { name: java }
       #- { name: javacc }
       # for docker
-      - { name: docker }
-      - { name: docker-compose }
+      #- { name: docker }
       # for vagrant
       - { name: vagrant }
       - { name: virtualbox }
@@ -144,7 +145,7 @@
       #- { name: zerotier-one }
       # for meeting
       - { name: zoom }
-      #- { name: blue-jeans }
+      - { name: bluejeans }
       - { name: discord }
 
 # for font
