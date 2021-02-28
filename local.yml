@@ -75,7 +75,7 @@
       #- { name: graphviz }
       - { name: htop }
       #- { name: coreutils }
-      #- { name: gnupg }
+      - { name: gnupg }
       - { name: zsh }
       - { name: git }
       - { name: ghq }
@@ -112,7 +112,7 @@
       - { name: docker }
       # for vagrant
       - { name: vagrant }
-      #- { name: virtualbox }
+      - { name: virtualbox }
       # for font
       #- { name: xquartz }
       # for book
