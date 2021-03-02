@@ -49,7 +49,7 @@
       - { name: s3cmd }
       - { name: aws-iam-authenticator }
       # for heroku
-      #- { name: heroku }
+      - { name: heroku }
       # for docker
       - { name: docker }
       - { name: docker-compose }
