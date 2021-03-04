@@ -107,8 +107,6 @@
       # for language
       #- { name: java }
       #- { name: javacc }
-      # for docker
-      #- { name: docker }
       # for vagrant
       - { name: vagrant }
       - { name: virtualbox }
