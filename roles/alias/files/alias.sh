@@ -11,6 +11,9 @@ alias git-private-setup='git config user.name "ohr486" && git config user.email 
 # for ruby
 alias be='bundle exec'
 
+# for docker
+alias dc='docker-compose'
+
 # for k8s
 alias k='kubectl'
 alias kg='kubectl get'
