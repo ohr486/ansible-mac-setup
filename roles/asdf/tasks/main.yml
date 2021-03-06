@@ -183,3 +183,18 @@
 
 #- name: set latest elm version
 #  shell: asdf global elm $(asdf list-all elm | grep -v alpha | sort -r | head -n 1)
+
+# ---------- mysql ----------
+- name: check mysql
+  stat: path=~/.asdf/plugins/mysql
+  register: mysqlresult
+
+- name: install mysql
+  shell: asdf plugin-add mysql https://github.com/iroddis/asdf-mysql.git
+  when: not mysqlresult.stat.exists
+
+- name: install latest mysql
+  shell: asdf install mysql $(asdf list-all mysql | sort -r | head -n 1)
+
+- name: set latest mysql version
+  shell: asdf global mysql $(asdf list-all mysql | sort -r | head -n 1)
