@@ -138,6 +138,8 @@
       #- { name: unity-hub }
       #- { name: parsec }
       #- { name: zerotier-one }
+      # for Design
+      - { name: adobe-creative-cloud }
       # for meeting
       - { name: zoom }
       - { name: bluejeans }
