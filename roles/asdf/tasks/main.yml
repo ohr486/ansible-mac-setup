@@ -121,6 +121,21 @@
 - name: set latest nodejs version
   shell: asdf global nodejs $(asdf list-all nodejs | sort -r | head -n 1)
 
+# ---------- yarn ----------
+- name: check yarn
+  stat: path=~/.asdf/plugins/yarn
+  register: yarnresult
+
+- name: install yarn
+  shell: asdf plugin-add yarn https://github.com/twuni/asdf-yarn.git
+  when: not yarnresult.stat.exists
+
+- name: install latest yarn
+  shell: asdf install yarn $(asdf list-all yarn | sort -r | head -n 1)
+
+- name: set latest yarn version
+  shell: asdf global yarn $(asdf list-all yarn | sort -r | head -n 1)
+
 # ---------- python ----------
 #- name: check python
 #  stat: path=~/.asdf/plugins/python
