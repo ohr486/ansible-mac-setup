@@ -43,35 +43,33 @@
 #  shell: asdf global packer $(asdf list-all packer | tail -n 1)
 
 # ---------- erlang ----------
-#- name: check erlang
-#  stat: path=~/.asdf/plugins/erlang
-#  register: erlangresult
+- name: check erlang
+  stat: path=~/.asdf/plugins/erlang
+  register: erlangresult
 
-#- name: install erlang
-#  shell: asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
-#  when: not erlangresult.stat.exists
+- name: install erlang
+  shell: asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
+  when: not erlangresult.stat.exists
 
-#- name: install latest erlang
-#  #shell: asdf install erlang $(asdf list-all erlang | grep -v rc | tail -n 1)
-#  shell: asdf install erlang 22.3.4.1 # 安定版を利用
+- name: install latest erlang
+  shell: asdf install erlang $(asdf list-all erlang | grep -v rc | grep -v R | tail -n 1)
 
-#- name: set latest erlang version
-#  #shell: asdf global erlang $(asdf list-all erlang | grep -v rc | tail -n 1)
-#  shell: asdf global erlang 22.3.4.1 # 安定版を利用
+- name: set latest erlang version
+  shell: asdf global erlang $(asdf list-all erlang | grep -v rc | grep -v R | tail -n 1)
 
-#- name: check rebar
-#  stat: path=~/.asdf/plugins/rebar
-#  register: rebarresult
+- name: check rebar
+  stat: path=~/.asdf/plugins/rebar
+  register: rebarresult
 
-#- name: install rebar
-#  shell: asdf plugin-add rebar https://github.com/Stratus3D/asdf-rebar.git
-#  when: not rebarresult.stat.exists
+- name: install rebar
+  shell: asdf plugin-add rebar https://github.com/Stratus3D/asdf-rebar.git
+  when: not rebarresult.stat.exists
 
-#- name: install latest rebar
-#  shell: asdf install rebar $(asdf list-all rebar | grep -v rc | tail -n 1)
+- name: install latest rebar
+  shell: asdf install rebar $(asdf list-all rebar | grep -v rc | tail -n 1)
 
-#- name: set latest rebar version
-#  shell: asdf global rebar $(asdf list-all rebar | grep -v rc | tail -n 1)
+- name: set latest rebar version
+  shell: asdf global rebar $(asdf list-all rebar | grep -v rc | tail -n 1)
 
 # ---------- elixir ----------
 #- name: check elixir
