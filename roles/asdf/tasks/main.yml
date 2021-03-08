@@ -9,8 +9,8 @@
   file: path=~/.asdf state=directory mode=0755
 
 # ---------- update list ----------
-#- name: update plugin-list
-#  shell: asdf plugin update --all # TODO: pluginが1つも無いとerror
+- name: update plugin-list
+  shell: asdf plugin update --all # TODO: pluginが1つも無いとerror
 
 # ---------- terraform ----------
 - name: check terraform
