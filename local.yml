@@ -83,7 +83,7 @@
       - { name: tree }
       #- { name: fzf }
       #- { name: openldap }
-      #- { name: pwgen }
+      - { name: pwgen }
       # for testing
       #- { name: selenium-server-standalone }
       #- { name: geckodriver }
