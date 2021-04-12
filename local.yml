@@ -135,7 +135,7 @@
       #- { name: visual-studio-code }
       - { name: karabiner-elements }
       # for Gaming
-      #- { name: unity-hub }
+      - { name: unity-hub }
       #- { name: parsec }
       #- { name: zerotier-one }
       # for Design
