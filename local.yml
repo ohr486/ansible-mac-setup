@@ -145,6 +145,8 @@
       - { name: zoom }
       - { name: bluejeans }
       - { name: discord }
+      # for bicycle
+      - { name: garmin-express }
 
 # for font
   handlers:
