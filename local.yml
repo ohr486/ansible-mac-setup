@@ -127,7 +127,7 @@
       - { name: kindle }
       #- { name: android-file-transfer }
       #- { name: elmedia-player }
-      #- { name: steam }
+      - { name: steam }
       - { name: forticlient-vpn }
       # for IDE
       - { name: jetbrains-toolbox }
