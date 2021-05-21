@@ -133,7 +133,7 @@
       - { name: jetbrains-toolbox }
       # for writing
       #- { name: mactex }
-      - { name: atom }
+      #- { name: atom }
       - { name: visual-studio-code }
       - { name: karabiner-elements }
       # for Gaming
