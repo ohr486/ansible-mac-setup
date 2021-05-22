@@ -85,6 +85,7 @@
       #- { name: openldap }
       - { name: pwgen }
       - { name: p7zip }
+      - { name: hugo }
       # for testing
       #- { name: selenium-server-standalone }
       #- { name: geckodriver }
