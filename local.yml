@@ -150,6 +150,7 @@
       - { name: discord }
       # for bicycle
       - { name: garmin-express }
+      - { name: zwift }
 
 # for font
   handlers:
