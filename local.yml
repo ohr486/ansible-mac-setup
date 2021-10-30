@@ -137,9 +137,9 @@
       - { name: atom }
       - { name: visual-studio-code }
       - { name: karabiner-elements }
+      - { name: dynalist }
       # for Gaming
       - { name: unity-hub }
-      - { name: mono }
       #- { name: parsec }
       #- { name: zerotier-one }
       # for Design
