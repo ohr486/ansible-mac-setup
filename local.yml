@@ -33,6 +33,7 @@
       #- { name: gauche }
       #- { name: composer }
       # for erlang compile
+      - { name: wxmac }
       #- { name: fop }
       # for java compile
       #- { name: ant }
