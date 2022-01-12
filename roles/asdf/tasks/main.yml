@@ -106,22 +106,22 @@
   shell: asdf global ruby $(asdf list-all ruby | grep "^\d.*" | grep -v dev | grep -v preview | grep -v rc | sort -r | head -n 1)
 
 # ---------- nodejs ----------
-- name: check nodejs
-  stat: path=~/.asdf/plugins/nodejs
-  register: nodejsresult
+#- name: check nodejs
+#  stat: path=~/.asdf/plugins/nodejs
+#  register: nodejsresult
 
-- name: install nodejs
-  shell: asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-  when: not nodejsresult.stat.exists
+#- name: install nodejs
+#  shell: asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+#  when: not nodejsresult.stat.exists
 
-- name: import PGP
-  shell: bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+#- name: import PGP
+#  shell: bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
 
-- name: install latest nodejs
-  shell: asdf install nodejs $(asdf list-all nodejs | sort -r | head -n 1)
+#- name: install latest nodejs
+#  shell: asdf install nodejs $(asdf list-all nodejs | sort -r | head -n 1)
 
-- name: set latest nodejs version
-  shell: asdf global nodejs $(asdf list-all nodejs | sort -r | head -n 1)
+#- name: set latest nodejs version
+#  shell: asdf global nodejs $(asdf list-all nodejs | sort -r | head -n 1)
 
 # ---------- yarn ----------
 - name: check yarn
@@ -172,19 +172,19 @@
   shell: asdf global golang $(asdf list-all golang | grep -v beta | grep -v rc | tail -n 1)
 
 # ---------- rust ----------
-#- name: check rust
-#  stat: path=~/.asdf/plugins/rust
-#  register: rustresult
+- name: check rust
+  stat: path=~/.asdf/plugins/rust
+  register: rustresult
 
-#- name: install rust
-#  shell: asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
-#  when: not rustresult.stat.exists
+- name: install rust
+  shell: asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
+  when: not rustresult.stat.exists
 
-#- name: install latest rust
-#  shell: asdf install rust $(asdf list-all rust | grep -v beta | grep -v stable | grep -v nightly | sort -r | head -n 1)
+- name: install latest rust
+  shell: asdf install rust $(asdf list-all rust | grep -v beta | grep -v stable | grep -v nightly | sort -r | head -n 1)
 
-#- name: set latest rust version
-#  shell: asdf global rust $(asdf list-all rust | grep -v beta | grep -v stable | grep -v nightly | sort -r | head -n 1)
+- name: set latest rust version
+  shell: asdf global rust $(asdf list-all rust | grep -v beta | grep -v stable | grep -v nightly | sort -r | head -n 1)
 
 # ---------- elm ----------
 #- name: check elm
