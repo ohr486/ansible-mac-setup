@@ -85,10 +85,10 @@
   when: not elixirresult.stat.exists
 
 - name: install latest elixir
-  shell: asdf install elixir $(asdf list-all elixir | grep -v master | grep -v rc | grep -v otp | tail -n 1)
+  shell: asdf install elixir $(asdf list-all elixir | grep -v master | grep -v main | grep -v rc | grep -v otp | tail -n 1)
 
 - name: set laster elixir version
-  shell: asdf global elixir $(asdf list-all elixir | grep -v master | grep -v rc | grep -v otp | tail -n 1)
+  shell: asdf global elixir $(asdf list-all elixir | grep -v master | grep -v main | grep -v rc | grep -v otp | tail -n 1)
 
 # ---------- ruby ----------
 - name: check ruby
