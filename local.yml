@@ -87,6 +87,7 @@
       - { name: pwgen }
       - { name: p7zip }
       - { name: hugo }
+      - { name: graphviz }
       # for testing
       #- { name: selenium-server-standalone }
       #- { name: geckodriver }
@@ -99,8 +100,11 @@
       #- { name: dfu-programmer }
       #- { name: teensy_loader_cli }
       # for IoT
-      #- { name: fwup }
-      #- { name: squashfs }
+      - { name: fwup }
+      - { name: squashfs }
+      - { name: coreutils }
+      - { name: xz }
+      - { name: pkg-config }
     brew_cask_repos:
       # for java
       - homebrew/cask-versions
