@@ -137,6 +137,7 @@
       - { name: forticlient-vpn }
       # for IDE
       - { name: jetbrains-toolbox }
+      - { name: arduino }
       # for writing
       #- { name: mactex }
       - { name: atom }
