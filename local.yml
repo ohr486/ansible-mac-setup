@@ -138,6 +138,7 @@
       # for IDE
       - { name: jetbrains-toolbox }
       - { name: arduino }
+      - { name: thonny }
       # for writing
       #- { name: mactex }
       - { name: atom }
