@@ -8,7 +8,15 @@ install homebrew
 
 ```bash
 $ xcode-select --install
+
+$ sudo xcodebuild --license
+> agree
+
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+$ vi .zprofile
+> edit export settings
+
 $ brew install git
 $ brew install ansible
 ```
