@@ -1,8 +1,8 @@
 ---
 - lineinfile: dest=~/.bash_profile line='# for brew by ansible-mac-setup'
-- lineinfile: dest=~/.bash_profile line='alias brew="PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew"'
+- lineinfile: dest=~/.bash_profile line='alias brew="PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin brew"'
 #- lineinfile: dest=~/.bash_profile line='export HOMEBREW_GITHUB_API_TOKEN="{YOUR_API_TOKEN}"'
-- lineinfile: dest=~/.bash_profile line='export PATH="/usr/local/sbin:$PATH"'
+- lineinfile: dest=~/.bash_profile line='export PATH="/usr/local/sbin:/usr/local/bin:$PATH"'
 
 - name: tap brew repositories
   homebrew_tap: tap={{ item }} state=present
