@@ -1,5 +1,5 @@
 ---
 - lineinfile: dest=~/.zshrc line='# for k8s by ansible-mac-setup'
-- lineinfile: dest=~/.zshrc line='source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"'
+- lineinfile: dest=~/.zshrc line='source "/opt/homebrew/opt/kube-ps1/share/kube-ps1.sh"'
 - lineinfile: dest=~/.zshrc line="PROMPT='$(kube_ps1)'$PROMPT"
 - lineinfile: dest=~/.zshrc line='kubeoff'
