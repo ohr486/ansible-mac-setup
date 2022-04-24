@@ -1,6 +1,6 @@
 ---
-- lineinfile: dest=~/.bash_profile line='# for loading alias by ansible-mac-setup'
-- lineinfile: dest=~/.bash_profile line='source ~/Dropbox/common-conf/alias.sh'
+- lineinfile: dest=~/.zshrc line='# for loading alias by ansible-mac-setup'
+- lineinfile: dest=~/.zshrc line='source ~/Dropbox/common-conf/alias.sh'
 
 - name: copy alias file
   copy:

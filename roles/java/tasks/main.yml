@@ -1,7 +1,7 @@
 ---
-- lineinfile: dest=~/.bash_profile line='# for java by ansible-mac-setup'
-- lineinfile: dest=~/.bash_profile line='export JAVA_HOME="$(/usr/libexec/java_home)"'
+- lineinfile: dest=~/.zshrc line='# for java by ansible-mac-setup'
+- lineinfile: dest=~/.zshrc line='export JAVA_HOME="$(/usr/libexec/java_home)"'
 
-- name: source ~/.bash_profile
-  shell: source ~/.bash_profile
+- name: source ~/.zshrc
+  shell: source ~/.zshrc
 
