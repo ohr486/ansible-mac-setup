@@ -36,3 +36,11 @@ $ gem install bundler
 $ bundle install
 $ bundle exec rake spec
 ```
+
+## mac setup 手順
+
+- AppleIDログイン
+- wifi設定
+- Xcodeインストール(Storeから)
+- mkdir ~/Git/github.com/ohr486
+
