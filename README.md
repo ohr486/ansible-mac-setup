@@ -45,5 +45,3 @@ $ bundle exec rake spec
 - mkdir ~/Git/github.com/ohr486
 - ln -s
 
-
-
