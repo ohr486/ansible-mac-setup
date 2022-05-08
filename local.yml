@@ -3,15 +3,15 @@
   gather_facts: no
   become: no
   roles:
-    - brew-cask
-    - brew
-    - alias
-    - dotenv
-    - java
+    #- brew-cask
+    #- brew
+    #- alias
+    #- dotenv
+    #- java
     - asdf
-    - k8s
-    - font
-    - zsh
+    #- k8s
+    #- font
+    #- zsh
   vars:
     brew_repos:
       # for font
@@ -34,7 +34,7 @@
       #- { name: composer }
       # for erlang compile
       - { name: wxmac }
-      #- { name: fop }
+      - { name: fop }
       # for java compile
       #- { name: ant }
       # for compute
@@ -47,15 +47,15 @@
       - { name: s3cmd }
       - { name: aws-iam-authenticator }
       # for heroku
-      - { name: heroku }
+      #- { name: heroku }
       # for docker
-      - { name: docker }
+      #- { name: docker }
       - { name: docker-compose }
-      - { name: unison }
-      - { name: fswatch }
-      - { name: rsync }
-      - { name: fsevent_watch }
-      - { name: fsevents-tools }
+      #- { name: unison }
+      #- { name: fswatch }
+      #- { name: rsync }
+      #- { name: fsevent_watch }
+      #- { name: fsevents-tools }
       # for bigdata
       #- { name: apache-spark }
       #- { name: kafka }
@@ -64,15 +64,13 @@
       - { name: fontforge }
       - { name: ricty }
       # for libs
-      #- { name: openssl }
-      #- { name: libffi }
-      #- { name: wxmac }
+      - { name: openssl }
+      - { name: libffi }
       # for books
       #- { name: ghostscript }
       # for life
       - { name: neovim }
       - { name: jq }
-      #- { name: graphviz }
       - { name: htop }
       #- { name: coreutils }
       - { name: gnupg }
@@ -84,9 +82,9 @@
       - { name: tree }
       #- { name: fzf }
       #- { name: openldap }
-      - { name: pwgen }
-      - { name: p7zip }
-      - { name: hugo }
+      #- { name: pwgen }
+      #- { name: p7zip }
+      #- { name: hugo }
       - { name: graphviz }
       # for testing
       #- { name: selenium-server-standalone }
@@ -115,8 +113,8 @@
       #- { name: java }
       #- { name: javacc }
       # for vagrant
-      - { name: vagrant }
-      - { name: virtualbox }
+      #- { name: vagrant }
+      #- { name: virtualbox }
       # for font
       #- { name: xquartz }
       # for book
@@ -128,7 +126,7 @@
       - { name: evernote }
       - { name: dropbox }
       - { name: firefox }
-      #- { name: google-chrome }
+      - { name: google-chrome }
       - { name: slack }
       - { name: kindle }
       #- { name: android-file-transfer }
@@ -137,12 +135,12 @@
       - { name: forticlient-vpn }
       # for IDE
       - { name: jetbrains-toolbox }
-      - { name: arduino }
-      - { name: thonny }
+      #- { name: arduino }
+      #- { name: thonny }
       # for writing
       #- { name: mactex }
-      - { name: atom }
-      - { name: visual-studio-code }
+      #- { name: atom }
+      #- { name: visual-studio-code }
       - { name: karabiner-elements }
       - { name: dynalist }
       # for Gaming
@@ -153,11 +151,11 @@
       - { name: adobe-creative-cloud }
       # for meeting
       - { name: zoom }
-      - { name: bluejeans }
+      #- { name: bluejeans }
       - { name: discord }
       # for bicycle
       - { name: garmin-express }
-      - { name: zwift }
+      #- { name: zwift }
 
 # for font
   handlers:
