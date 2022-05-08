@@ -4,10 +4,10 @@
 - lineinfile: dest=~/.bash_profile line='  autoload -U bashcompinit'
 - lineinfile: dest=~/.bash_profile line='  bashcompinit'
 - lineinfile: dest=~/.bash_profile line='fi'
-- lineinfile: dest=~/.bash_profile line='export ASDF_PREFIX="$(brew --prefix asdf)"'
-- lineinfile: dest=~/.bash_profile line='# export ASDF_PREFIX="/usr/local/opt/asdf"'
-- lineinfile: dest=~/.bash_profile line='source $ASDF_PREFIX/asdf.sh'
-- lineinfile: dest=~/.bash_profile line='source $ASDF_PREFIX/etc/bash_completion.d/asdf.bash'
+- lineinfile: dest=~/.zshrc line='export ASDF_PREFIX="$(brew --prefix asdf)"'
+- lineinfile: dest=~/.zshrc line='# export ASDF_PREFIX="/usr/local/opt/asdf"'
+- lineinfile: dest=~/.zshrc line='source $ASDF_PREFIX/asdf.sh'
+- lineinfile: dest=~/.zshrc line='source $ASDF_PREFIX/etc/bash_completion.d/asdf.bash'
 
 - name: create asdf dir
   file: path=~/.asdf state=directory mode=0755
