@@ -9,12 +9,13 @@
 - lineinfile: dest=~/.zshrc line='source $ASDF_PREFIX/asdf.sh'
 - lineinfile: dest=~/.zshrc line='source $ASDF_PREFIX/etc/bash_completion.d/asdf.bash'
 
+# ---------- create asdf dir ----------
 - name: create asdf dir
   file: path=~/.asdf state=directory mode=0755
 
 # ---------- update list ----------
 - name: update plugin-list
-  shell: asdf plugin update --all # TODO: pluginが1つも無いとerror
+  shell: asdf plugin update --all
 
 # ---------- terraform ----------
 - name: check terraform
@@ -47,48 +48,48 @@
 #  shell: asdf global packer $(asdf list-all packer | tail -n 1)
 
 # ---------- erlang ----------
-- name: check erlang
-  stat: path=~/.asdf/plugins/erlang
-  register: erlangresult
+#- name: check erlang
+#  stat: path=~/.asdf/plugins/erlang
+#  register: erlangresult
 
-- name: install erlang
-  shell: asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
-  when: not erlangresult.stat.exists
+#- name: install erlang
+#  shell: asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
+#  when: not erlangresult.stat.exists
 
-- name: install latest erlang
-  shell: asdf install erlang $(asdf list-all erlang | grep -v rc | grep -v R | tail -n 1)
+#- name: install latest erlang
+#  shell: asdf install erlang $(asdf list-all erlang | grep -v rc | grep -v R | tail -n 1)
 
-- name: set latest erlang version
-  shell: asdf global erlang $(asdf list-all erlang | grep -v rc | grep -v R | tail -n 1)
+#- name: set latest erlang version
+#  shell: asdf global erlang $(asdf list-all erlang | grep -v rc | grep -v R | tail -n 1)
 
-- name: check rebar
-  stat: path=~/.asdf/plugins/rebar
-  register: rebarresult
+#- name: check rebar
+#  stat: path=~/.asdf/plugins/rebar
+#  register: rebarresult
 
-- name: install rebar
-  shell: asdf plugin-add rebar https://github.com/Stratus3D/asdf-rebar.git
-  when: not rebarresult.stat.exists
+#- name: install rebar
+#  shell: asdf plugin-add rebar https://github.com/Stratus3D/asdf-rebar.git
+#  when: not rebarresult.stat.exists
 
-- name: install latest rebar
-  shell: asdf install rebar $(asdf list-all rebar | grep -v rc | tail -n 1)
+#- name: install latest rebar
+#  shell: asdf install rebar $(asdf list-all rebar | grep -v rc | tail -n 1)
 
-- name: set latest rebar version
-  shell: asdf global rebar $(asdf list-all rebar | grep -v rc | tail -n 1)
+#- name: set latest rebar version
+#  shell: asdf global rebar $(asdf list-all rebar | grep -v rc | tail -n 1)
 
 # ---------- elixir ----------
-- name: check elixir
-  stat: path=~/.asdf/plugins/elixir
-  register: elixirresult
+#- name: check elixir
+#  stat: path=~/.asdf/plugins/elixir
+#  register: elixirresult
 
-- name: install elixir
-  shell: asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
-  when: not elixirresult.stat.exists
+#- name: install elixir
+#  shell: asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+#  when: not elixirresult.stat.exists
 
-- name: install latest elixir
-  shell: asdf install elixir $(asdf list-all elixir | grep -v master | grep -v main | grep -v rc | grep -v otp | tail -n 1)
+#- name: install latest elixir
+#  shell: asdf install elixir $(asdf list-all elixir | grep -v master | grep -v main | grep -v rc | grep -v otp | tail -n 1)
 
-- name: set laster elixir version
-  shell: asdf global elixir $(asdf list-all elixir | grep -v master | grep -v main | grep -v rc | grep -v otp | tail -n 1)
+#- name: set laster elixir version
+#  shell: asdf global elixir $(asdf list-all elixir | grep -v master | grep -v main | grep -v rc | grep -v otp | tail -n 1)
 
 # ---------- ruby ----------
 - name: check ruby
@@ -124,19 +125,19 @@
 #  shell: asdf global nodejs $(asdf list-all nodejs | sort -r | head -n 1)
 
 # ---------- yarn ----------
-- name: check yarn
-  stat: path=~/.asdf/plugins/yarn
-  register: yarnresult
+#- name: check yarn
+#  stat: path=~/.asdf/plugins/yarn
+#  register: yarnresult
 
-- name: install yarn
-  shell: asdf plugin-add yarn https://github.com/twuni/asdf-yarn.git
-  when: not yarnresult.stat.exists
+#- name: install yarn
+#  shell: asdf plugin-add yarn https://github.com/twuni/asdf-yarn.git
+#  when: not yarnresult.stat.exists
 
-- name: install latest yarn
-  shell: asdf install yarn $(asdf list-all yarn | sort -r | head -n 1)
+#- name: install latest yarn
+#  shell: asdf install yarn $(asdf list-all yarn | sort -r | head -n 1)
 
-- name: set latest yarn version
-  shell: asdf global yarn $(asdf list-all yarn | sort -r | head -n 1)
+#- name: set latest yarn version
+#  shell: asdf global yarn $(asdf list-all yarn | sort -r | head -n 1)
 
 # ---------- python ----------
 #- name: check python
@@ -157,34 +158,34 @@
 #  shell: asdf global python $(asdf list-all python | grep "^3.*" | grep -v dev | sort -r | head -n 1) $(asdf list-all python | grep "^2.*" | grep -v dev | sort -r | head -n 1)
 
 # ---------- golang ----------
-- name: check golang
-  stat: path=~/.asdf/plugins/golang
-  register: golangresult
+#- name: check golang
+#  stat: path=~/.asdf/plugins/golang
+#  register: golangresult
 
-- name: install golang
-  shell: asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
-  when: not golangresult.stat.exists
+#- name: install golang
+#  shell: asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
+#  when: not golangresult.stat.exists
 
-- name: install latest golang
-  shell: asdf install golang $(asdf list-all golang | grep -v beta | grep -v rc | tail -n 1)
+#- name: install latest golang
+#  shell: asdf install golang $(asdf list-all golang | grep -v beta | grep -v rc | tail -n 1)
 
-- name: set latest golang version
-  shell: asdf global golang $(asdf list-all golang | grep -v beta | grep -v rc | tail -n 1)
+#- name: set latest golang version
+#  shell: asdf global golang $(asdf list-all golang | grep -v beta | grep -v rc | tail -n 1)
 
 # ---------- rust ----------
-- name: check rust
-  stat: path=~/.asdf/plugins/rust
-  register: rustresult
+#- name: check rust
+#  stat: path=~/.asdf/plugins/rust
+#  register: rustresult
 
-- name: install rust
-  shell: asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
-  when: not rustresult.stat.exists
+#- name: install rust
+#  shell: asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
+#  when: not rustresult.stat.exists
 
-- name: install latest rust
-  shell: asdf install rust $(asdf list-all rust | grep -v beta | grep -v stable | grep -v nightly | sort -r | head -n 1)
+#- name: install latest rust
+#  shell: asdf install rust $(asdf list-all rust | grep -v beta | grep -v stable | grep -v nightly | sort -r | head -n 1)
 
-- name: set latest rust version
-  shell: asdf global rust $(asdf list-all rust | grep -v beta | grep -v stable | grep -v nightly | sort -r | head -n 1)
+#- name: set latest rust version
+#  shell: asdf global rust $(asdf list-all rust | grep -v beta | grep -v stable | grep -v nightly | sort -r | head -n 1)
 
 # ---------- elm ----------
 #- name: check elm
@@ -202,16 +203,16 @@
 #  shell: asdf global elm $(asdf list-all elm | grep -v alpha | sort -r | head -n 1)
 
 # ---------- mysql ----------
-- name: check mysql
-  stat: path=~/.asdf/plugins/mysql
-  register: mysqlresult
+#- name: check mysql
+#  stat: path=~/.asdf/plugins/mysql
+#  register: mysqlresult
 
-- name: install mysql
-  shell: asdf plugin-add mysql https://github.com/iroddis/asdf-mysql.git
-  when: not mysqlresult.stat.exists
+#- name: install mysql
+#  shell: asdf plugin-add mysql https://github.com/iroddis/asdf-mysql.git
+#  when: not mysqlresult.stat.exists
 
-- name: install latest mysql
-  shell: asdf install mysql $(asdf list-all mysql | sort -r | head -n 1)
+#- name: install latest mysql
+#  shell: asdf install mysql $(asdf list-all mysql | sort -r | head -n 1)
 
-- name: set latest mysql version
-  shell: asdf global mysql $(asdf list-all mysql | sort -r | head -n 1)
+#- name: set latest mysql version
+#  shell: asdf global mysql $(asdf list-all mysql | sort -r | head -n 1)
