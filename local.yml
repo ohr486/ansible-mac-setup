@@ -3,15 +3,15 @@
   gather_facts: no
   become: no
   roles:
-    #- brew-cask
-    #- brew
-    #- alias
-    #- dotenv
-    #- java
+    - brew-cask
+    - brew
+    - alias
+    - dotenv
+    - java
     - asdf
-    #- k8s
-    #- font
-    #- zsh
+    - k8s
+    - font
+    - zsh
   vars:
     brew_repos:
       # for font
