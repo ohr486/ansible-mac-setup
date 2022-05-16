@@ -46,6 +46,7 @@
       - { name: awscli }
       - { name: s3cmd }
       - { name: aws-iam-authenticator }
+      - { name: kayac/tap/ecspresso }
       # for heroku
       #- { name: heroku }
       # for docker
