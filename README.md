@@ -34,6 +34,4 @@ $ ./setup.sh
 - AppleIDログイン
 - wifi設定
 - Xcodeインストール(Storeから)
-- mkdir ~/Git/github.com/ohr486
 - ln -s
-
