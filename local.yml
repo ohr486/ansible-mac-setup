@@ -19,7 +19,7 @@
       # for rsync
       #- homebrew/dupes
       # for avr
-      - osx-cross/homebrew-avr
+      #- osx-cross/homebrew-avr
       # for homebrew-services
       - homebrew/services
       # for php
