@@ -35,3 +35,4 @@ $ ./setup.sh
 - wifi設定
 - Xcodeインストール(Storeから)
 - ln -s
+
