@@ -36,3 +36,6 @@ $ ./setup.sh
 - Xcodeインストール(Storeから)
 - ln -s
 
+
+
+
