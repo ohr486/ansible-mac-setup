@@ -1,7 +1,8 @@
 ---
 #- lineinfile: dest=~/.bash_profile line='export HOMEBREW_GITHUB_API_TOKEN="{YOUR_API_TOKEN}"'
 - lineinfile: dest=~/.zshrc line='# for brew by ansible-mac-setup'
-- lineinfile: dest=~/.zshrc line='eval $(/opt/homebrew/bin/brew shellenv)'
+#- lineinfile: dest=~/.zshrc line='eval $(/opt/homebrew/bin/brew shellenv)'
+- lineinfile: dest=~/.zshrc line='eval $(/usr/local/bin/brew shellenv)'
 
 - name: check opt sym link
   stat: path=/usr/local/opt
