@@ -157,6 +157,8 @@
       # for bicycle
       - { name: garmin-express }
       - { name: zwift }
+      # for stream
+      - { name: loupedeck }
 
 # for font
   handlers:
