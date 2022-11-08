@@ -127,7 +127,7 @@
       - { name: evernote }
       - { name: dropbox }
       - { name: firefox }
-      - { name: google-chrome }
+      - { name: google-chrome, state: absent }
       - { name: slack }
       - { name: kindle }
       #- { name: android-file-transfer }
@@ -156,7 +156,7 @@
       - { name: discord }
       # for bicycle
       - { name: garmin-express }
-      - { name: zwift }
+      - { name: zwift, state: absent }
       # for stream
       - { name: loupedeck }
 
