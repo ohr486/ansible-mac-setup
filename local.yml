@@ -159,6 +159,7 @@
       - { name: zwift, state: absent }
       # for stream
       - { name: loupedeck }
+      - { name: obs }
 
 # for font
   handlers:
