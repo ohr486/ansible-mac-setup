@@ -157,6 +157,20 @@
 #- name: set latest python
 #  shell: asdf global python $(asdf list-all python | grep "^3.*" | grep -v dev | sort -r | head -n 1) $(asdf list-all python | grep "^2.*" | grep -v dev | sort -r | head -n 1)
 
+- name: check poetry
+  stat: path=~/.asdf/plugins/poetry
+  register: poetryresult
+
+- name: install poetry
+  shell: asdf plugin-add poetry https://github.com/asdf-community/asdf-poetry.git
+  when: not poetryresult.stat.exists
+
+- name: install latest poetry
+  shell: asdf install poetry $(asdf list-all poetry | grep -v rc | sort -r | head -n 1)
+
+- name: set latest poetry
+  shell: asdf global poetry $(asdf list-all poetry | grep -v rc | sort -r | head -n 1)
+
 # ---------- golang ----------
 #- name: check golang
 #  stat: path=~/.asdf/plugins/golang
