@@ -158,6 +158,9 @@
 - name: set latest python
   shell: asdf global python $(asdf list-all python | grep "^3.11.*" | grep -v dev | tail -n 1)
 
+- name: install latest anaconda
+  shell: asdf install python $(asdf list-all python | grep "^anaconda3" | tail -n 1)
+
 - name: check poetry
   stat: path=~/.asdf/plugins/poetry
   register: poetryresult
