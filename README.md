@@ -32,6 +32,8 @@ $ ./setup.sh
 
 ## mac setup 手順
 
+- 初回
+
 - AppleIDログイン
 - wifi設定
 - Xcodeインストール(Storeから)
