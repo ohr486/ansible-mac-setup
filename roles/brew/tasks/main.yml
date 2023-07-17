@@ -4,17 +4,17 @@
 #- lineinfile: dest=~/.zshrc line='eval $(/opt/homebrew/bin/brew shellenv)'
 - lineinfile: dest=~/.zshrc line='eval $(/usr/local/bin/brew shellenv)'
 
-- name: check opt sym link
-  stat: path=/usr/local/opt
-  register: optsymlink
+#- name: check opt sym link
+#  stat: path=/usr/local/opt
+#  register: optsymlink
 
-- name: create sym link
-  become: true
-  file:
-    src: /opt/homebrew/opt
-    dest: /usr/local/opt
-    state: link
-  when: not optsymlink.stat.exists
+#- name: create sym link
+#  become: true
+#  file:
+#    src: /opt/homebrew/opt
+#    dest: /usr/local/opt
+#    state: link
+#  when: not optsymlink.stat.exists
 
 - name: tap brew repositories
   homebrew_tap: tap={{ item }} state=present
