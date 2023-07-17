@@ -1,10 +1,15 @@
 ---
 
+# --- Dropbox ---
 - name: create Dropbox dir
   file: path=~/Dropbox state=directory mode=0755
 
 - name: create common-conf dir
   file: path=~/Dropbox/common-conf state=directory mode=0755
+
+# --- asdf ---
+- name: create asdf dir
+  file: path=~/.asdf state=directory mode=0755
 
 # --- bash ---
 - name: symbolic link for .bash_profile
@@ -65,7 +70,7 @@
     dest: ~/.vimrc
     state: link
 
-# --- asdf ---
+# --- asdf versions ---
 - name: symbolic link for .tool-versions
   file:
     src: ~/Dropbox/common-conf/tool-versions

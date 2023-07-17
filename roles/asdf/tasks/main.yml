@@ -10,10 +10,6 @@
 - lineinfile: dest=~/.zshrc line='source $ASDF_PREFIX/etc/bash_completion.d/asdf.bash'
 - lineinfile: dest=~/.zshrc line='poetry config virtualenvs.in-project true'
 
-# ---------- create asdf dir ----------
-- name: create asdf dir
-  file: path=~/.asdf state=directory mode=0755
-
 # ---------- update list ----------
 - name: update plugin-list
   shell: asdf plugin update --all

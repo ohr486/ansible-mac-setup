@@ -2,6 +2,9 @@
 
 # for alias by ansible-mac-setup
 
+# for vim
+alias vi='nvim'
+
 # for git
 alias g='cd $(ghq root)/$(ghq list | peco)'
 alias gl='open https://$(ghq list | peco | sed -e "s/:10022//g")'
@@ -13,6 +16,7 @@ alias be='bundle exec'
 
 # for docker
 alias dc='docker-compose'
+alias dce='docker-compose exec'
 
 # for k8s
 alias k='kubectl'
