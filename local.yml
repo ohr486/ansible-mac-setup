@@ -6,12 +6,12 @@
     - brew-cask
     - brew
     - alias
-    - dotenv
-    - java
-    - asdf
-    - k8s
-    - font
-    - zsh
+    #- dotenv
+    #- java
+    #- asdf
+    #- k8s
+    #- font
+    #- zsh
   vars:
     brew_repos:
       # for font
@@ -26,6 +26,8 @@
       #- homebrew/php
       # for heroku
       - heroku/brew
+      # for wxmac
+      - homebrew/core
     brew_packs:
       # for languages
       - { name: asdf }
@@ -38,15 +40,15 @@
       # for java compile
       #- { name: ant }
       # for compute
-      - { name: kubernetes-cli }
-      - { name: kube-ps1 }
-      - { name: kubectx }
-      - { name: stern }
+      #- { name: kubernetes-cli }
+      #- { name: kube-ps1 }
+      #- { name: kubectx }
+      #- { name: stern }
       # for aws
-      - { name: awscli }
-      - { name: s3cmd }
-      - { name: aws-iam-authenticator }
-      - { name: kayac/tap/ecspresso }
+      #- { name: awscli }
+      #- { name: s3cmd }
+      #- { name: aws-iam-authenticator }
+      #- { name: kayac/tap/ecspresso }
       # for heroku
       #- { name: heroku }
       # for docker
@@ -65,8 +67,8 @@
       - { name: fontforge }
       - { name: ricty }
       # for libs
-      - { name: openssl }
-      - { name: libffi }
+      #- { name: openssl }
+      #- { name: libffi }
       # for books
       #- { name: ghostscript }
       # for life
@@ -74,7 +76,7 @@
       - { name: jq }
       - { name: htop }
       #- { name: coreutils }
-      - { name: gnupg }
+      #- { name: gnupg }
       - { name: zsh }
       - { name: git }
       - { name: ghq }
@@ -86,7 +88,7 @@
       #- { name: pwgen }
       #- { name: p7zip }
       #- { name: hugo }
-      - { name: graphviz }
+      #- { name: graphviz }
       # for testing
       #- { name: selenium-server-standalone }
       #- { name: geckodriver }
@@ -99,16 +101,17 @@
       #- { name: dfu-programmer }
       #- { name: teensy_loader_cli }
       # for IoT
-      - { name: fwup }
-      - { name: squashfs }
-      - { name: coreutils }
-      - { name: xz }
-      - { name: pkg-config }
+      #- { name: fwup }
+      #- { name: squashfs }
+      #- { name: coreutils }
+      #- { name: xz }
+      #- { name: pkg-config }
     brew_cask_repos:
       # for java
       - homebrew/cask-versions
       # for health
-      - homebrew/cask-drivers
+      #- homebrew/cask-drivers
+      - homebrew/core
     brew_cask_packs:
       # for language
       #- { name: java }
@@ -121,19 +124,19 @@
       # for book
       #- { name: mactex }
       # for life
-      - { name: appcleaner }
-      - { name: daisydisk }
+      #- { name: appcleaner }
+      #- { name: daisydisk }
       - { name: iterm2 }
       - { name: evernote }
       - { name: dropbox }
-      - { name: firefox }
-      - { name: google-chrome, state: absent }
+      #- { name: firefox }
+      #- { name: google-chrome, state: absent }
       - { name: slack }
-      - { name: kindle }
+      #- { name: kindle }
       #- { name: android-file-transfer }
       #- { name: elmedia-player }
       #- { name: steam }
-      - { name: forticlient-vpn }
+      #- { name: forticlient-vpn }
       # for IDE
       - { name: jetbrains-toolbox }
       #- { name: arduino }
@@ -143,23 +146,23 @@
       #- { name: atom }
       #- { name: visual-studio-code }
       - { name: karabiner-elements }
-      - { name: dynalist }
+      #- { name: dynalist }
       # for Gaming
       - { name: unity-hub }
       #- { name: parsec }
       #- { name: zerotier-one }
       # for Design
-      - { name: adobe-creative-cloud }
+      #- { name: adobe-creative-cloud }
       # for meeting
       - { name: zoom }
       #- { name: bluejeans }
-      - { name: discord }
+      #- { name: discord }
       # for bicycle
-      - { name: garmin-express }
-      - { name: zwift, state: absent }
+      #- { name: garmin-express }
+      #- { name: zwift, state: absent }
       # for stream
-      - { name: loupedeck }
-      - { name: obs }
+      #- { name: loupedeck }
+      #- { name: obs }
 
 # for font
   handlers:
