@@ -98,14 +98,14 @@
     dest: ~/.netrc
     state: link
 
-# --- for IDE ---
+# --- IDE ---
 - name: symbolic link for .idea
   file:
     src: ~/Dropbox/common-conf/idea
     dest: ~/.idea
     state: link
 
-# --- for DigitalOcean ---
+# --- DigitalOcean ---
 - name: symbolic link for .tugboat
   file:
     src: ~/Dropbox/common-conf/tugboat
@@ -119,7 +119,7 @@
     dest: ~/.gnupg
     state: link
 
-# --- gnupg ---
+# --- aws ---
 - name: symbolic link for .aws
   file:
     src: ~/Dropbox/common-conf/dot-aws
