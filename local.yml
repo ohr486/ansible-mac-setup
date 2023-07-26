@@ -75,6 +75,7 @@
       - { name: neovim }
       - { name: jq }
       - { name: htop }
+      - { name: bpytop }
       #- { name: coreutils }
       #- { name: gnupg }
       - { name: zsh }
