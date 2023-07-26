@@ -7,7 +7,6 @@
     - brew
     - alias
     #- dotenv
-    #- java
     #- asdf
     #- k8s
     - font
@@ -39,11 +38,11 @@
       - { name: fop }
       # for java compile
       #- { name: ant }
-      # for compute
-      #- { name: kubernetes-cli }
-      #- { name: kube-ps1 }
-      #- { name: kubectx }
-      #- { name: stern }
+      # for k8s
+      - { name: kubernetes-cli }
+      - { name: kube-ps1 }
+      - { name: kubectx }
+      - { name: stern }
       # for aws
       #- { name: awscli }
       #- { name: s3cmd }
@@ -132,7 +131,7 @@
       #- { name: firefox }
       #- { name: google-chrome, state: absent }
       - { name: slack }
-      #- { name: kindle }
+      - { name: kindle }
       #- { name: android-file-transfer }
       #- { name: elmedia-player }
       #- { name: steam }

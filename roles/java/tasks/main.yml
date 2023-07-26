@@ -1,7 +1,0 @@
----
-- lineinfile: dest=~/.zshrc line='# for java by ansible-mac-setup'
-- lineinfile: dest=~/.zshrc line='export JAVA_HOME="$(/usr/libexec/java_home)"'
-
-- name: source ~/.zshrc
-  shell: source ~/.zshrc
-
