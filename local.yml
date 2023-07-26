@@ -51,8 +51,9 @@
       # for heroku
       #- { name: heroku }
       # for docker
-      #- { name: docker }
-      - { name: docker-compose }
+      #- { name: docker, state: absent }
+      #- { name: docker-completion, state: absent }
+      #- { name: docker-compose, state: absent }
       #- { name: unison }
       #- { name: fswatch }
       #- { name: rsync }
@@ -136,6 +137,7 @@
       #- { name: elmedia-player }
       #- { name: steam }
       #- { name: forticlient-vpn }
+      - { name: docker }
       # for IDE
       - { name: jetbrains-toolbox }
       #- { name: arduino }
@@ -151,7 +153,7 @@
       #- { name: parsec }
       #- { name: zerotier-one }
       # for Design
-      #- { name: adobe-creative-cloud }
+      - { name: adobe-creative-cloud }
       # for meeting
       - { name: zoom }
       #- { name: bluejeans }
