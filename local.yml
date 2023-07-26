@@ -6,11 +6,11 @@
     - brew-cask
     - brew
     - alias
-    #- dotenv
-    #- asdf
-    #- k8s
+    - dotenv
+    - asdf
+    - k8s
     - font
-    #- zsh
+    - zsh
   vars:
     brew_repos:
       # for font
@@ -44,7 +44,7 @@
       - { name: kubectx }
       - { name: stern }
       # for aws
-      #- { name: awscli }
+      - { name: awscli }
       #- { name: s3cmd }
       #- { name: aws-iam-authenticator }
       #- { name: kayac/tap/ecspresso }
@@ -82,11 +82,11 @@
       - { name: wget }
       - { name: peco }
       - { name: tree }
-      #- { name: fzf }
+      - { name: fzf }
       #- { name: openldap }
       #- { name: pwgen }
       #- { name: p7zip }
-      #- { name: hugo }
+      - { name: hugo }
       #- { name: graphviz }
       # for testing
       #- { name: selenium-server-standalone }
@@ -155,12 +155,12 @@
       # for meeting
       - { name: zoom }
       #- { name: bluejeans }
-      #- { name: discord }
+      - { name: discord }
       # for bicycle
       #- { name: garmin-express }
       #- { name: zwift, state: absent }
       # for stream
-      #- { name: loupedeck }
+      - { name: loupedeck }
       #- { name: obs }
 
 # for font
