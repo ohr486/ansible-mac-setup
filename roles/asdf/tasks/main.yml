@@ -17,11 +17,11 @@
 # ---------- terraform ----------
 - name: check terraform
   stat: path=~/.asdf/plugins/terraform
-  register: tfresult
+  register: tf_result
 
 - name: install terrafrom
   shell: asdf plugin-add terraform https://github.com/Banno/asdf-hashicorp.git
-  when: not tfresult.stat.exists
+  when: not tf_result.stat.exists
 
 - name: install latest terraform
   shell: asdf install terraform $(asdf list-all terraform | grep -v beta | grep -v rc | grep -v alpha | tail -n 1)
@@ -29,29 +29,14 @@
 - name: set latest terraform version
   shell: asdf global terraform $(asdf list-all terraform | grep -v beta | grep -v rc | grep -v alpha | tail -n 1)
 
-# ---------- packer ----------
-#- name: check packer
-#  stat: path=~/.asdf/plugins/packer
-#  register: pkresult
-
-#- name: install packer
-#  shell: asdf plugin-add packer https://github.com/Banno/asdf-hashicorp.git
-#  when: not pkresult.stat.exists
-
-#- name: install latest packer
-#  shell: asdf install packer $(asdf list-all packer | tail -n 1)
-
-#- name: set latest packer version
-#  shell: asdf global packer $(asdf list-all packer | tail -n 1)
-
 # ---------- erlang ----------
 - name: check erlang
   stat: path=~/.asdf/plugins/erlang
-  register: erlangresult
+  register: erlang_result
 
 - name: install erlang
   shell: asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
-  when: not erlangresult.stat.exists
+  when: not erlang_result.stat.exists
 
 - name: install latest erlang
   shell: asdf install erlang $(asdf list-all erlang | grep -v rc | grep -v R | tail -n 1)
@@ -61,11 +46,11 @@
 
 - name: check rebar
   stat: path=~/.asdf/plugins/rebar
-  register: rebarresult
+  register: rebar_result
 
 - name: install rebar
   shell: asdf plugin-add rebar https://github.com/Stratus3D/asdf-rebar.git
-  when: not rebarresult.stat.exists
+  when: not rebar_result.stat.exists
 
 - name: install latest rebar
   shell: asdf install rebar $(asdf list-all rebar | grep -v rc | tail -n 1)
@@ -76,11 +61,11 @@
 # ---------- elixir ----------
 - name: check elixir
   stat: path=~/.asdf/plugins/elixir
-  register: elixirresult
+  register: elixir_result
 
 - name: install elixir
   shell: asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
-  when: not elixirresult.stat.exists
+  when: not elixir_result.stat.exists
 
 - name: install latest elixir
   shell: asdf install elixir $(asdf list-all elixir | grep -v master | grep -v main | grep -v rc | grep -v otp | tail -n 1)
@@ -91,11 +76,11 @@
 # ---------- ruby ----------
 - name: check ruby
   stat: path=~/.asdf/plugins/ruby
-  register: rubyresult
+  register: ruby_result
 
 - name: install ruby
   shell: asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
-  when: not rubyresult.stat.exists
+  when: not ruby_result.stat.exists
 
 - name: install latest ruby
   shell: asdf install ruby $(asdf list-all ruby | grep "^\d.*" | grep -v dev | grep -v preview | grep -v rc | tail -n 1)
@@ -104,31 +89,27 @@
   shell: asdf global ruby $(asdf list-all ruby | grep "^\d.*" | grep -v dev | grep -v preview | grep -v rc | tail -n 1)
 
 # ---------- nodejs ----------
-#- name: check nodejs
-#  stat: path=~/.asdf/plugins/nodejs
-#  register: nodejsresult
+- name: check nodejs
+  stat: path=~/.asdf/plugins/nodejs
+  register: nodejs_result
 
-#- name: install nodejs
-#  shell: asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-#  when: not nodejsresult.stat.exists
+- name: install nodejs
+  shell: asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+  when: not nodejs_result.stat.exists
 
-#- name: import PGP
-#  shell: bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+- name: install latest nodejs
+  shell: asdf install nodejs $(asdf list-all nodejs | tail -n 1)
 
-#- name: install latest nodejs
-#  shell: asdf install nodejs $(asdf list-all nodejs | tail -n 1)
+- name: set latest nodejs version
+  shell: asdf global nodejs $(asdf list-all nodejs | tail -n 1)
 
-#- name: set latest nodejs version
-#  shell: asdf global nodejs $(asdf list-all nodejs | tail -n 1)
-
-# ---------- yarn ----------
 #- name: check yarn
 #  stat: path=~/.asdf/plugins/yarn
-#  register: yarnresult
+#  register: yarn_result
 
 #- name: install yarn
 #  shell: asdf plugin-add yarn https://github.com/twuni/asdf-yarn.git
-#  when: not yarnresult.stat.exists
+#  when: not yarn_result.stat.exists
 
 #- name: install latest yarn
 #  shell: asdf install yarn $(asdf list-all yarn | tail -n 1)
@@ -139,11 +120,11 @@
 # ---------- python ----------
 - name: check python
   stat: path=~/.asdf/plugins/python
-  register: pythonresult
+  register: python_result
 
 - name: install python
   shell: asdf plugin-add python https://github.com/danhper/asdf-python.git
-  when: not pythonresult.stat.exists
+  when: not python_result.stat.exists
 
 #- name: install latest python2
 #  shell: asdf install python $(asdf list-all python | grep "^2.*" | grep -v dev | tail -n 1)
@@ -159,11 +140,11 @@
 
 - name: check poetry
   stat: path=~/.asdf/plugins/poetry
-  register: poetryresult
+  register: poetry_result
 
 - name: install poetry
   shell: asdf plugin-add poetry https://github.com/asdf-community/asdf-poetry.git
-  when: not poetryresult.stat.exists
+  when: not poetry_result.stat.exists
 
 - name: install latest poetry
   shell: asdf install poetry $(asdf list-all poetry | grep -v rc | tail -n 1)
@@ -174,11 +155,11 @@
 # ---------- golang ----------
 - name: check golang
   stat: path=~/.asdf/plugins/golang
-  register: golangresult
+  register: golang_result
 
 - name: install golang
   shell: asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
-  when: not golangresult.stat.exists
+  when: not golang_result.stat.exists
 
 - name: install latest golang
   shell: asdf install golang $(asdf list-all golang | grep -v beta | grep -v rc | tail -n 1)
@@ -189,11 +170,11 @@
 # ---------- rust ----------
 - name: check rust
   stat: path=~/.asdf/plugins/rust
-  register: rustresult
+  register: rust_result
 
 - name: install rust
   shell: asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
-  when: not rustresult.stat.exists
+  when: not rust_result.stat.exists
 
 - name: install latest rust
   shell: asdf install rust $(asdf list-all rust | grep -v beta | grep -v stable | grep -v nightly | tail -n 1)
@@ -204,11 +185,11 @@
 # ---------- java ----------
 - name: check java
   stat: path=~/.asdf/plugins/java
-  register: javaresult
+  register: java_result
 
 - name: install java
   shell: asdf plugin-add java https://github.com/halcyon/asdf-java.git
-  when: not javaresult.stat.exists
+  when: not java_result.stat.exists
 
 - name: install latest openjdk
   shell: asdf install java $(asdf list-all java | grep openjdk | tail -n 1)
@@ -216,14 +197,44 @@
 - name: set latest java version
   shell: asdf global java $(asdf list-all java | grep openjdk | tail -n 1)
 
+# ---------- minikube ----------
+- name: check minikube
+  stat: path=~/.asdf/plugins/minikube
+  register: minikube_result
+
+- name: install minikube
+  shell: asdf plugin-add minikube https://github.com/alvarobp/asdf-minikube.git
+  when: not minikube_result.stat.exists
+
+- name: install latest minikube
+  shell: asdf install minikube $(asdf list-all minikube | grep -v beta | tail -n 1)
+
+- name: set latest minikube version
+  shell: asdf global minikube $(asdf list-all minikube | grep -v beta | tail -n 1)
+
+# ---------- packer ----------
+#- name: check packer
+#  stat: path=~/.asdf/plugins/packer
+#  register: pk_result
+
+#- name: install packer
+#  shell: asdf plugin-add packer https://github.com/Banno/asdf-hashicorp.git
+#  when: not pk_result.stat.exists
+
+#- name: install latest packer
+#  shell: asdf install packer $(asdf list-all packer | tail -n 1)
+
+#- name: set latest packer version
+#  shell: asdf global packer $(asdf list-all packer | tail -n 1)
+
 # ---------- elm ----------
 #- name: check elm
 #  stat: path=~/.asdf/plugins/elm
-#  register: elmresult
+#  register: elm_result
 
 #- name: install elm
 #  shell: asdf plugin-add elm https://github.com/asdf-community/asdf-elm.git
-#  when: not elmresult.stat.exists
+#  when: not elm_result.stat.exists
 
 #- name: install latest elm
 #  shell: asdf install elm $(asdf list-all elm | grep -v alpha | tail -n 1)
@@ -234,14 +245,15 @@
 # ---------- mysql ----------
 #- name: check mysql
 #  stat: path=~/.asdf/plugins/mysql
-#  register: mysqlresult
+#  register: mysql_result
 
 #- name: install mysql
 #  shell: asdf plugin-add mysql https://github.com/iroddis/asdf-mysql.git
-#  when: not mysqlresult.stat.exists
+#  when: not mysql_result.stat.exists
 
 #- name: install latest mysql
 #  shell: asdf install mysql $(asdf list-all mysql | tail -n 1)
 
 #- name: set latest mysql version
 #  shell: asdf global mysql $(asdf list-all mysql | tail -n 1)
+
