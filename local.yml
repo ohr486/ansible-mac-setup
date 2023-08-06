@@ -41,8 +41,8 @@
       # for k8s
       - { name: kubernetes-cli }
       - { name: kube-ps1 }
-      - { name: kubectx }
-      - { name: stern }
+      - { name: kubectx, state: absent }
+      - { name: stern, state: absent }
       # for aws
       - { name: awscli, state: absent }
       - { name: s3cmd, state: absent }

@@ -29,7 +29,7 @@
 - name: set latest gcloud version
   shell: asdf global gcloud $(asdf list-all gcloud | tail -n 1)
 
-# ---------- aws ----------
+# ---------- awscli ----------
 - name: check awscli
   stat: path=~/.asdf/plugins/awscli
   register: awscli_result
@@ -44,6 +44,7 @@
 - name: set latest awscli version
   shell: asdf global awscli $(asdf list-all awscli | tail -n 1)
 
+# ---------- aws-iam-authenticator ----------
 - name: check aws-iam-authenticator
   stat: path=~/.asdf/plugins/aws-iam-authenticator
   register: aws_iam_auth_result
@@ -240,6 +241,22 @@
 
 - name: set latest java version
   shell: asdf global java $(asdf list-all java | grep openjdk | tail -n 1)
+
+# ---------- kubectx ----------
+
+- name: check kubectx
+  stat: path=~/.asdf/plugins/kubectx
+  register: kubectx_result
+
+- name: install kubectx
+  shell: asdf plugin-add kubectx
+  when: not kubectx_result.stat.exists
+
+- name: install latest kubectx
+  shell: asdf install kubectx $(asdf list-all kubectx | tail -n 1)
+
+- name: set latest kubectx version
+  shell: asdf global kubectx $(asdf list-all kubectx | tail -n 1)
 
 # ---------- minikube ----------
 - name: check minikube
