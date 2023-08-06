@@ -14,6 +14,50 @@
 - name: update plugin-list
   shell: asdf plugin update --all
 
+# ---------- gcloud ----------
+- name: check gcloud
+  stat: path=~/.asdf/plugins/gcloud
+  register: gcloud_result
+
+- name: install gcloud
+  shell: asdf plugin-add gcloud https://github.com/jthegedus/asdf-gcloud.git
+  when: not gcloud_result.stat.exists
+
+- name: install latest gcloud
+  shell: asdf install gcloud $(asdf list-all gcloud | tail -n 1)
+
+- name: set latest gcloud version
+  shell: asdf global gcloud $(asdf list-all gcloud | tail -n 1)
+
+# ---------- aws ----------
+- name: check awscli
+  stat: path=~/.asdf/plugins/awscli
+  register: awscli_result
+
+- name: install awscli
+  shell: asdf plugin-add awscli https://github.com/MetricMike/asdf-awscli.git
+  when: not awscli_result.stat.exists
+
+- name: install latest awscli
+  shell: asdf install awscli $(asdf list-all awscli | tail -n 1)
+
+- name: set latest awscli version
+  shell: asdf global awscli $(asdf list-all awscli | tail -n 1)
+
+- name: check aws-iam-authenticator
+  stat: path=~/.asdf/plugins/aws-iam-authenticator
+  register: aws_iam_auth_result
+
+- name: install aws-iam-authenticator
+  shell: asdf plugin-add aws-iam-authenticator https://github.com/zekker6/asdf-aws-iam-authenticator
+  when: not aws_iam_auth_result.stat.exists
+
+- name: install latest aws-iam-authenticator
+  shell: asdf install aws-iam-authenticator $(asdf list-all aws-iam-authenticator | grep -v alpha | tail -n 1)
+
+- name: set latest aws-iam-authenticator version
+  shell: asdf global aws-iam-authenticator $(asdf list-all aws-iam-authenticator | grep -v alpha | tail -n 1)
+
 # ---------- terraform ----------
 - name: check terraform
   stat: path=~/.asdf/plugins/terraform
