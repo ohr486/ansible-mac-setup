@@ -43,6 +43,7 @@
       - { name: kube-ps1 }
       - { name: kubectx, state: absent }
       - { name: stern, state: absent }
+      - { name: cfssl } # for k8s-the-hard-way
       # for aws
       - { name: awscli, state: absent }
       - { name: s3cmd, state: absent }
@@ -72,9 +73,10 @@
       # for books
       #- { name: ghostscript }
       # for life
+      - { name: tmux }
       - { name: neovim }
       - { name: jq }
-      - { name: htop }
+      - { name: htop, state: absent }
       - { name: bpytop }
       #- { name: coreutils }
       #- { name: gnupg }
