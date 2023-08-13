@@ -29,13 +29,14 @@
       - homebrew/core
     brew_packs:
       # for languages
-      - { name: asdf }
+      - { name: asdf, state: latest }
       #- { name: v8 }
       #- { name: gauche }
       #- { name: composer }
       # for erlang compile
       - { name: wxmac }
       - { name: fop }
+      - { name: unixodbc, state: latest }
       # for java compile
       #- { name: ant }
       # for k8s
@@ -129,43 +130,43 @@
       # for life
       #- { name: appcleaner }
       #- { name: daisydisk }
-      - { name: iterm2 }
-      - { name: evernote }
-      - { name: dropbox }
+      - { name: iterm2, state: latest }
+      - { name: evernote, state: latest }
+      - { name: dropbox, state: latest }
       #- { name: firefox }
       #- { name: google-chrome, state: absent }
-      - { name: slack }
-      - { name: kindle }
+      - { name: slack, state: latest }
+      - { name: kindle, state: latest }
       #- { name: android-file-transfer }
       #- { name: elmedia-player }
       #- { name: steam }
       #- { name: forticlient-vpn }
-      - { name: docker }
+      - { name: docker, state: latest }
       # for IDE
-      - { name: jetbrains-toolbox }
+      - { name: jetbrains-toolbox, state: latest }
       #- { name: arduino }
       #- { name: thonny }
       # for writing
       #- { name: mactex }
       #- { name: atom }
       #- { name: visual-studio-code }
-      - { name: karabiner-elements }
+      - { name: karabiner-elements, state: latest }
       #- { name: dynalist }
       # for Gaming
-      - { name: unity-hub }
+      - { name: unity-hub, state: latest }
       #- { name: parsec }
       #- { name: zerotier-one }
       # for Design
-      - { name: adobe-creative-cloud }
+      - { name: adobe-creative-cloud, state: latest }
       # for meeting
-      - { name: zoom }
+      - { name: zoom, state: latest }
       #- { name: bluejeans }
-      - { name: discord }
+      - { name: discord, state: latest }
       # for bicycle
       #- { name: garmin-express }
       #- { name: zwift, state: absent }
       # for stream
-      - { name: loupedeck }
+      - { name: loupedeck, state: latest }
       #- { name: obs }
 
 # for font
