@@ -78,7 +78,7 @@
       - { name: neovim }
       - { name: jq }
       - { name: htop, state: absent }
-      - { name: bpytop }
+      - { name: bpytop, state: latest }
       #- { name: coreutils }
       #- { name: gnupg }
       - { name: zsh }
@@ -91,7 +91,7 @@
       #- { name: openldap }
       #- { name: pwgen }
       #- { name: p7zip }
-      - { name: hugo }
+      - { name: hugo, state: latest }
       #- { name: graphviz }
       # for testing
       #- { name: selenium-server-standalone }
