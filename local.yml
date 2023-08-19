@@ -30,6 +30,7 @@
     brew_packs:
       # for languages
       - { name: asdf, state: latest }
+      - { name: gpg, state: latest }
       #- { name: v8 }
       #- { name: gauche }
       #- { name: composer }
