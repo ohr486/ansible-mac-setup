@@ -133,6 +133,7 @@
       #- { name: daisydisk }
       - { name: iterm2, state: latest }
       - { name: evernote, state: latest }
+      - { name: notion, state: latest }
       - { name: dropbox, state: latest }
       #- { name: firefox }
       #- { name: google-chrome, state: absent }
