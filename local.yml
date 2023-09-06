@@ -150,7 +150,6 @@
       #- { name: thonny }
       # for writing
       #- { name: mactex }
-      #- { name: atom }
       #- { name: visual-studio-code }
       - { name: karabiner-elements, state: latest }
       - { name: dynalist }
