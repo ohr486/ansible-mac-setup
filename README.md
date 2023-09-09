@@ -1,4 +1,3 @@
-
 # ansible-mac-setup
 
 one click setup script for MacOS
