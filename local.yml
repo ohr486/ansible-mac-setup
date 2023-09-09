@@ -142,7 +142,7 @@
       #- { name: android-file-transfer }
       #- { name: elmedia-player }
       #- { name: steam }
-      #- { name: forticlient-vpn }
+      - { name: forticlient-vpn, state: absent }
       - { name: docker, state: latest }
       # for IDE
       - { name: jetbrains-toolbox, state: latest }
