@@ -159,6 +159,7 @@
       #- { name: zerotier-one }
       # for Design
       - { name: adobe-creative-cloud, state: latest }
+      - { name: figma }
       # for meeting
       - { name: zoom, state: latest }
       #- { name: bluejeans }
