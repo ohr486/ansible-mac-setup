@@ -26,7 +26,7 @@
       # for heroku
       - heroku/brew
       # for wxmac
-      - homebrew/core
+      #- homebrew/core
     brew_packs:
       # for languages
       - { name: asdf, state: latest }
@@ -116,7 +116,7 @@
       - homebrew/cask-versions
       # for health
       #- homebrew/cask-drivers
-      - homebrew/core
+      #- homebrew/core
     brew_cask_packs:
       # for language
       #- { name: java }
@@ -170,6 +170,7 @@
       # for stream
       - { name: loupedeck, state: latest }
       #- { name: obs }
+      - { name: microsoft-remote-desktop }
 
 # for font
   handlers:
