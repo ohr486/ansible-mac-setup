@@ -30,12 +30,14 @@
     brew_packs:
       # for languages
       - { name: asdf, state: latest }
+      - { name: roswell, state: latest }
       - { name: gpg, state: latest }
       #- { name: v8 }
       #- { name: gauche }
       #- { name: composer }
       # for erlang compile
-      - { name: wxmac }
+      - { name: wxmac, state: absent }
+      - { name: wxwidgets } # rename from wxmac
       - { name: fop }
       - { name: unixodbc, state: latest }
       # for java compile
@@ -67,7 +69,7 @@
       #- { name: kafka }
       #- { name: embulk }
       # for font
-      - { name: fontforge }
+      - { name: fontforge, state: absent } # move to cask
       - { name: ricty }
       # for libs
       #- { name: openssl }
@@ -171,6 +173,8 @@
       - { name: loupedeck, state: latest }
       #- { name: obs }
       - { name: microsoft-remote-desktop }
+      # for font
+      - { name: fontforge }
 
 # for font
   handlers:

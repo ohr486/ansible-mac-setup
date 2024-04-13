@@ -242,6 +242,22 @@
 - name: set latest java version
   shell: asdf global java $(asdf list-all java | grep openjdk | tail -n 1)
 
+# ---------- gauche ----------
+
+- name: check gauche
+  stat: path=~/.asdf/plugins/gauche
+  register: gauche_result
+
+- name: install gauche
+  shell: asdf plugin-add gauche
+  when: not gauche_result.stat.exists
+
+- name: install latest gauche
+  shell: asdf install gauche $(asdf list-all gauche | tail -n 1)
+
+- name: set latest gauche version
+  shell: asdf global gauche $(asdf list-all gauche | tail -n 1)
+
 # ---------- kubectx ----------
 
 - name: check kubectx
