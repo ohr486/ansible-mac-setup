@@ -175,10 +175,10 @@
 #  shell: asdf install python $(asdf list-all python | grep "^2.*" | grep -v dev | tail -n 1)
 
 - name: install latest python3
-  shell: asdf install python $(asdf list-all python | grep "^3.11.*" | grep -v dev | tail -n 1)
+  shell: asdf install python $(asdf list-all python | grep "^3.12.*" | grep -v dev | tail -n 1)
 
 - name: set latest python
-  shell: asdf global python $(asdf list-all python | grep "^3.11.*" | grep -v dev | tail -n 1)
+  shell: asdf global python $(asdf list-all python | grep "^3.12.*" | grep -v dev | tail -n 1)
 
 #- name: install latest anaconda
 #  shell: asdf install python $(asdf list-all python | grep "^anaconda3" | tail -n 1)
