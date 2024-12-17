@@ -140,7 +140,7 @@
       #- { name: firefox }
       #- { name: google-chrome, state: absent }
       - { name: slack, state: latest }
-      - { name: kindle, state: latest }
+      - { name: kindle, state: absent }
       #- { name: android-file-transfer }
       #- { name: elmedia-player }
       #- { name: steam }
@@ -157,6 +157,7 @@
       - { name: dynalist }
       # for Gaming
       - { name: unity-hub, state: latest }
+      - { name: godot, state: latest }
       #- { name: parsec }
       #- { name: zerotier-one }
       # for Design
