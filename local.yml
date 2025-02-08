@@ -36,7 +36,7 @@
       #- { name: gauche }
       #- { name: composer }
       # for erlang compile
-      - { name: wxmac, state: absent }
+      # - { name: wxmac, state: absent }
       - { name: wxwidgets } # rename from wxmac
       - { name: fop }
       - { name: unixodbc, state: latest }
