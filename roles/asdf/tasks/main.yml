@@ -30,7 +30,7 @@
   shell: asdf install gcloud $(asdf list all gcloud | grep -v '^$' | tail -n 1)
 
 - name: set latest gcloud version
-  shell: asdf global gcloud $(asdf list all gcloud | grep -v '^$' | tail -n 1)
+  shell: asdf set --home gcloud $(asdf list all gcloud | grep -v '^$' | tail -n 1)
 
 # ---------- awscli ----------
 - name: check awscli
@@ -45,7 +45,7 @@
   shell: asdf install awscli $(asdf list all awscli | grep -v '^$' | tail -n 1)
 
 - name: set latest awscli version
-  shell: asdf global awscli $(asdf list all awscli | grep -v '^$' | tail -n 1)
+  shell: asdf set --home awscli $(asdf list all awscli | grep -v '^$' | tail -n 1)
 
 # ---------- aws-iam-authenticator ----------
 - name: check aws-iam-authenticator
@@ -60,7 +60,7 @@
   shell: asdf install aws-iam-authenticator $(asdf list all aws-iam-authenticator | grep -v alpha | grep -v '^$' | tail -n 1)
 
 - name: set latest aws-iam-authenticator version
-  shell: asdf global aws-iam-authenticator $(asdf list all aws-iam-authenticator | grep -v alpha | grep -v '^$' | tail -n 1)
+  shell: asdf set --home aws-iam-authenticator $(asdf list all aws-iam-authenticator | grep -v alpha | grep -v '^$' | tail -n 1)
 
 # ---------- terraform ----------
 - name: check terraform
@@ -75,7 +75,7 @@
   shell: asdf install terraform $(asdf list all terraform | grep -v beta | grep -v rc | grep -v alpha | grep -v '^$' | tail -n 1)
 
 - name: set latest terraform version
-  shell: asdf global terraform $(asdf list all terraform | grep -v beta | grep -v rc | grep -v alpha | grep -v '^$' | tail -n 1)
+  shell: asdf set --home terraform $(asdf list all terraform | grep -v beta | grep -v rc | grep -v alpha | grep -v '^$' | tail -n 1)
 
 # ---------- erlang ----------
 - name: check erlang
@@ -90,7 +90,7 @@
   shell: asdf install erlang $(asdf list all erlang | grep -v rc | grep -v R | grep -v '^$' | tail -n 1)
 
 - name: set latest erlang version
-  shell: asdf global erlang $(asdf list all erlang | grep -v rc | grep -v R | grep -v '^$' | tail -n 1)
+  shell: asdf set --home erlang $(asdf list all erlang | grep -v rc | grep -v R | grep -v '^$' | tail -n 1)
 
 - name: check rebar
   stat: path=~/.asdf/plugins/rebar
@@ -104,7 +104,7 @@
   shell: asdf install rebar $(asdf list all rebar | grep -v rc | grep -v '^$' | tail -n 1)
 
 - name: set latest rebar version
-  shell: asdf global rebar $(asdf list all rebar | grep -v rc | grep -v '^$' | tail -n 1)
+  shell: asdf set --home rebar $(asdf list all rebar | grep -v rc | grep -v '^$' | tail -n 1)
 
 # ---------- elixir ----------
 - name: check elixir
@@ -119,7 +119,7 @@
   shell: asdf install elixir $(asdf list all elixir | grep -v master | grep -v main | grep -v rc | grep -v otp | grep -v '^$' | tail -n 1)
 
 - name: set laster elixir version
-  shell: asdf global elixir $(asdf list all elixir | grep -v master | grep -v main | grep -v rc | grep -v otp | grep -v '^$' | tail -n 1)
+  shell: asdf set --home elixir $(asdf list all elixir | grep -v master | grep -v main | grep -v rc | grep -v otp | grep -v '^$' | tail -n 1)
 
 # ---------- ruby ----------
 - name: check ruby
@@ -134,7 +134,7 @@
   shell: asdf install ruby $(asdf list all ruby | grep "^\d.*" | grep -v dev | grep -v preview | grep -v rc | grep -v '^$' | tail -n 1)
 
 - name: set latest ruby version
-  shell: asdf global ruby $(asdf list all ruby | grep "^\d.*" | grep -v dev | grep -v preview | grep -v rc | grep -v '^$' | tail -n 1)
+  shell: asdf set --home ruby $(asdf list all ruby | grep "^\d.*" | grep -v dev | grep -v preview | grep -v rc | grep -v '^$' | tail -n 1)
 
 # ---------- nodejs ----------
 - name: check nodejs
@@ -149,7 +149,7 @@
   shell: asdf install nodejs $(asdf list all nodejs | grep -v '^$' | tail -n 1)
 
 - name: set latest nodejs version
-  shell: asdf global nodejs $(asdf list all nodejs | grep -v '^$' | tail -n 1)
+  shell: asdf set --home nodejs $(asdf list all nodejs | grep -v '^$' | tail -n 1)
 
 - name: check yarn
   stat: path=~/.asdf/plugins/yarn
@@ -163,7 +163,7 @@
   shell: asdf install yarn $(asdf list all yarn | grep -v '^$' | tail -n 1)
 
 - name: set latest yarn version
-  shell: asdf global yarn $(asdf list all yarn | grep -v '^$' | tail -n 1)
+  shell: asdf set --home yarn $(asdf list all yarn | grep -v '^$' | tail -n 1)
 
 # ---------- python ----------
 - name: check python
@@ -181,7 +181,7 @@
   shell: asdf install python $(asdf list all python | grep "^3.12.*" | grep -v dev | grep -v '^$' | tail -n 1)
 
 - name: set latest python
-  shell: asdf global python $(asdf list all python | grep "^3.12.*" | grep -v dev | grep -v '^$' | tail -n 1)
+  shell: asdf set --home python $(asdf list all python | grep "^3.12.*" | grep -v dev | grep -v '^$' | tail -n 1)
 
 #- name: install latest anaconda
 #  shell: asdf install python $(asdf list all python | grep "^anaconda3" | grep -v '^$' | tail -n 1)
@@ -198,7 +198,7 @@
   shell: asdf install poetry $(asdf list all poetry | grep -v rc | grep -v '^$' | tail -n 1)
 
 - name: set latest poetry
-  shell: asdf global poetry $(asdf list all poetry | grep -v rc | grep -v '^$' | tail -n 1)
+  shell: asdf set --home poetry $(asdf list all poetry | grep -v rc | grep -v '^$' | tail -n 1)
 
 # ---------- golang ----------
 - name: check golang
@@ -213,7 +213,7 @@
   shell: asdf install golang $(asdf list all golang | grep -v beta | grep -v rc | grep -v '^$' | tail -n 1)
 
 - name: set latest golang version
-  shell: asdf global golang $(asdf list all golang | grep -v beta | grep -v rc | grep -v '^$' | tail -n 1)
+  shell: asdf set --home golang $(asdf list all golang | grep -v beta | grep -v rc | grep -v '^$' | tail -n 1)
 
 # ---------- rust ----------
 - name: check rust
@@ -228,7 +228,7 @@
   shell: asdf install rust $(asdf list all rust | grep -v beta | grep -v stable | grep -v nightly | grep -v '^$' | tail -n 1)
 
 - name: set latest rust version
-  shell: asdf global rust $(asdf list all rust | grep -v beta | grep -v stable | grep -v nightly | grep -v '^$' | tail -n 1)
+  shell: asdf set --home rust $(asdf list all rust | grep -v beta | grep -v stable | grep -v nightly | grep -v '^$' | tail -n 1)
 
 # ---------- java ----------
 - name: check java
@@ -243,7 +243,7 @@
   shell: asdf install java $(asdf list all java | grep openjdk | grep -v '^$' | tail -n 1)
 
 - name: set latest java version
-  shell: asdf global java $(asdf list all java | grep openjdk | grep -v '^$' | tail -n 1)
+  shell: asdf set --home java $(asdf list all java | grep openjdk | grep -v '^$' | tail -n 1)
 
 # ---------- gauche ----------
 
@@ -259,7 +259,7 @@
   shell: asdf install gauche $(asdf list all gauche | grep -v '^$' | tail -n 1)
 
 - name: set latest gauche version
-  shell: asdf global gauche $(asdf list all gauche | grep -v '^$' | tail -n 1)
+  shell: asdf set --home gauche $(asdf list all gauche | grep -v '^$' | tail -n 1)
 
 # ---------- kubectx ----------
 
@@ -275,7 +275,7 @@
   shell: asdf install kubectx $(asdf list all kubectx | grep -v '^$' | tail -n 1)
 
 - name: set latest kubectx version
-  shell: asdf global kubectx $(asdf list all kubectx | grep -v '^$' | tail -n 1)
+  shell: asdf set --home kubectx $(asdf list all kubectx | grep -v '^$' | tail -n 1)
 
 # ---------- minikube ----------
 - name: check minikube
@@ -290,7 +290,7 @@
   shell: asdf install minikube $(asdf list all minikube | grep -v beta | grep -v '^$' | tail -n 1)
 
 - name: set latest minikube version
-  shell: asdf global minikube $(asdf list all minikube | grep -v beta | grep -v '^$' | tail -n 1)
+  shell: asdf set --home minikube $(asdf list all minikube | grep -v beta | grep -v '^$' | tail -n 1)
 
 # ---------- packer ----------
 #- name: check packer
@@ -305,7 +305,7 @@
 #  shell: asdf install packer $(asdf list all packer | grep -v '^$' | tail -n 1)
 
 #- name: set latest packer version
-#  shell: asdf global packer $(asdf list all packer | grep -v '^$' | tail -n 1)
+#  shell: asdf set --home packer $(asdf list all packer | grep -v '^$' | tail -n 1)
 
 # ---------- elm ----------
 #- name: check elm
@@ -320,7 +320,7 @@
 #  shell: asdf install elm $(asdf list all elm | grep -v alpha | grep -v '^$' | tail -n 1)
 
 #- name: set latest elm version
-#  shell: asdf global elm $(asdf list all elm | grep -v alpha | grep -v '^$' | tail -n 1)
+#  shell: asdf set --home elm $(asdf list all elm | grep -v alpha | grep -v '^$' | tail -n 1)
 
 # ---------- mysql ----------
 #- name: check mysql
@@ -335,5 +335,5 @@
 #  shell: asdf install mysql $(asdf list all mysql | grep -v '^$' | tail -n 1)
 
 #- name: set latest mysql version
-#  shell: asdf global mysql $(asdf list all mysql | grep -v '^$' | tail -n 1)
+#  shell: asdf set --home mysql $(asdf list all mysql | grep -v '^$' | tail -n 1)
 
