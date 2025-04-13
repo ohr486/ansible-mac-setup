@@ -148,11 +148,14 @@
       - { name: docker, state: latest }
       # for IDE
       - { name: jetbrains-toolbox, state: latest }
+      - { name: visual-studio-code, state: latest }
+      - { name: visual-studio, state: latest }
+      - { name: cursor, state: latest }
+      - { name: windsurf, state: latest }
       #- { name: arduino }
       #- { name: thonny }
       # for writing
       #- { name: mactex }
-      #- { name: visual-studio-code }
       - { name: karabiner-elements, state: latest }
       - { name: dynalist }
       # for Gaming
