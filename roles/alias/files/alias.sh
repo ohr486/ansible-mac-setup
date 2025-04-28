@@ -16,9 +16,9 @@ alias git-office-setup='git config user.name "ohara_tsunenori" && git config use
 alias be='bundle exec'
 
 # for docker
-alias dc='docker-compose'
-alias dce='docker-compose exec'
-alias dcr='docker-compose run --rm'
+alias dc='docker compose'
+alias dce='docker compose exec'
+alias dcr='docker compose run --rm'
 
 # for k8s
 alias k='kubectl'
