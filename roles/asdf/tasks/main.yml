@@ -23,7 +23,7 @@
   register: gcloud_result
 
 - name: install gcloud
-  shell: asdf plugin-add gcloud https://github.com/jthegedus/asdf-gcloud.git
+  shell: asdf plugin add gcloud https://github.com/jthegedus/asdf-gcloud.git
   when: not gcloud_result.stat.exists
 
 - name: install latest gcloud
@@ -38,7 +38,7 @@
   register: awscli_result
 
 - name: install awscli
-  shell: asdf plugin-add awscli https://github.com/MetricMike/asdf-awscli.git
+  shell: asdf plugin add awscli https://github.com/MetricMike/asdf-awscli.git
   when: not awscli_result.stat.exists
 
 - name: install latest awscli
@@ -53,7 +53,7 @@
   register: aws_iam_auth_result
 
 - name: install aws-iam-authenticator
-  shell: asdf plugin-add aws-iam-authenticator https://github.com/zekker6/asdf-aws-iam-authenticator
+  shell: asdf plugin add aws-iam-authenticator https://github.com/zekker6/asdf-aws-iam-authenticator
   when: not aws_iam_auth_result.stat.exists
 
 - name: install latest aws-iam-authenticator
@@ -68,7 +68,7 @@
   register: tf_result
 
 - name: install terrafrom
-  shell: asdf plugin-add terraform https://github.com/Banno/asdf-hashicorp.git
+  shell: asdf plugin add terraform https://github.com/Banno/asdf-hashicorp.git
   when: not tf_result.stat.exists
 
 - name: install latest terraform
@@ -83,7 +83,7 @@
   register: erlang_result
 
 - name: install erlang
-  shell: asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
+  shell: asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
   when: not erlang_result.stat.exists
 
 - name: install latest erlang
@@ -97,7 +97,7 @@
   register: rebar_result
 
 - name: install rebar
-  shell: asdf plugin-add rebar https://github.com/Stratus3D/asdf-rebar.git
+  shell: asdf plugin add rebar https://github.com/Stratus3D/asdf-rebar.git
   when: not rebar_result.stat.exists
 
 - name: install latest rebar
@@ -112,7 +112,7 @@
   register: elixir_result
 
 - name: install elixir
-  shell: asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+  shell: asdf plugin add elixir https://github.com/asdf-vm/asdf-elixir.git
   when: not elixir_result.stat.exists
 
 - name: install latest elixir
@@ -127,7 +127,7 @@
   register: ruby_result
 
 - name: install ruby
-  shell: asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
+  shell: asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
   when: not ruby_result.stat.exists
 
 - name: install latest ruby
@@ -142,7 +142,7 @@
   register: nodejs_result
 
 - name: install nodejs
-  shell: asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+  shell: asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
   when: not nodejs_result.stat.exists
 
 - name: install latest nodejs
@@ -156,7 +156,7 @@
   register: yarn_result
 
 - name: install yarn
-  shell: asdf plugin-add yarn https://github.com/twuni/asdf-yarn.git
+  shell: asdf plugin add yarn https://github.com/twuni/asdf-yarn.git
   when: not yarn_result.stat.exists
 
 - name: install latest yarn
@@ -171,7 +171,7 @@
   register: python_result
 
 - name: install python
-  shell: asdf plugin-add python https://github.com/danhper/asdf-python.git
+  shell: asdf plugin add python https://github.com/asdf-community/asdf-python.git
   when: not python_result.stat.exists
 
 #- name: install latest python2
@@ -191,7 +191,7 @@
   register: poetry_result
 
 - name: install poetry
-  shell: asdf plugin-add poetry https://github.com/asdf-community/asdf-poetry.git
+  shell: asdf plugin add poetry https://github.com/asdf-community/asdf-poetry.git
   when: not poetry_result.stat.exists
 
 - name: install latest poetry
@@ -206,7 +206,7 @@
   register: golang_result
 
 - name: install golang
-  shell: asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
+  shell: asdf plugin add golang https://github.com/kennyp/asdf-golang.git
   when: not golang_result.stat.exists
 
 - name: install latest golang
@@ -221,7 +221,7 @@
   register: rust_result
 
 - name: install rust
-  shell: asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
+  shell: asdf plugin add rust https://github.com/code-lever/asdf-rust.git
   when: not rust_result.stat.exists
 
 - name: install latest rust
@@ -236,7 +236,7 @@
   register: java_result
 
 - name: install java
-  shell: asdf plugin-add java https://github.com/halcyon/asdf-java.git
+  shell: asdf plugin add java https://github.com/halcyon/asdf-java.git
   when: not java_result.stat.exists
 
 - name: install latest openjdk
@@ -252,7 +252,7 @@
   register: gauche_result
 
 - name: install gauche
-  shell: asdf plugin-add gauche
+  shell: asdf plugin add gauche
   when: not gauche_result.stat.exists
 
 - name: install latest gauche
@@ -268,7 +268,7 @@
   register: kubectx_result
 
 - name: install kubectx
-  shell: asdf plugin-add kubectx
+  shell: asdf plugin add kubectx
   when: not kubectx_result.stat.exists
 
 - name: install latest kubectx
@@ -283,7 +283,7 @@
   register: minikube_result
 
 - name: install minikube
-  shell: asdf plugin-add minikube https://github.com/alvarobp/asdf-minikube.git
+  shell: asdf plugin add minikube https://github.com/alvarobp/asdf-minikube.git
   when: not minikube_result.stat.exists
 
 - name: install latest minikube
@@ -298,7 +298,7 @@
 #  register: pk_result
 
 #- name: install packer
-#  shell: asdf plugin-add packer https://github.com/Banno/asdf-hashicorp.git
+#  shell: asdf plugin add packer https://github.com/Banno/asdf-hashicorp.git
 #  when: not pk_result.stat.exists
 
 #- name: install latest packer
@@ -313,7 +313,7 @@
 #  register: elm_result
 
 #- name: install elm
-#  shell: asdf plugin-add elm https://github.com/asdf-community/asdf-elm.git
+#  shell: asdf plugin add elm https://github.com/asdf-community/asdf-elm.git
 #  when: not elm_result.stat.exists
 
 #- name: install latest elm
@@ -328,7 +328,7 @@
 #  register: mysql_result
 
 #- name: install mysql
-#  shell: asdf plugin-add mysql https://github.com/iroddis/asdf-mysql.git
+#  shell: asdf plugin add mysql https://github.com/iroddis/asdf-mysql.git
 #  when: not mysql_result.stat.exists
 
 #- name: install latest mysql

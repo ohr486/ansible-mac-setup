@@ -112,7 +112,9 @@
       #- { name: squashfs }
       #- { name: coreutils }
       #- { name: xz }
-      #- { name: pkg-config }
+      # for Python/Poetry
+      - { name: pkg-config }
+      - { name: tcl-tk }
     brew_cask_repos:
       # for java
       - homebrew/cask-versions
