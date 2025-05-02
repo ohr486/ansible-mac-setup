@@ -156,6 +156,8 @@
       - { name: windsurf, state: latest }
       #- { name: arduino }
       #- { name: thonny }
+      # for AI
+      - { name: claude, state: latest }
       # for writing
       #- { name: mactex }
       - { name: karabiner-elements, state: latest }
