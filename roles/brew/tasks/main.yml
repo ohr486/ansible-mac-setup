@@ -19,7 +19,7 @@
 - name: tap brew repositories
   homebrew_tap: tap={{ item }} state=present
   with_items: '{{ brew_repos }}'
-  when: brew_repos
+  when: brew_repos | default([]) | length > 0
 
 - name: update brew
   homebrew: update_homebrew=yes
@@ -29,10 +29,8 @@
     name={{ item.name | default(item) }}
     state={{ item.state | default('latest') }}
     install_options={{
-      item.install_options | default() | join(',')
-      if item.install_options is not string
-      else item.install_options
+      item.install_options | default([])
     }}
   with_items: '{{ brew_packs }}'
-  when: brew_packs
+  when: brew_packs | default([]) | length > 0
 

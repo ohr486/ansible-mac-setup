@@ -117,7 +117,7 @@
       - { name: tcl-tk }
     brew_cask_repos:
       # for java
-      - homebrew/cask-versions
+      #- homebrew/cask-versions
       # for health
       #- homebrew/cask-drivers
       #- homebrew/core
@@ -178,7 +178,7 @@
       #- { name: garmin-express }
       #- { name: zwift, state: absent }
       # for stream
-      - { name: loupedeck, state: latest }
+      - { name: loupedeck }
       #- { name: obs }
       - { name: microsoft-remote-desktop }
       # for font
