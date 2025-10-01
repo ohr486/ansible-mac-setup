@@ -255,11 +255,11 @@
   shell: asdf plugin add gauche
   when: not gauche_result.stat.exists
 
-- name: install latest gauche
-  shell: asdf install gauche $(asdf list all gauche | grep -v '^$' | tail -n 1)
+#- name: install latest gauche
+#  shell: asdf install gauche $(asdf list all gauche | grep -v '^$' | tail -n 1)
 
-- name: set latest gauche version
-  shell: asdf set --home gauche $(asdf list all gauche | grep -v '^$' | tail -n 1)
+#- name: set latest gauche version
+#  shell: asdf set --home gauche $(asdf list all gauche | grep -v '^$' | tail -n 1)
 
 # ---------- kubectx ----------
 
