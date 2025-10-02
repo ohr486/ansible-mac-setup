@@ -135,7 +135,8 @@
       # for life
       #- { name: appcleaner }
       #- { name: daisydisk }
-      - { name: iterm2, state: latest }
+      - { name: iterm2, state: absent }
+      - { name: wezterm, state: latest }
       - { name: evernote, state: latest }
       - { name: notion, state: latest }
       - { name: dropbox, state: latest }
