@@ -165,6 +165,21 @@
 - name: set latest yarn version
   shell: asdf set --home yarn $(asdf list all yarn | grep -v '^$' | tail -n 1)
 
+# ---------- pnpm ----------
+- name: check pnpm
+  stat: path=~/.asdf/plugins/pnpm
+  register: pnpm_result
+
+- name: install pnpm
+  shell: asdf plugin add pnpm https://github.com/jonathanmorley/asdf-pnpm.git
+  when: not pnpm_result.stat.exists
+
+- name: install latest pnpm
+  shell: asdf install pnpm $(asdf list all pnpm | grep -v '^$' | grap -v dev | grep -v alpha | grep -v test | tail -n 1)
+
+- name: set latest pnpm version
+  shell: asdf set --home pnpm $(asdf list all pnpm | grep -v '^$' | grep -v dev | grep -v alpha | grep -v test | tail -n 1)
+
 # ---------- python ----------
 - name: check python
   stat: path=~/.asdf/plugins/python
