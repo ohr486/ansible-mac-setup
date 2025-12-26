@@ -180,6 +180,21 @@
 - name: set latest pnpm version
   shell: asdf set --home pnpm $(asdf list all pnpm | grep -v '^$' | grep -v dev | grep -v alpha | grep -v test | tail -n 1)
 
+# ---------- bun ----------
+- name: check bun
+  stat: path=~/.asdf/plugins/bun
+  register: bun_result
+
+- name: install bun
+  shell: asdf plugin add bun https://github.com/cometkim/asdf-bun.git
+  when: not bun_result.stat.exists
+
+- name: install latest bun
+  shell: asdf install bun $(asdf list all bun | grep -v '^$' | tail -n 1)
+
+- name: set latest bun version
+  shell: asdf set --home bun $(asdf list all bun | grep -v '^$' | tail -n 1)
+
 # ---------- python ----------
 - name: check python
   stat: path=~/.asdf/plugins/python

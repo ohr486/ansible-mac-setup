@@ -96,6 +96,8 @@
       #- { name: p7zip }
       - { name: hugo, state: latest }
       #- { name: graphviz }
+      # for AI
+      - { name: gemini-cli, state: latest }
       # for testing
       #- { name: selenium-server-standalone }
       #- { name: geckodriver }
@@ -159,6 +161,7 @@
       #- { name: thonny }
       # for AI
       - { name: claude, state: latest }
+      - { name: kiro, state: latest }
       # for writing
       #- { name: mactex }
       - { name: karabiner-elements, state: latest }
