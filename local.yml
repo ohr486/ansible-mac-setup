@@ -79,7 +79,7 @@
       # for life
       - { name: tmux }
       - { name: neovim }
-      - { name: jq }
+      - { name: jq, state: latest }
       - { name: htop, state: absent }
       - { name: bpytop, state: latest }
       #- { name: coreutils }
@@ -98,6 +98,7 @@
       #- { name: graphviz }
       # for AI
       - { name: gemini-cli, state: latest }
+      - { name: opencode, state: latest }
       # for testing
       #- { name: selenium-server-standalone }
       #- { name: geckodriver }
@@ -140,6 +141,7 @@
       - { name: iterm2, state: absent }
       - { name: wezterm, state: latest }
       - { name: evernote, state: latest }
+      - { name: obsidian, state: latest }
       - { name: notion, state: latest }
       - { name: dropbox, state: latest }
       #- { name: firefox }
@@ -157,15 +159,15 @@
       - { name: visual-studio, state: latest }
       - { name: cursor, state: latest }
       - { name: windsurf, state: latest }
+      - { name: kiro, state: latest }
       #- { name: arduino }
       #- { name: thonny }
       # for AI
       - { name: claude, state: latest }
-      - { name: kiro, state: latest }
       # for writing
       #- { name: mactex }
       - { name: karabiner-elements, state: latest }
-      - { name: dynalist }
+      - { name: dynalist, state: latest }
       # for Gaming
       - { name: unity-hub, state: latest }
       - { name: godot, state: latest }
