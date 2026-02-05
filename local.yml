@@ -160,6 +160,7 @@
       - { name: cursor, state: latest }
       - { name: windsurf, state: latest }
       - { name: kiro, state: latest }
+      - { name: kiro-cli, state: latest }
       #- { name: arduino }
       #- { name: thonny }
       # for AI
