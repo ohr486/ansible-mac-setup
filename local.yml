@@ -86,6 +86,7 @@
       #- { name: gnupg }
       - { name: zsh }
       - { name: git }
+      - { name: glab, state: latest } # for GitLab
       - { name: ghq }
       - { name: wget }
       - { name: peco }
