@@ -162,6 +162,7 @@
       - { name: windsurf, state: latest }
       - { name: kiro, state: latest }
       - { name: kiro-cli, state: latest }
+      - { name: codex, state: latest }
       #- { name: arduino }
       #- { name: thonny }
       # for AI
