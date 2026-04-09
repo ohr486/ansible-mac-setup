@@ -153,7 +153,7 @@
       #- { name: elmedia-player }
       #- { name: steam }
       - { name: forticlient-vpn, state: absent }
-      - { name: docker, state: latest }
+      - { name: docker-desktop, state: latest }
       # for IDE
       - { name: jetbrains-toolbox, state: latest }
       - { name: visual-studio-code, state: latest }
