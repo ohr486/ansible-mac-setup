@@ -1,7 +1,6 @@
 ---
-- name: Install Ricty Font
-  shell: cp -f $(brew --cellar ricty)/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
-  args:
-    creates: ~/Library/Fonts/Ricty-bold.ttf
-  notify: run fc-cache
-
+# Ricty は廃止しました（untrusted tap "sanemat/font" かつ 2020年以降未メンテのため）。
+# フォントは brew cask (font-hackgen-nerd) で ~/Library/Fonts へ自動インストールされるため、
+# このrole での手動コピー／fc-cache は不要です。定義は local.yml の brew_cask_packs を参照。
+- name: fonts are installed via cask (font-hackgen-nerd) - nothing to do here
+  ansible.builtin.meta: noop

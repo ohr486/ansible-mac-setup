@@ -13,8 +13,8 @@
     - zsh
   vars:
     brew_repos:
-      # for font
-      - sanemat/font
+      # for font (Ricty用。untrusted tap かつ 2020年以降未メンテのため廃止。HackGen Nerd を cask で導入)
+      #- sanemat/font
       # for rsync
       #- homebrew/dupes
       # for avr
@@ -70,7 +70,7 @@
       #- { name: embulk }
       # for font
       - { name: fontforge, state: absent } # move to cask
-      - { name: ricty }
+      #- { name: ricty } # 廃止: untrusted tap(sanemat/font)かつ未メンテのビルド依存で壊れやすい。cask の font-hackgen-nerd へ移行
       # for libs
       #- { name: openssl }
       #- { name: libffi }
@@ -194,6 +194,7 @@
       - { name: microsoft-remote-desktop }
       # for font
       - { name: fontforge }
+      - { name: font-hackgen-nerd, state: latest } # Ricty代替(再配布可・メンテ継続。~/Library/Fonts へ自動配置)
 
 # for font
   handlers:
