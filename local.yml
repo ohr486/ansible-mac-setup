@@ -153,7 +153,7 @@
       #- { name: elmedia-player }
       #- { name: steam }
       - { name: forticlient-vpn, state: absent }
-      - { name: docker-desktop, state: latest }
+      - { name: docker-desktop, state: latest, requires_sudo: true }
       # for IDE
       - { name: jetbrains-toolbox, state: latest }
       - { name: visual-studio-code, state: latest }
@@ -161,12 +161,14 @@
       - { name: cursor, state: latest }
       - { name: windsurf, state: latest }
       - { name: kiro, state: latest }
-      - { name: kiro-cli, state: latest }
-      - { name: codex, state: latest }
       #- { name: arduino }
       #- { name: thonny }
       # for AI
       - { name: claude, state: latest }
+      - { name: claude-code, state: latest }
+      - { name: codex, state: latest }
+      - { name: codex-app, state: latest }
+      - { name: kiro-cli, state: latest }
       # for writing
       #- { name: mactex }
       - { name: karabiner-elements, state: latest }
@@ -197,4 +199,3 @@
   handlers:
     - name: run fc-cache
       shell: fc-cache -vf
-

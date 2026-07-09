@@ -31,6 +31,10 @@ $ cd ansible-mac-setup
 $ ./setup.sh
 ```
 
+Docker Desktop など、Homebrew Cask の更新中に `/usr/local` 配下の root 所有ファイルを更新するアプリは sudo パスワードが必要です。
+実行中に `Homebrew Cask の操作に sudo パスワードが必要です（スキップする場合は Enter）` と表示されたら、macOS のログインパスワードを入力してください。
+非対話で実行する場合は、`brew_cask_sudo_password` を Ansible Vault などで渡してください。
+
 ## mac setup 手順
 
 - 初回
@@ -39,4 +43,3 @@ $ ./setup.sh
 - wifi設定
 - Xcodeインストール(Storeから)
 - ln -s
-
