@@ -168,6 +168,7 @@
       - { name: claude-code, state: latest }
       - { name: codex, state: latest }
       - { name: codex-app, state: latest }
+      - { name: steipete/tap/codexbar, state: latest } # CodexBar: Codex/Claude のメニューバー使用量モニタ(steipete/tap を自動tap)
       - { name: kiro-cli, state: latest }
       # for writing
       #- { name: mactex }
