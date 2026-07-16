@@ -23,8 +23,8 @@
       #- homebrew/services
       # for php
       #- homebrew/php
-      # for heroku
-      - heroku/brew
+      # for heroku (untrusted tap かつ heroku formula 未使用のため廃止。必要時は homebrew/core の heroku を利用)
+      #- heroku/brew
       # for wxmac
       #- homebrew/core
     brew_packs:
@@ -143,7 +143,7 @@
       - { name: wezterm, state: latest }
       - { name: evernote, state: latest }
       - { name: obsidian, state: latest }
-      - { name: notion, state: latest }
+      - { name: notion, state: latest, install_options: force }
       - { name: dropbox, state: latest }
       #- { name: firefox }
       #- { name: google-chrome, state: absent }
@@ -156,10 +156,10 @@
       - { name: docker-desktop, state: latest, requires_sudo: true }
       # for IDE
       - { name: jetbrains-toolbox, state: latest }
+      - { name: windsurf, state: absent }
       - { name: visual-studio-code, state: latest }
       - { name: visual-studio, state: latest }
       - { name: cursor, state: latest }
-      - { name: windsurf, state: latest }
       - { name: kiro, state: latest }
       #- { name: arduino }
       #- { name: thonny }
@@ -175,7 +175,7 @@
       - { name: karabiner-elements, state: latest }
       - { name: dynalist, state: latest }
       # for Gaming
-      - { name: unity-hub, state: latest }
+      - { name: unity-hub, state: latest, install_options: force }
       - { name: godot, state: latest }
       #- { name: parsec }
       #- { name: zerotier-one }
@@ -185,7 +185,7 @@
       # for meeting
       - { name: zoom, state: latest }
       #- { name: bluejeans }
-      - { name: discord, state: latest }
+      - { name: discord, state: latest, install_options: force }
       # for bicycle
       #- { name: garmin-express }
       #- { name: zwift, state: absent }

@@ -15,8 +15,8 @@
 
 - name: check whether brew cask packages need sudo password
   set_fact:
-    brew_cask_requires_sudo_password: "{{ brew_cask_packs | default([]) | selectattr('requires_sudo', 'defined') | selectattr('requires_sudo') | list | length > 0 }}"
-  when: brew_cask_packs | default([]) | length > 0
+    brew_cask_requires_sudo_password: "{{ brew_cask_packs | default([], true) | selectattr('requires_sudo', 'defined') | selectattr('requires_sudo') | list | length > 0 }}"
+  when: brew_cask_packs | default([], true) | length > 0
 
 - name: ask sudo password for brew cask packages
   pause:
@@ -38,6 +38,7 @@
   homebrew_cask:
     name: "{{ item.name | default(item) }}"
     state: "{{ item.state | default('present') }}"
+    install_options: "{{ item.install_options | default(omit) }}"
     sudo_password: "{{ (item.requires_sudo | default(false) and (brew_cask_effective_sudo_password | default('') | length > 0)) | ternary(brew_cask_effective_sudo_password | default(''), omit) }}"
-  with_items: '{{ brew_cask_packs }}'
-  when: brew_cask_packs | default([]) | length > 0
+  with_items: '{{ brew_cask_packs | default([], true) }}'
+  when: brew_cask_packs | default([], true) | length > 0
