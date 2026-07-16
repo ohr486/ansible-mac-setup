@@ -116,6 +116,7 @@
       # for AI
       - { name: gemini-cli, state: latest }
       - { name: opencode, state: latest }
+      - { name: herdr, state: latest } # herdr.dev: ターミナル常駐のエージェントマルチプレクサ(caskではなくformula)
       # for testing
       #- { name: selenium-server-standalone }
       #- { name: geckodriver }
