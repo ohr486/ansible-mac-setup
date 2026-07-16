@@ -225,7 +225,12 @@
   when: not poetry_result.stat.exists
 
 - name: install latest poetry
+  # poetry の install callback は python3 shim を呼ぶ。cwd(このリポジトリ)の
+  # .tool-versions が home の python 設定をシャドウするため、home で実行して
+  # asdf set --home で設定した python を確実に解決させる。
   shell: asdf install poetry $(asdf list all poetry | grep -v rc | grep -v '^$' | tail -n 1)
+  args:
+    chdir: "{{ lookup('env', 'HOME') }}"
 
 - name: set latest poetry
   shell: asdf set --home poetry $(asdf list all poetry | grep -v rc | grep -v '^$' | tail -n 1)
