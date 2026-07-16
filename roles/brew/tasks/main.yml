@@ -21,6 +21,39 @@
   with_items: '{{ brew_repos | default([], true) }}'
   when: brew_repos | default([], true) | length > 0
 
+# === untrusted/未使用tapの掃除(冪等)。brew update より前に実行し走査対象から外す ===
+# 順序が重要: untap(--force)は formula をロードしないので untrusted でも成功するが、
+# uninstall は tap が残っていると untrusted 拒否で失敗する。よって untap を先に行う。
+# (1) 現在tap済みのものだけ強制untap(--force で formula 有無・trust に関わらず除去)
+- name: list currently installed taps
+  command: brew tap
+  register: brew_current_taps
+  changed_when: false
+  when: brew_repos_absent | default([], true) | length > 0
+
+- name: force-untap unused/untrusted brew repositories
+  command: brew untap --force {{ item }}
+  with_items: '{{ brew_repos_absent | default([], true) }}'
+  when:
+    - brew_repos_absent | default([], true) | length > 0
+    - item in (brew_current_taps.stdout_lines | default([]))
+
+# (2) untap後に不要formulaを削除(tapが消えているので untrusted 拒否を回避)
+#     tap削除後は未インストールformulaの名前解決ができずエラーになるため、
+#     インストール済みのものだけを対象にして冪等にする
+- name: list installed formulae
+  command: brew list --formula -1
+  register: brew_installed_formulae
+  changed_when: false
+  when: brew_formulae_absent | default([], true) | length > 0
+
+- name: uninstall unused formulae from removed taps
+  homebrew: name={{ item }} state=absent
+  with_items: '{{ brew_formulae_absent | default([], true) }}'
+  when:
+    - brew_formulae_absent | default([], true) | length > 0
+    - item in (brew_installed_formulae.stdout_lines | default([]))
+
 - name: update brew
   homebrew: update_homebrew=yes
 

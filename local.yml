@@ -27,6 +27,22 @@
       #- heroku/brew
       # for wxmac
       #- homebrew/core
+    # === untrusted/未使用tapの掃除(冪等: 対象が無ければ no-op) ===
+    # 最近のHomebrewは untrusted tap からの formula ロードを拒否し、brew update も失敗する。
+    # untap(--force)は formula をロードしないため trust に関係なく成功するので、
+    # 「先に強制untap → その後 formula を uninstall」の順で処理する(順序が逆だと拒否される)。
+    # (1) 除去する未使用/untrusted tap
+    brew_repos_absent:
+      - go-task/tap    # go-task 本体は保持し tap のみ除去(下の formula 削除に含めない)
+      - heroku/brew    # heroku formula は廃止(必要時は homebrew/core を利用)
+      - kayac/tap      # ecspresso 用。未使用のため廃止
+      - osx-cross/avr  # avr ツールチェイン用。廃止
+      - sanemat/font   # Ricty 用。HackGen Nerd(cask) へ移行済み
+    # (2) untap後に削除する不要formula(tapが消えるので untrusted 拒否を回避できる)
+    brew_formulae_absent:
+      - ricty          # sanemat/font。HackGen Nerd(cask) へ移行済み
+      - avr-gcc@9      # osx-cross/avr。ergodox/avr ツールチェイン。廃止
+      - avr-binutils   # osx-cross/avr。同上
     brew_packs:
       # for languages
       - { name: asdf, state: latest }
@@ -145,7 +161,7 @@
       - { name: obsidian, state: latest }
       - { name: notion, state: latest, install_options: force }
       - { name: dropbox, state: latest }
-      #- { name: firefox }
+      - { name: firefox, state: absent }
       #- { name: google-chrome, state: absent }
       - { name: slack, state: latest }
       - { name: kindle, state: absent }
@@ -173,7 +189,7 @@
       # for writing
       #- { name: mactex }
       - { name: karabiner-elements, state: latest }
-      - { name: dynalist, state: latest }
+      - { name: dynalist, state: absent }
       # for Gaming
       - { name: unity-hub, state: latest, install_options: force }
       - { name: godot, state: latest }
