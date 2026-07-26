@@ -13,6 +13,8 @@
     - zsh
   vars:
     brew_repos:
+      # for multica (multica-ai/tap/multica のインストールに必須。フルネーム指定では自動tapされない)
+      - multica-ai/tap
       # for font (Ricty用。untrusted tap かつ 2020年以降未メンテのため廃止。HackGen Nerd を cask で導入)
       #- sanemat/font
       # for rsync
@@ -117,6 +119,7 @@
       - { name: gemini-cli, state: latest }
       - { name: opencode, state: latest }
       - { name: herdr, state: latest } # herdr.dev: ターミナル常駐のエージェントマルチプレクサ(caskではなくformula)
+      - { name: multica-ai/tap/multica, state: latest } # Multica: ローカルエージェントランタイム/管理ツール(tapは上の brew_repos で追加)
       # for testing
       #- { name: selenium-server-standalone }
       #- { name: geckodriver }
